@@ -18,8 +18,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def hello():
-    return "Hello, World!"
+@app.route("/base.html")
+def display_books():
+    books = mongo.db.books.find()
+    return render_template("base.html", books=books)
 
 
 if __name__ == "__main__":
