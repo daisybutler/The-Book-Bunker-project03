@@ -48,6 +48,12 @@ nav li a {
     font-size: 70px;
 }
 
+.search-bar {
+    border: 2px solid #bb98eb;
+    padding: 0 5px 0 5px;
+    border-radius: 10px;
+}
+
 
 /* FOOTER ------------------------------- */
 
