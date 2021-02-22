@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@700&display=swap');
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
 nav {
     background-color: #bb98eb;
 }
@@ -12,5 +22,9 @@ nav {
 nav li a {
     font-family: "Lato", sans-serif;
     font-size: 20px;
-
 }
+
+.page-footer {
+    background-color: #bb98eb;
+}
+
