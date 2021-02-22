@@ -110,6 +110,25 @@ h2 {
     border-radius: 55px;
 }
 
+/* My Library ------------------------------- */
+
+#reading-list {
+    
+}
+
+.collapsible-header {
+    font-family: "Poppins", sans-serif;
+    background-color: #bb98eb;
+    color: white;
+    font-size: 25px;
+}
+
+.collapsible-body {
+    font-family: "Lato", sans-serif;
+    color: #282828;
+    margin-bottom: 0;
+}
+
 /* Sign Up ------------------------------- */
 
 .switch-to-login-or-signup {
@@ -128,8 +147,6 @@ h2 {
     height: 160px;
     border-radius: 80px;
 }
-
-
 
 /* Login ------------------------------- */
 
