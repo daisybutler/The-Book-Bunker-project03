@@ -111,6 +111,16 @@ h2 {
 }
 
 
+/* Login ------------------------------- */
+
+.btn-large {
+    background-color: #bb98eb;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
 /* FOOTER ------------------------------- */
 
 .page-footer {
