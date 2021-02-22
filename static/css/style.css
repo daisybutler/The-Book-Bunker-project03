@@ -6,6 +6,7 @@ body {
     flex-direction: column;
   }
 
+  /* Facilitates sticky footer */
   main {
     flex: 1 0 auto;
   }
