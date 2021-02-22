@@ -110,6 +110,26 @@ h2 {
     border-radius: 55px;
 }
 
+/* Sign Up ------------------------------- */
+
+.switch-to-login-or-signup {
+    background-color: #bb98eb;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+.switch-to-login-or-signup:hover {
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+}
+
+
 
 /* Login ------------------------------- */
 
