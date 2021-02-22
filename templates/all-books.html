@@ -1,8 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>All Books</h2>
 
-
-{% for book in books%}
+    {% for book in books %}
         {{ book.title }}
         {{ book.author }}
         {{ book.category }}
         {{ book.year }}
     {% endfor %}
+
+{% endblock %}

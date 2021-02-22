@@ -24,11 +24,11 @@
         <!---Navbar with collapsible mobile element-->
         <nav>
             <div class="nav-wrapper">
-                <a href="/" class="brand-logo"><i class="fas fa-book"></i></a>
+                <a href="{{ url_for('homepage') }}" class="brand-logo"><i class="fas fa-book"></i></a>
                 <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('homepage') }}">Home</a></li>
-                    <li><a href="#">All Books</a></li>
+                    <li><a href="{{ url_for('all_books') }}">All Books</a></li>
                     <li><a href="#">My Library</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Login/Signup</a></li>
@@ -38,8 +38,8 @@
         </nav>
     
         <ul class="sidenav" id="mobile-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="#">All Books</a></li>
+            <li><a href="{{ url_for('homepage') }}">Home</a></li>
+            <li><a href="{{ url_for('all_books') }}">All Books</a></li>
             <li><a href="#">My Library</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Login/Signup</a></li>

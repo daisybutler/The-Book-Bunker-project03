@@ -23,6 +23,11 @@ def homepage():
     return render_template("index.html")
 
 
+@app.route("/all-books.html")
+def all_books():
+    return render_template("all-books.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

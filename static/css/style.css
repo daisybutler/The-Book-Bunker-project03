@@ -49,9 +49,14 @@ nav li a {
     font-size: 70px;
 }
 
+h2 {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    color: #bb98eb;
+}
+
 #homepage-content {
     margin: 0 auto;
-
 }
 
 .search-bar {
