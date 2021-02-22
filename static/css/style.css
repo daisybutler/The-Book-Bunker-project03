@@ -33,10 +33,19 @@ nav li a {
 
 /* HOMEPAGE ------------------------------- */
 
-#homepage-title {
+#homepage-title h1 {
     font-family: "Poppins", sans-serif;
     color: #bb98eb;
     text-align: center;
+    line-height: 50px;
+}
+
+#small-title {
+    font-size: 40px;
+}
+
+#large-title {
+    font-size: 70px;
 }
 
 
