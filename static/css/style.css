@@ -1,6 +1,6 @@
 /* FONTS ------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&family=Poppins:wght@700&display=swap');
 
 /* SITE WIDE FEATURES ------------------------------- */
 
@@ -38,6 +38,7 @@ nav li a {
     color: #bb98eb;
     text-align: center;
     line-height: 50px;
+    padding-bottom: 40px;
 }
 
 #small-title {
@@ -48,11 +49,23 @@ nav li a {
     font-size: 70px;
 }
 
+#homepage-content {
+    margin: 0 auto;
+
+}
+
 .search-bar {
     border: 2px solid #bb98eb;
     padding: 0 5px 0 5px;
     border-radius: 10px;
 }
+
+.search-bar-prompt {
+    padding-left: 5px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
 
 #call-to-action-buttons {
     float: right;
