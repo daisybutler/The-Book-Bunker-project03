@@ -19,12 +19,12 @@
             </form>
         </div>
         <div id="call-to-action-buttons" class="col s12 l4">
-            <button class="login-circle" onclick="window.location.href='/login.html'">
+            <a class="login-circle" href="{{ url_for('login') }}">
                 <p class="white-text">Login</p>
-            </button>
-            <button class="sign-up-circle" onclick="window.location.href='/signup.html'">
+            </a>
+            <a class="sign-up-circle" href="{{ url_for('signup') }}">
                 <p class="white-text" >Create An Account</p>
-            </button>
+            </a>
         </div>
     </div>
 </div>
