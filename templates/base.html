@@ -27,7 +27,7 @@
                 <a href="/" class="brand-logo"><i class="fas fa-book"></i></a>
                 <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ url_for('homepage') }}">Home</a></li>
                     <li><a href="#">All Books</a></li>
                     <li><a href="#">My Library</a></li>
                     <li><a href="#">Contact</a></li>
@@ -57,8 +57,8 @@
 
     <footer class="page-footer">
         <div class="container">
-            <div class="row">
-                <div class="center">
+            <div class="row footer-contents">
+                <div class="col s12 l4 offset-l4 center">
                     <h5 class="white-text">The Book Bunker</h5>
                 </div>
                 <div class="right">

@@ -1,4 +1,8 @@
+/* FONTS ------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@700&display=swap');
+
+/* SITE WIDE FEATURES ------------------------------- */
 
 body {
     display: flex;
@@ -10,6 +14,8 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+/* NAVIGATION ------------------------------- */
 
 nav {
     background-color: #bb98eb;
@@ -25,7 +31,23 @@ nav li a {
     font-size: 20px;
 }
 
+/* HOMEPAGE ------------------------------- */
+
+#homepage-title {
+    font-family: "Poppins", sans-serif;
+    color: #bb98eb;
+    text-align: center;
+}
+
+
+/* FOOTER ------------------------------- */
+
 .page-footer {
     background-color: #bb98eb;
 }
+
+.footer-contents i {
+    font-size: 30px;
+}
+
 
