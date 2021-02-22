@@ -28,6 +28,26 @@ def all_books():
     return render_template("all-books.html")
 
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("/dashboard.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("/contact.html")
+
+
+@app.route("/signup")
+def signup():
+    return render_template("/signup.html")
+
+
+@app.route("/logout")
+def logout():
+    return render_template("/logout.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
