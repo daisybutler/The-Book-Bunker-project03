@@ -19,6 +19,32 @@
 </head>
 
 <body>
+
+    <!---Navbar with collapsible mobile element-->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All Books</a></li>
+                <li><a href="#">My Library</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Login/Signup</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">All Books</a></li>
+        <li><a href="#">My Library</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login/Signup</a></li>
+        <li><a href="#">Log Out</a></li>
+    </ul>
+
     {% for book in books%}
         {{ book.title }}
         {{ book.author }}
