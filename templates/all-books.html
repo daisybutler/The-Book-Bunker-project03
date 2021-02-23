@@ -2,11 +2,18 @@
 {% block content %}
     <h2>All Books</h2>
 
-    {% for book in books %}
-        {{ book.title }}
-        {{ book.author }}
-        {{ book.category }}
-        {{ book.year }}
+    {% for book in all_books %}
+    <div class="row">
+        <div class="col s12 l6">
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+            <p>{{ book.category }}</p>
+            <p>{{ book.year }}</p>
+        </div>
+        <div class="col s12 l6">
+            <p>image</p>
+        </div>
+    </div>
     {% endfor %}
 
 {% endblock %}

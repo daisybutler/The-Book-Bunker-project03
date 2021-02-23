@@ -25,7 +25,8 @@ def homepage():
 
 @app.route("/all-books.html")
 def all_books():
-    return render_template("all-books.html")
+    all_books = list(mongo.db.books.find())
+    return render_template("all-books.html", all_books=all_books)
 
 
 @app.route("/dashboard")
