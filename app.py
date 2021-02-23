@@ -18,15 +18,24 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/index.html")
-def homepage():
+def home():
     return render_template("index.html")
 
 
-@app.route("/all-books.html")
+@app.route("/all-books")
 def all_books():
     all_books = list(mongo.db.books.find())
     return render_template("all-books.html", all_books=all_books)
+
+
+@app.route("/all-books/<book_url>")
+def show_book(book_url):
+    selected_book = {}
+    books = mongo.db.books.find()
+    for book in books:
+        if book["book_url"] == book_url:
+            selected_book == book
+        return "Hello"
 
 
 @app.route("/dashboard")
