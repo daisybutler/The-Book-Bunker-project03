@@ -112,9 +112,13 @@ h2 {
 
 /* My Library ------------------------------- */
 
-#reading-list {
-    
+.book-image {
+    max-width: 200px;
+    max-height: 300px;
 }
+
+/* My Library ------------------------------- */
+
 
 .collapsible-header {
     font-family: "Poppins", sans-serif;
