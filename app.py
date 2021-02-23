@@ -34,23 +34,23 @@ def show_book(book_url):
     books = mongo.db.books.find()
     for book in books:
         if book["book_url"] == book_url:
-            selected_book == book
-        return "Hello"
+            selected_book = book
+        return "<h2>" + selected_book["title"] + "</h2>"
 
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("/dashboard.html")
+    return render_template("dashboard.html")
 
 
 @app.route("/contact")
 def contact():
-    return render_template("/contact.html")
+    return render_template("contact.html")
 
 
 @app.route("/signup")
 def signup():
-    return render_template("/signup.html")
+    return render_template("signup.html")
 
 
 @app.route("/login")
@@ -60,7 +60,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    return render_template("/logout.html")
+    return render_template("logout.html")
 
 
 if __name__ == "__main__":
