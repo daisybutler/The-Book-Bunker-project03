@@ -39,16 +39,32 @@ def all_books():
 @app.route("/all-books/<book_url>")
 def show_book(book_url):
     selected_book = {}
+    allbooks = mongo.db.books.find()
+    for book in allbooks:
+        if book["book_url"] == book_url:
+            selected_book = book["title"]
+        else:
+            return "Could not find book."
+    return selected_book
+
+
+"""@app.route("/all-books/<book_url>")
+def show_book(book_url):
+    selected_book = {}
     books = mongo.db.books.find()
     for book in books:
         if book["book_url"] == book_url:
-            selected_book = book
-        return "<h2>" + selected_book["title"] + "</h2>"
+            selected_book = book["title"]
+        else:
+            return "Could not find book."
+    return selected_book"""
 
 
-@app.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html", username=session["user"])
+@app.route("/dashboard/<username>", methods=['GET', 'POST'])
+def dashboard(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("dashboard.html", username=username)
 
 
 @app.route("/contact")
@@ -94,8 +110,6 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
-                    request.form.get("username")))
                 return redirect(url_for(
                     "dashboard", username=session["user"]))
 

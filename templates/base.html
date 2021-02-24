@@ -30,7 +30,7 @@
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('all_books') }}">All Books</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('dashboard') }}">My Library</a></li>
+                        <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Library</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('signup') }}">Login/Signup</a></li>
@@ -44,7 +44,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('all_books') }}">All Books</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('dashboard') }}">My Library</a></li>
+                <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Library</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('signup') }}">Login/Signup</a></li>

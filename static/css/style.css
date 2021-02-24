@@ -141,7 +141,7 @@ nav li a {
     transform: translate(0, 10px);
 }
 
-/* My Library ------------------------------- */
+/* All Books ------------------------------- */
 
 .book-image {
     max-width: 200px;
@@ -178,16 +178,8 @@ nav li a {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
-
-/*.switch-to-login-or-signup p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}*/
 
 .switch-to-login-or-signup:hover {
     width: 160px;
