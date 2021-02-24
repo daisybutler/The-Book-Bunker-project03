@@ -39,14 +39,14 @@ def all_books():
 
 
 # DISPLAY INDIVIDUAL BOOKS -------------------------------------
-@app.route("/display-book/<book_url>")
-def display_book(book_url):
-    choice = {}
-    books = mongo.db.books.find()
-    for book in books:
-        if book["book_url"] == book_url:
-            choice = book
-    return render_template('book-page.html', choice=choice)
+
+@app.route("/display-book/<book_id>")
+def display_book(book_id):
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    selected_book = {"title": book["title"],
+                     "author": book["author"], "category": book["category"],
+                     "year": book["year"]}
+    return render_template("display-book.html", selected_book=selected_book)
 
 
 # DISPLAY USER DASHBOARD -------------------------------------
