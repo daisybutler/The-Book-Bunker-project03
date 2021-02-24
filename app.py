@@ -24,19 +24,21 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# DISPLAY HOME -------------------------------------
 @app.route("/")
 def home():
     # Passes in username to display session user when applicable
     return render_template("index.html")
 
 
+# DISPLAY ALL BOOKS -------------------------------------
 @app.route("/all-books")
 def all_books():
     all_books = list(mongo.db.books.find())
     return render_template("all-books.html", all_books=all_books)
 
 
-@app.route("/all-books/<book_url>")
+"""@app.route("/all-books/<book_url>")
 def show_book(book_url):
     selected_book = {}
     allbooks = mongo.db.books.find()
@@ -48,7 +50,7 @@ def show_book(book_url):
     return selected_book
 
 
-"""@app.route("/all-books/<book_url>")
+@app.route("/all-books/<book_url>")
 def show_book(book_url):
     selected_book = {}
     books = mongo.db.books.find()
@@ -60,6 +62,7 @@ def show_book(book_url):
     return selected_book"""
 
 
+# DISPLAY USER DASHBOARD -------------------------------------
 @app.route("/dashboard/<username>", methods=['GET', 'POST'])
 def dashboard(username):
     username = mongo.db.users.find_one(
@@ -67,20 +70,21 @@ def dashboard(username):
     return render_template("dashboard.html", username=username)
 
 
+# DISPLAY CONTACT -------------------------------------
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
 
 
-@app.route("/search-topics", methods=["GET", "POST"])
-def search_topics():
-    if request.method == "POST":
-        topic = request.form.get("search").lower()
-        return topic
-    else:
-        return "No topics found"
+# SEARCH ALL BOOKS -------------------------------------
+@app.route("/search-categories", methods=["GET", "POST"])
+def search_categories():
+    search = request.form.get('search')
+    all_books = list(mongo.db.books.find({"$text": {"$search": search}}))
+    return render_template("all-books.html", all_books=all_books)
 
 
+# SIGNUP -------------------------------------
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -107,6 +111,7 @@ def signup():
     return render_template("signup.html")
 
 
+# LOGIN -------------------------------------
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -135,6 +140,7 @@ def login():
     return render_template("login.html")
 
 
+# LOGOUT -------------------------------------
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -147,5 +153,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-
