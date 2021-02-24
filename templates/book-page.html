@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {block content}
 
-    <h2>{{ selected_book.title }}</h2>
+    {% for thing in choice %}
+        <p>{{ thing }}</p>
+    {% endfor %}
+
 
 {endblock}

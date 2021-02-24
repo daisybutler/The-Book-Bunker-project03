@@ -12,11 +12,16 @@
                 </div>
             </form>
         </div>
+        <div class="row">
+            <div class="col s12 ">
+                <a href="{{url_for('all_books') }}">Show all books</a>
+            </div>
+        </div>
 
     {% for book in all_books %}
     <div class="row">
         <div class="col s12 l6 center">
-            <h3><a href="/all-books/{{ book.book_url }}">{{ book.title }}</a></h3>
+            <h3><a href="/display-book/{{ book.book_url }}">{{ book.title }}</a></h3>
             <p>{{ book.author }}</p>
             <p>{{ book.category }}</p>
             <p>{{ book.year }}</p>

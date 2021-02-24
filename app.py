@@ -38,28 +38,15 @@ def all_books():
     return render_template("all-books.html", all_books=all_books)
 
 
-"""@app.route("/all-books/<book_url>")
-def show_book(book_url):
-    selected_book = {}
-    allbooks = mongo.db.books.find()
-    for book in allbooks:
-        if book["book_url"] == book_url:
-            selected_book = book["title"]
-        else:
-            return "Could not find book."
-    return selected_book
-
-
-@app.route("/all-books/<book_url>")
-def show_book(book_url):
-    selected_book = {}
+# DISPLAY INDIVIDUAL BOOKS -------------------------------------
+@app.route("/display-book/<book_url>")
+def display_book(book_url):
+    choice = {}
     books = mongo.db.books.find()
     for book in books:
         if book["book_url"] == book_url:
-            selected_book = book["title"]
-        else:
-            return "Could not find book."
-    return selected_book"""
+            choice = book
+    return render_template('book-page.html', choice=choice)
 
 
 # DISPLAY USER DASHBOARD -------------------------------------

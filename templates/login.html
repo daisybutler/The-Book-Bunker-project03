@@ -4,7 +4,7 @@
     <h2>Login</h2>
 
     <div class="row">
-        <form class="col s10 offset-s1 m8 offset-m2 l6" method="POST" action="{{ url_for('login') }}">
+        <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="row">
                 <div class="input-field col s12">
                     <input id="username" name="username" type="text" class="validate">
@@ -19,7 +19,7 @@
                 <div class="col s4 m4 l12 offset-l5">
                     <button type="submit" class="waves-effect waves-light btn-large">Login</button>
                 </div>
-                <div class="col s4 m4">
+                <div class="col s4 offset-s2">
                     <a class="login-circle switch-to-login-or-signup" role="button" href="{{ url_for('signup') }}">
                         <p>New Here?<br><small>Create an account</small></p>
                     </a>
