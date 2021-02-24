@@ -3,14 +3,14 @@
     <h2>All Books</h2>
 
     <div class="row">
-        <div class="col s12 l8">
+        <div class="col s12 l8 offset-l2" id="book-page-search-bar">
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
             <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
                 <div class="input-field">
                     <i class="fas fa-search"></i>
                     <input id="search" name="search" type="text" class="validate" required>
-                    <label class="label-icon" for="search"><i class="material-icons">Search by topic</i></label>
+                    <label class="label-icon" for="search">E.g. "investing"</label>
                 </div>
             </form>
         </div>
