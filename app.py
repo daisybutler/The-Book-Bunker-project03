@@ -26,6 +26,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
+    # Passes in username to display session user when applicable
     return render_template("index.html")
 
 
@@ -47,7 +48,7 @@ def show_book(book_url):
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html")
+    return render_template("dashboard.html", username=session["user"])
 
 
 @app.route("/contact")

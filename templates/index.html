@@ -19,8 +19,13 @@
                 </div>
             </form>
         </div>
+        <!---Displays greeting and username if a user is logged in-->
+        {% if session.user %}
+        <div id="welcome-message-circle" class="col s12 l4 center">
+                <h3 id="welcome-message">What topics do you want to discover today, {{ username }}?</h3>
+            </div>
         <!---Displays login/signup call to actions if no user is logged in-->
-        {% if session.user == False %}
+        {% else %}
         <div id="call-to-action-buttons" class="col s12 l4">
             <a class="login-circle" href="{{ url_for('login') }}">
                 <p class="white-text">Login</p>
@@ -29,11 +34,6 @@
                 <p class="white-text" >Create An Account</p>
             </a>
         </div>
-        <!---Displays greeting and username if a user is logged in-->
-        {% else %}
-            <div>
-                <h3>Hello, {{ username }}</h3>
-            </div>
         {% endif %}
     </div>
 </div>
