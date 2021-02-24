@@ -27,7 +27,9 @@
                     <button type="submit" class="waves-effect waves-light btn-large">Sign Up</button>
                 </div>
                 <div class="col s4 m4">
-                    <a class="login-circle switch-to-login-or-signup" href="{{ url_for('login') }}">Have An Account?<br><small>Login</small></a>
+                    <a class="login-circle switch-to-login-or-signup" role="button" href="{{ url_for('login') }}">
+                        <p>An Account?<br><small>Login</small></p> 
+                    </a>
                 </div>
             </div>
         </form>
