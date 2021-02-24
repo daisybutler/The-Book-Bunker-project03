@@ -14,9 +14,7 @@
             <p class="search-bar-prompt">Search By Keyword</p>
             <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
                 <div class="input-field">
-                    <i class="fas fa-search"></i>
-                    <input id="search" name="search" type="text" class="validate" required>
-                    <label class="label-icon" for="search">E.g. "investing"</label>
+                    <input id="search" name="search" type="text" placeholder="E.g. 'investing'" required>
                 </div>
             </form>
         </div>
