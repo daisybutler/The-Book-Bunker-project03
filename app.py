@@ -72,6 +72,15 @@ def contact():
     return render_template("contact.html")
 
 
+@app.route("/search-topics", methods=["GET", "POST"])
+def search_topics():
+    if request.method == "POST":
+        topic = request.form.get("search").lower()
+        return topic
+    else:
+        return "No topics found"
+
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
