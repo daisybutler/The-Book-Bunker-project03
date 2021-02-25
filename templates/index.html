@@ -20,9 +20,9 @@
         </div>
         <!---Displays greeting and username if a user is logged in-->
         {% if session.user %}
-        <div id="welcome-message-circle" class="col s12 xl4">
+        <!--<div id="welcome-message-circle" class="col s12 xl4">
                 <h3 id="welcome-message">What topics do you want to discover today?</h3>
-            </div>
+            </div> --->
         <!---Displays login/signup call to actions if no user is logged in-->
         {% else %}
         <div id="call-to-action-buttons" class="col s12 xl4">
@@ -58,7 +58,7 @@
     </div>
     <div class="row">
         <div id="more-books-button" class="col s12 center">
-            <a class="btn" href="{{ url_for('all_books') }}">See All Books</a>
+            <a id="all-books-btn-home" class="btn-large" href="{{ url_for('all_books') }}">See All Books</a>
         </div>
     </div>
 </div>
