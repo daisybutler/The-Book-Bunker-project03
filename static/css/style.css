@@ -21,6 +21,16 @@ body {
     color: #bb98eb;
 }
 
+.button {
+    background-color: #bb98eb;
+    color: #fff;
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+    padding: 20px;
+    border: 1px solid #bb98eb;
+    border-radius: 10px;
+}
+
 /* NAVIGATION ------------------------------- */
 
 nav {
@@ -144,7 +154,9 @@ nav li a {
     transform: translate(0, 10px);
 }
 
-
+#featured-section {
+    margin-bottom: 50px;
+}
 
 #top-picks-title {
     font-family: "Poppins", sans-serif;
@@ -155,6 +167,10 @@ nav li a {
 
 .featured-book {
     max-width: 100%;
+}
+
+#more-books-button {
+    margin-top: 20px;
 }
 
 /* All Books ------------------------------- */
