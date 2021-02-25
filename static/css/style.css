@@ -22,15 +22,12 @@ body {
     color: #bb98eb;
 }
 
-.button {
+.btn {
     background-color: #bb98eb;
-    color: #fff;
-    font-size: 30px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    padding: 20px;
-    border: 1px solid #bb98eb;
-    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #cdb3f1;
 }
 
 /* NAVIGATION ------------------------------- */
