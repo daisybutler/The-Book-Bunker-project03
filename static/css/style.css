@@ -186,6 +186,16 @@ nav li a {
     margin-bottom: 30px;
 }
 
+#add-book-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+#add-book-button i {
+    transform: translate(0, 20px);
+}
+
 /* Display Book ------------------------------- */
 
 .buy-button {
