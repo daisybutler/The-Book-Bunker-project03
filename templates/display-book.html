@@ -1,26 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
-    <div class="col s12">
-        <h2 >{{ selected_book.title }}</h2>
-        <h3>{{ selected_book.author}}</h3>
-    </div>
-</div>
-<div class="row">
-    <div class="col s12 l6">
-        <p>description</p>
-        <div class="row">
-            <div class="col s12 center">
-                <a href="https://www.amazon.com" target="_blank">Buy Now</a>
-                <button>Like</button>
-                <button>Save</button>
-            </div>            
+    <div class="row">
+        <div class="col s12">
+            <a href="{{ url_for('all_books') }}">Back to All Books</a>
         </div>
     </div>
-    <div class="col s12 l6">
-        <img src="{{ selected_book.image_url }}">
-    </div>
-</div>
+    <!---Checks the selected_book main values have been retrieved from db-->
+    {% if selected_book.title, selected_book.author %}
+        <div class="row">
+            <div class="col s12">
+                <h2>{{ selected_book.title }}</h2>
+                <h3>{{ selected_book.author}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l6">
+                <p>{{ selected_book.description }}</p>
+                <div class="row">
+                    <div class="col s12 center">
+                        <a href="https://www.amazon.com" target="_blank">Buy Now</a>
+                        <button>Like</button>
+                        <button>Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6">
+                <img src="{{ selected_book.image_url }}">
+            </div>
+        </div>
+    <!---If selected_book main values have not been retrieved then error message displays to user -->
+    {% else %}
+        <div class="row">
+            <div class="col s12">
+                <h3>Sorry, we are having trouble displaying this book for you.</h3>
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}

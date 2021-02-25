@@ -44,7 +44,8 @@ def display_book(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     selected_book = {"title": book["title"],
                      "author": book["author"], "category": book["category"],
-                     "year": book["year"], "image_url": book["image_url"]}
+                     "year": book["year"], "image_url": book["image_url"],
+                     "description": book["description"]}
     return render_template("display-book.html", selected_book=selected_book)
 
 
