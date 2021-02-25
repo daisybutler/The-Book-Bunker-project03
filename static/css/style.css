@@ -4,6 +4,7 @@
 
 /* SITE WIDE FEATURES ------------------------------- */
 
+.author-year
 body {
     display: flex;
     min-height: 100vh;
@@ -216,6 +217,23 @@ nav li a {
     padding-left: 100px;
 }
 
+.author-year {
+    font-family: "Lato";
+    color: #bb98eb;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.category {
+    font-family: "Poppins", sans-serif;
+    color: #bb98eb;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
 /* Display Book ------------------------------- */
 
 .buy-button {
@@ -251,19 +269,6 @@ nav li a {
     text-align: center;
 }
 
-.author-year {
-    font-family: "Lato";
-    color: #bb98eb;
-    font-size: 18px;
-    text-align: center;
-}
-
-.category {
-    font-family: "Poppins", sans-serif;
-    color: #bb98eb;
-    font-size: 18px;
-    font-weight: 600;
-}
 
 /* Sign Up ------------------------------- */
 
