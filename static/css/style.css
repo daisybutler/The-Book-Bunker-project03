@@ -196,6 +196,26 @@ nav li a {
     transform: translate(0, 20px);
 }
 
+#all-books-page-display {
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#expand-book-btn {
+    background-color: #bb98eb;
+}
+
+.card {
+    background-color: #DAD9D9;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.card-image {
+    padding-left: 100px;
+}
+
 /* Display Book ------------------------------- */
 
 .buy-button {
