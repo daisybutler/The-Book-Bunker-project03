@@ -36,7 +36,7 @@
                     </a>
                 </div>
                 <h3>
-                    <a class="book-title card-title" href="{{ url_for('display_book', book_id=book._id)}}">{{ book.title }}</a>
+                    <a class="book-title" href="{{ url_for('display_book', book_id=book._id)}}">{{ book.title }}</a>
                 </h3>
                 <p class="author-year">{{ book.author }} - {{ book.year }}</p>
                 <p class="category">{{ book.category }}</p>
