@@ -1,35 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Contact</h2>
+    <h2>Add Book</h2>
 
     <div class="row">
         <form class="col s10 offset-s1 m8 offset-m2">
             <div class="row">
-                <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+                <div class="input-field col s12 m6">
+                    <input id="title" type="text" class="validate">
+                    <label for="title">Title</label>
                 </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                <div class="input-field col s12 m6">
+                    <input id="author" type="text" class="validate">
+                    <label for="author">Author</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <select>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label for="category">Category</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="year" type="number" min="1980" max="2021" class="validate">
+                    <label for="year">Year</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
+                    <textarea id="description" class="materialize-textarea" data-length="200"></textarea>
+                    <label for="description">Description</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="message" class="materialize-textarea" data-length="200"></textarea>
-                    <label for="message">Message</label>
+                <div class="input-field col s12 m6">
+                    <input id="image_url" type="text" class="validate">
+                    <label for="image_url">Image URL</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input id="purchase_link" type="text" class="validate">
+                    <label for="purchase_link">Purchase Link</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 center">
-                    <a class="waves-effect waves-light btn-large">Send</a>
+                    <a class="waves-effect waves-light btn-large">Add Book</a>
                 </div>
             </div>
         </form>
@@ -38,7 +57,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <!---Displays a character limit for message length to user as they type--->
+    <!---Displays a character limit for description length to user as they type--->
     <script>
         $('textarea#message').characterCounter();
     </script>

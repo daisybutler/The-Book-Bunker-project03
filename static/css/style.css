@@ -44,7 +44,7 @@ nav li a {
     color: #bb98eb;
     text-align: center;
     line-height: 50px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 #small-title {
@@ -56,7 +56,7 @@ nav li a {
 }
 
 #homepage-content {
-    margin: 0 auto;
+    min-height: 200px;
 }
 
 #welcome-message {
@@ -79,6 +79,7 @@ nav li a {
     border: 2px solid #bb98eb;
     padding: 0 5px 0 5px;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .search-bar-prompt {
@@ -93,19 +94,15 @@ nav li a {
     font-family: "Lato", sans-serif;
 }
 
-#call-to-action-buttons {
-    float: right;
-}
-
 .sign-up-circle {
     background-color: #bb98eb;
     display: inline-block;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
     text-align: center;
     font-family: "Lato", sans-serif;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sign-up-circle p {
@@ -113,9 +110,9 @@ nav li a {
 }
 
 .sign-up-circle:hover {
-    width: 220px;
-    height: 220px;
-    border-radius: 110px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
 }
 
 .sign-up-circle p:hover {
@@ -145,6 +142,19 @@ nav li a {
 
 .login-circle p:hover {
     transform: translate(0, 10px);
+}
+
+
+
+#top-picks-title {
+    font-family: "Poppins", sans-serif;
+    color: #bb98eb;
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+.featured-book {
+    max-width: 100%;
 }
 
 /* All Books ------------------------------- */

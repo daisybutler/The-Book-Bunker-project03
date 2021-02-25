@@ -9,7 +9,7 @@
 
 <div id="homepage-content" class="container">
     <div class="row">
-        <div class="col s12 l8">
+        <div class="col s12 xl6">
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
             <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
@@ -20,12 +20,12 @@
         </div>
         <!---Displays greeting and username if a user is logged in-->
         {% if session.user %}
-        <div id="welcome-message-circle" class="col s12 l4 center">
+        <div id="welcome-message-circle" class="col s12 xl6 center">
                 <h3 id="welcome-message">What topics do you want to discover today?</h3>
             </div>
         <!---Displays login/signup call to actions if no user is logged in-->
         {% else %}
-        <div id="call-to-action-buttons" class="col s12 l4">
+        <div id="call-to-action-buttons" class="col s12 xl6 center">
             <a class="login-circle" href="{{ url_for('login') }}">
                 <p class="white-text">Login</p>
             </a>
@@ -34,6 +34,27 @@
             </a>
         </div>
         {% endif %}
+    </div>
+</div>
+<div id="featured-section" class="container">
+    <div class="row">
+        <div class="col s12 center">
+            <p id="top-picks-title">Top Picks</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m4 l3">
+            <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
+        </div>
+        <div class="col m4 l3">
+            <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
+        </div>
+        <div class="col m4 l3">
+            <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
+        </div>
+        <div class="col m4 l3">
+            <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
+        </div>
     </div>
 </div>
 
