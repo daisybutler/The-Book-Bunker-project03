@@ -3,4 +3,5 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('.fixed-action-btn').floatingActionButton();
+    $('.tooltipped').tooltip();
   });
