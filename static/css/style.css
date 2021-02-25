@@ -272,7 +272,15 @@ nav li a {
 
 /* Sign Up ------------------------------- */
 
-.switch-to-login-or-signup {
+.login-signup-switch {
+    margin-top: 40px;
+}
+
+.login-signup-switch:hover {
+     background-color: #cdb3f1;
+}
+
+/*.switch-to-login-or-signup {
     background-color: #bb98eb;
     width: 150px;
     height: 150px;
@@ -285,13 +293,13 @@ nav li a {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} 
 
 .switch-to-login-or-signup:hover {
     width: 160px;
     height: 160px;
     border-radius: 80px;
-}
+}*/
 
 /* Login ------------------------------- */
 
