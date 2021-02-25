@@ -31,6 +31,27 @@ body {
     border-radius: 10px;
 }
 
+.book-title {
+    color: #bb98eb;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.author-year {
+    font-family: "Lato";
+    color: #bb98eb;
+    font-size: 18px;
+    text-align: center;
+}
+
+.category {
+    font-family: "Poppins", sans-serif;
+    color: #bb98eb;
+    font-size: 18px;
+
+}
+
 /* NAVIGATION ------------------------------- */
 
 nav {
