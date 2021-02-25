@@ -50,18 +50,18 @@ def display_book(book_id):
     return render_template("display-book.html", selected_book=selected_book)
 
 
+# DISPLAY ADD BOOK -------------------------------------
+@app.route("/add-book")
+def add_book():
+    return render_template("add-book.html")
+
+
 # DISPLAY USER DASHBOARD -------------------------------------
 @app.route("/dashboard/<username>", methods=['GET', 'POST'])
 def dashboard(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template("dashboard.html", username=username)
-
-
-# DISPLAY CONTACT -------------------------------------
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
 
 
 # SEARCH ALL BOOKS -------------------------------------
