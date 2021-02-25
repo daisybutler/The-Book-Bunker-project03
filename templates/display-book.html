@@ -1,12 +1,26 @@
 {% extends "base.html" %}
-{block content}
+{% block content %}
 
 <div class="row">
-    <div class="col">
+    <div class="col s12">
         <h2 >{{ selected_book.title }}</h2>
+        <h3>{{ selected_book.author}}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 l6">
+        <p>description</p>
+        <div class="row">
+            <div class="col s12 center">
+                <a href="https://www.amazon.com" target="_blank">Buy Now</a>
+                <button>Like</button>
+                <button>Save</button>
+            </div>            
+        </div>
+    </div>
+    <div class="col s12 l6">
+        <img src="{{ selected_book.image_url }}">
     </div>
 </div>
 
-<h2>test</h2>
-
-{endblock}
+{% endblock %}
