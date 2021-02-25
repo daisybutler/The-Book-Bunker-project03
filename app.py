@@ -45,7 +45,8 @@ def display_book(book_id):
     selected_book = {"title": book["title"],
                      "author": book["author"], "category": book["category"],
                      "year": book["year"], "image_url": book["image_url"],
-                     "description": book["description"]}
+                     "description": book["description"],
+                     "purchase_link": book["purchase_link"]}
     return render_template("display-book.html", selected_book=selected_book)
 
 

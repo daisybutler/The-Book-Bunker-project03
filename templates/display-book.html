@@ -19,7 +19,11 @@
                 <p>{{ selected_book.description }}</p>
                 <div class="row">
                     <div class="col s12 center">
-                        <a href="https://www.amazon.com" target="_blank">Buy Now</a>
+                        {% if selected_book.purchase_link %}
+                            <a href="{{ selected_book.purchase_link }}" target="_blank">Buy Now</a>
+                        {% else %}
+                            <p>Not Available</p>
+                        {% endif %}
                         <button>Like</button>
                         <button>Save</button>
                     </div>
