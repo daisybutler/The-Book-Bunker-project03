@@ -1,6 +1,6 @@
 /* FONTS ------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 /* SITE WIDE FEATURES ------------------------------- */
 
@@ -17,6 +17,7 @@ body {
 
   h2 {
     font-family: "Poppins", sans-serif;
+    font-weight: 700;
     text-align: center;
     color: #bb98eb;
 }
@@ -25,31 +26,11 @@ body {
     background-color: #bb98eb;
     color: #fff;
     font-size: 30px;
-    font-family: "Lato", sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     padding: 20px;
     border: 1px solid #bb98eb;
     border-radius: 10px;
-}
-
-.book-title {
-    color: #bb98eb;
-    font-family: "Poppins", sans-serif;
-    font-size: 30px;
-    text-align: center;
-}
-
-.author-year {
-    font-family: "Lato";
-    color: #bb98eb;
-    font-size: 18px;
-    text-align: center;
-}
-
-.category {
-    font-family: "Poppins", sans-serif;
-    color: #bb98eb;
-    font-size: 18px;
-
 }
 
 /* NAVIGATION ------------------------------- */
@@ -72,6 +53,7 @@ nav li a {
 
 #homepage-title h1 {
     font-family: "Poppins", sans-serif;
+    font-weight: 700;
     color: #bb98eb;
     text-align: center;
     line-height: 50px;
@@ -80,10 +62,12 @@ nav li a {
 
 #small-title {
     font-size: 40px;
+    font-weight: 700;
 }
 
 #large-title {
     font-size: 70px;
+    font-weight: 700;
 }
 
 #homepage-content {
@@ -205,8 +189,19 @@ nav li a {
     margin-bottom: 30px;
 }
 
-/* My Library ------------------------------- */
+/* Display Book ------------------------------- */
 
+.buy-button {
+    background-color: #bb98eb;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 5px;
+    border: 1px solid #bb98eb;
+    border-radius: 6px;
+}
+
+/* My Profile ------------------------------- */
 
 .collapsible-header {
     font-family: "Poppins", sans-serif;
@@ -219,6 +214,28 @@ nav li a {
     font-family: "Lato", sans-serif;
     color: #282828;
     margin-bottom: 0;
+}
+
+.book-title {
+    color: #bb98eb;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
+.author-year {
+    font-family: "Lato";
+    color: #bb98eb;
+    font-size: 18px;
+    text-align: center;
+}
+
+.category {
+    font-family: "Poppins", sans-serif;
+    color: #bb98eb;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /* Sign Up ------------------------------- */
