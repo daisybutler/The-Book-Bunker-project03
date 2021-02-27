@@ -79,7 +79,11 @@ def add_book():
 def dashboard(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("dashboard.html", username=username)
+
+    recommended_books = mongo.db.books.find({"added_by": session['user']})
+
+    return render_template("dashboard.html", username=username,
+                           recommended_books=recommended_books)
 
 
 # SEARCH ALL BOOKS -------------------------------------

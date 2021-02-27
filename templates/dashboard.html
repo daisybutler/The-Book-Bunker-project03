@@ -30,8 +30,7 @@
 </div>
 
 <div class="container">
-    {% for book in books %}
-    {% if book.added_by == session.user %}
+    {% for book in recommended_books %}
     <ul id="added-list" class="collapsible">
         <li>
             <div class="collapsible-header">{{book.title}}</div>
@@ -44,19 +43,18 @@
     {% else %}
     <div class="row">
         <div class="col s12 m4 offset-m4 center">
-            <p>You have not added any book recommendation yet.</p>
+            <p>You have not added any recommendations to The Book Bunker yet.</p>
         </div>
     </div>
     <div class="row">
-        <div class="col 12 center">
+        <div class="col s12 m2 offset-m5 center">
             <a id="add-book-button" class="btn-floating btn-large waves-effect waves-light green"
                 href="{{ url_for('add_book') }}">
                 <i class="fas fa-plus"></i>
             </a>
         </div>
     </div>
-    {% endif %}
-    {% endfor%}
+    {% endfor %}
 </div>
 
 {% endblock %}
