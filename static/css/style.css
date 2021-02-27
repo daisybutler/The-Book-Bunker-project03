@@ -248,6 +248,10 @@ nav li a {
 
 /* Display Book ------------------------------- */
 
+#back-to-books-button {
+    margin-top: 15px;
+}
+
 .buy-button {
     background-color: #bb98eb;
     font-family: 'Poppins', sans-serif;
