@@ -33,10 +33,18 @@
     {% for book in recommended_books %}
     <ul id="added-list" class="collapsible">
         <li>
-            <div class="collapsible-header">{{book.title}}</div>
+            <div class="collapsible-header">
+                <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
+            </div>
             <div class="collapsible-body row">
-                <div class="col s6">{{book.description}}</div>
-                <div class="col s6">{{book.image_url}}</div>
+                
+                <div class="col s6">
+                    <p>{{ book.category }}</p>
+                    <p>{{book.description}}</p>
+                </div>
+                <div class="col s6">
+                    <img src="{{book.image_url}}" alt="Image of {{book.title}}">
+                </div>
             </div>
         </li>
     </ul>
