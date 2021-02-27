@@ -29,7 +29,7 @@
 <div id="all-books-page-display" class="row">
     {% for book in all_books %}
     <div class="col s12 m6 l4 xl3 center">
-        <div class="card">
+        <div class="card" height="540px">
             <div class="card-image">
                 <a href="{{ url_for('display_book', book_id=book._id) }}">
                     <img class="book-image center" src="{{ book.image_url }}" alt="{{ book.title }}">

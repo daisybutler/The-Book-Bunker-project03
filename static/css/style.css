@@ -162,10 +162,9 @@ nav li a {
 }
 
 #top-picks-title {
-    font-family: "Poppins", sans-serif;
-    color: #bb98eb;
     font-size: 50px;
     margin-bottom: 0;
+    font-weight: 600;
 }
 
 .featured-book {
@@ -199,8 +198,8 @@ nav li a {
 
 #all-books-page-display {
     margin-top: 50px;
-    margin-left: 30px;
     margin-right: 30px;
+    display: inline;
 }
 
 #expand-book-btn {
