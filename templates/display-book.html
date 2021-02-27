@@ -15,9 +15,9 @@
                     <h3 class="author-year">{{ selected_book.author}}</h3>
                 </div>
             </div>
-            <div class="row">
+            <div id="book-container" class="row">
                 <div class="col s12 l8">
-                    <p>{{ selected_book.description }}</p>
+                    <p id="description">{{ selected_book.description }}</p>
                     <div class="row">
                         <div class="col s12">
                             {% if selected_book.purchase_link %}
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col s12 l4">
-                    <img src="{{ selected_book.image_url }}">
+                    <img id="book-image" src="{{ selected_book.image_url }}">
                 </div>
             </div>
         <!---If selected_book main values have not been retrieved then error message displays to user -->

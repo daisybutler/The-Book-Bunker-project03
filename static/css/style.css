@@ -23,6 +23,10 @@ body {
     color: #bb98eb;
 }
 
+p {
+    font-family: "Lato", sans-serif;
+}
+
 .btn {
     background-color: #bb98eb;
 }
@@ -252,6 +256,19 @@ nav li a {
     padding: 5px;
     border: 1px solid #bb98eb;
     border-radius: 6px;
+}
+
+#book-container {
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+#description {
+  font-size: 18px;
+}
+
+#book-image {
+    margin-top: 30px;
 }
 
 /* My Profile ------------------------------- */
