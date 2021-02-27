@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <h2>{{ username }}'s Profile</h2>
 
+<h2>{{ username }}'s Profile</h2>
+
+<div class="container">
     <ul id="reading-list" class="collapsible">
         <li>
             <div class="collapsible-header">Title</div>
@@ -26,6 +27,36 @@
             </div>
         </li>
     </ul>
+</div>
+
+<div class="container">
+    {% for book in books %}
+    {% if book.added_by == session.user %}
+    <ul id="added-list" class="collapsible">
+        <li>
+            <div class="collapsible-header">{{book.title}}</div>
+            <div class="collapsible-body row">
+                <div class="col s6">{{book.description}}</div>
+                <div class="col s6">{{book.image_url}}</div>
+            </div>
+        </li>
+    </ul>
+    {% else %}
+    <div class="row">
+        <div class="col s12 m4 offset-m4 center">
+            <p>You have not added any book recommendation yet.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col 12 center">
+            <a id="add-book-button" class="btn-floating btn-large waves-effect waves-light green"
+                href="{{ url_for('add_book') }}">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor%}
 </div>
 
 {% endblock %}
