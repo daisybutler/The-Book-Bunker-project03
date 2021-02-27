@@ -57,8 +57,8 @@ def display_book(book_id):
 def add_book():
     if request.method == 'POST':
         new_book = {
-            "title": request.form.get("title"),
-            "author": request.form.get("author"),
+            "title": request.form.get("title").title(),
+            "author": request.form.get("author").title(),
             "category": request.form.get("category_name"),
             "year": request.form.get("year"),
             "image_url": request.form.get("image_url"),
