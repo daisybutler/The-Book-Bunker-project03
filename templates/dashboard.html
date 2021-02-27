@@ -4,29 +4,50 @@
 <h2>{{ username }}'s Profile</h2>
 
 <div class="container">
+     {% for book in saved_books %}
     <ul id="reading-list" class="collapsible">
         <li>
-            <div class="collapsible-header">Title</div>
+            <div class="collapsible-header">
+                <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
+            </div>
             <div class="collapsible-body row">
-                <div class="col s6">description</div>
-                <div class="col s6">Image</div>
+                
+                <div class="col s6">
+                    <p>{{ book.category }}</p>
+                    <p>{{ book.description }}</p>
+                    <div class="row">
+                        <div class="col s12">
+                            {% if book.purchase_link %}
+                                <a class="btn" href="{{ book.purchase_link }}" target="_blank">Buy Now</a>
+                            {% else %}
+                                <p class="grey-text lighten-2">Not Available</p>
+                            {% endif %}
+                            <a class="btn"><i class="fas fa-heart"></i></a>
+                            <a class="btn"><i class="fas fa-bookmark"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <img src="{{book.image_url}}" alt="Image of {{book.title}}">
+                </div>
             </div>
         </li>
-        <li>
-            <div class="collapsible-header">Title</div>
-            <div class="collapsible-body row">
-                <div class="col s6">description</div>
-                <div class="col s6">Image</div>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header">Title</div>
-            <div class="collapsible-body row">
-                <div class="col s6">description</div>
-                <div class="col s6">Image</div>
-            </div>
-        </li>
-    </ul>
+    </ul>  
+    {% else %}
+    <div class="row">
+        <div class="col s12 m4 offset-m4 center">
+            <p>You have not saved any books to your reading list yet.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m2 offset-m5 center">
+            <a id="add-book-button" class="btn-floating btn-large waves-effect waves-light green"
+                href="{{ url_for('all_books') }}">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+    </div>
+    {% endfor %}  
 </div>
 
 <div class="container">
