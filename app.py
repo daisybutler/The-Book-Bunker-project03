@@ -46,11 +46,13 @@ def display_book(book_id):
                      "author": book["author"], "category": book["category"],
                      "year": book["year"], "image_url": book["image_url"],
                      "description": book["description"],
-                     "purchase_link": book["purchase_link"]}
+                     "purchase_link": book["purchase_link"],
+                     "added_by": book["added_by"]
+                     }
     return render_template("display-book.html", selected_book=selected_book)
 
 
-# DISPLAY ADD BOOK -------------------------------------
+# ADD BOOK -------------------------------------
 @app.route("/add-book", methods=['GET', 'POST'])
 def add_book():
     if request.method == 'POST':
