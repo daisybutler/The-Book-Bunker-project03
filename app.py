@@ -82,6 +82,16 @@ def dashboard(username):
 
     recommended_books = mongo.db.books.find({"added_by": session['user']})
 
+    """all_books = mongo.db.books.find()
+    user_saved = mongo.db.users.find_one('saved_books')
+    saved_books_dict = {}
+
+    for val in user_saved.values():
+        for item in val:
+            for book in all_books:
+                if book["_id"] == item:
+                    saved_books_dict[val] = book"""
+
     return render_template("dashboard.html", username=username,
                            recommended_books=recommended_books)
 
