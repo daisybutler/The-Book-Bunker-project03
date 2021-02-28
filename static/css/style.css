@@ -322,18 +322,6 @@ nav li a {
     margin-top: 5px;
 }
 
-.modal-content h4 {
-    font-family: "Poppins", sans-serif;
-    color: #bb98eb;
-    font-size: 30px;
-}
-
-.modal-content p {
-    font-family: "Lato", sans-serif;
-    color: #282828;
-    font-size: 18px;
-}
-
 /* Sign Up ------------------------------- */
 
 .login-signup-switch {
