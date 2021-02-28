@@ -52,14 +52,20 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <h3 class='book-title'>My Recommendations</h3>
+            <h3 class="book-title">My Recommendations</h3>
         </div>
     </div>
     {% for book in recommended_books %}
     <ul id="added-list" class="collapsible">
         <li>
-            <div class="collapsible-header">
-                <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
+            <div class="collapsible-header row">
+                <div class="col s9">
+                    <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
+                </div>
+                <div id="book-actions" class="col s3 center">
+                    <a id="edit-button" class="btn">Edit</a>
+                    <a id="delete-button" class="btn">Delete</a>
+                </div>
             </div>
             <div class="collapsible-body row">
                 
@@ -79,7 +85,7 @@
                     </div>
                 </div>
                 <div class="col s6">
-                    <img src="{{book.image_url}}" alt="Image of {{book.title}}">
+                    <img src="{{ book.image_url }}" alt="Image of {{ book.title }}">
                 </div>
             </div>
         </li>

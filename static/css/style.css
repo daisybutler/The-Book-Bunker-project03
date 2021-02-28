@@ -299,6 +299,7 @@ nav li a {
     background-color: #bb98eb;
     color: white;
     font-size: 25px;
+    position: relative;
 }
 
 .collapsible-body {
@@ -306,6 +307,21 @@ nav li a {
     color: #282828;
     margin-bottom: 0;
 }
+
+#book-actions {
+    padding-top: 15px;
+}
+
+#edit-button {
+    background-color: lightblue;
+    margin-top: 5px;
+}
+
+#delete-button {
+    background-color: red;
+    margin-top: 5px;
+}
+
 
 /* Sign Up ------------------------------- */
 
