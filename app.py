@@ -96,6 +96,15 @@ def dashboard(username):
                            recommended_books=recommended_books)
 
 
+# EDIT BOOK -------------------------------------
+@app.route('/edit-book<book_id>', methods=['GET', 'POST'])
+def edit_book(book_id):
+    book = mongo.db.books.find_one({'_id': ObjectId(book_id)})
+
+    categories = mongo.db.categories.find().sort('category_name', 1)
+    return render_template("edit-book.html", categories=categories, book=book)
+
+
 # SEARCH ALL BOOKS -------------------------------------
 @app.route("/search-categories", methods=["GET", "POST"])
 def search_categories():
