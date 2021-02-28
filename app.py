@@ -99,8 +99,22 @@ def dashboard(username):
 # EDIT BOOK -------------------------------------
 @app.route('/edit-book<book_id>', methods=['GET', 'POST'])
 def edit_book(book_id):
-    book = mongo.db.books.find_one({'_id': ObjectId(book_id)})
+    if request.method == 'POST':
+        edited_book = {
+            "title": request.form.get("title").title(),
+            "author": request.form.get("author").title(),
+            "category": request.form.get("category_name"),
+            "year": request.form.get("year"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "purchase_link": request.form.get("purchase_link"),
+            "added_by": session["user"]
+        }
+        mongo.db.books.update({'_id': ObjectId(book_id)}, edited_book)
+        flash("Book edited")
+        return redirect(url_for('dashboard', username=session["user"]))
 
+    book = mongo.db.books.find_one({'_id': ObjectId(book_id)})
     categories = mongo.db.categories.find().sort('category_name', 1)
     return render_template("edit-book.html", categories=categories, book=book)
 
