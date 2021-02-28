@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.fixed-action-btn').floatingActionButton();
     $('.tooltipped').tooltip();
-
+    $('.modal').modal();
     $('#show-all-books-btn').click(function(){
         $('#show-all-books-btn').addClass('hide-button');
     })

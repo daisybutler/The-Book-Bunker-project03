@@ -64,30 +64,31 @@
                 </div>
                 <div id="book-actions" class="col s3 center">
                     <a id="edit-button" class="btn" href="{{ url_for('edit_book', book_id=book._id) }}">Edit</a>
-                    <a id="delete-button" class="btn" href="{{ url_for('delete_book', book_id=book._id) }}">Delete</a>
+                    <a id="delete-button" class="btn" href="{{ url_for('delete_book', book_id=book._id) }}"
+                        onclick="
+                        return confirm('Are you sure you want to delete {{ book.title }} from the database? This action will remove this book for all users and cannot be undone.');">Delete</a>
                 </div>
-            </div>
-            <div class="collapsible-body row">
-                
-                <div class="col s6">
-                    <p>{{ book.category }}</p>
-                    <p>{{ book.description }}</p>
-                    <div class="row">
-                        <div class="col s12">
-                            {% if book.purchase_link %}
+                <div class="collapsible-body row">
+
+                    <div class="col s6">
+                        <p>{{ book.category }}</p>
+                        <p>{{ book.description }}</p>
+                        <div class="row">
+                            <div class="col s12">
+                                {% if book.purchase_link %}
                                 <a class="btn" href="{{ book.purchase_link }}" target="_blank">Buy Now</a>
-                            {% else %}
+                                {% else %}
                                 <p class="grey-text lighten-2">Not Available</p>
-                            {% endif %}
-                            <a class="btn"><i class="fas fa-heart"></i></a>
-                            <a class="btn"><i class="fas fa-bookmark"></i></a>
+                                {% endif %}
+                                <a class="btn"><i class="fas fa-heart"></i></a>
+                                <a class="btn"><i class="fas fa-bookmark"></i></a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col s6">
+                        <img src="{{ book.image_url }}" alt="Image of {{ book.title }}">
+                    </div>
                 </div>
-                <div class="col s6">
-                    <img src="{{ book.image_url }}" alt="Image of {{ book.title }}">
-                </div>
-            </div>
         </li>
     </ul>
     {% else %}
