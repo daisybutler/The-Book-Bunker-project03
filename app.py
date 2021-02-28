@@ -119,6 +119,14 @@ def edit_book(book_id):
     return render_template("edit-book.html", categories=categories, book=book)
 
 
+# DELETE BOOK -------------------------------------
+@app.route('/delete-book<book_id>', methods=['GET', 'POST'])
+def delete_book(book_id):
+    mongo.db.books.remove({'_id': ObjectId(book_id)})
+    flash("Book deleted")
+    return redirect(url_for('dashboard', username=session["user"]))
+
+
 # SEARCH ALL BOOKS -------------------------------------
 @app.route("/search-categories", methods=["GET", "POST"])
 def search_categories():

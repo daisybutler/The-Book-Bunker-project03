@@ -313,12 +313,12 @@ nav li a {
 }
 
 #edit-button {
-    background-color: lightblue;
+    background-color: rgb(146, 215, 238);
     margin-top: 5px;
 }
 
 #delete-button {
-    background-color: red;
+    background-color: rgb(224, 105, 105);
     margin-top: 5px;
 }
 
