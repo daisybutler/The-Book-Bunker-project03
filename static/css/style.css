@@ -253,6 +253,10 @@ nav li a {
     margin-top: 0;
 }
 
+.hide-button {
+    display: none;
+}
+
 /* Display Book ------------------------------- */
 
 #back-to-books-button {

@@ -12,7 +12,7 @@
         <div class="col s12 xl8">
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
-            <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
+            <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
                 <div class="input-field">
                     <input id="search" name="search" type="text" placeholder="E.g. 'investing'" required>
                 </div>
@@ -62,5 +62,9 @@
         </div>
     </div>
 </div>
+
+{% endblock %}
+
+{% block scripts %}
 
 {% endblock %}

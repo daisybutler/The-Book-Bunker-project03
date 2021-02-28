@@ -4,4 +4,22 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.fixed-action-btn').floatingActionButton();
     $('.tooltipped').tooltip();
+
+    $('#show-all-books-btn').click(function(){
+        $('#show-all-books-btn').addClass('hide-button');
+    })
   });
+
+
+
+/*
+function showAllBooksBtn() {
+    btn = document.getElementById('#show-all-books-btn');
+    btn.classList.remove('hide-button');
+}
+
+function hideAllBooksButton() {
+    btn = document.getElementById('#show-all-books-btn');
+    btn.classList.add('hide-button');
+}*/
+
