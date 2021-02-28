@@ -1,81 +1,89 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Edit Book</h2>
+<h2>Edit Book</h2>
 
-    <!---Add book form-->
-    <div class="row container">
-        <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_book', book_id=book._id) }}">
-            <div class="row">
+<!---Add book form-->
+<div class="row container">
+    <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_book', book_id=book._id) }}">
+        <div class="row">
 
-                <!---Add title-->
-                <div class="input-field col s12 m6">
-                    <input id="title" name="title" type="text" class="validate" required>
-                    <label for="title">Title</label>
-                </div>
-
-                <!---Add author-->
-                <div class="input-field col s12 m6">
-                    <input id="author" name="author" type="text" class="validate" required>
-                    <label for="author">Author</label>
-                </div>
-            </div>
-            <div class="row">
-
-                <!---Select category-->
-                <div class="input-field col s12 m6">
-                    <select id="category_name" name="category_name" required>
-                        <option value="" disabled selected>Select a Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="category_name">Category</label>
-                </div>
-
-                <!---Select year between 1980 and 2021-->
-                <div class="input-field col s12 m6">
-                    <input id="year" name="year" type="number" min="1980" max="2021" class="validate" required>
-                    <label for="year">Year</label>
-                </div>
+            <!---Add title-->
+            <div class="input-field col s12 m6">
+                <input id="title" name="title" type="text" class="validate" value="{{ book.title }}" required>
+                <label for="title">Title</label>
             </div>
 
-            <!---Input description-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="description" name="description" class="materialize-textarea" data-length="200" required></textarea>
-                    <label for="description">Description</label>
-                </div>
+            <!---Add author-->
+            <div class="input-field col s12 m6">
+                <input id="author" name="author" type="text" class="validate" value="{{ book.author }}" required>
+                <label for="author">Author</label>
+            </div>
+        </div>
+        <div class="row">
+
+            <!---Select category-->
+            <div class="input-field col s12 m6">
+                <select id="category_name" name="category_name" required>
+                    <option value="" disabled>Select a Category</option>
+                    {% for category in categories %}
+                    {% if category.category_name == book.category %}
+                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    {% else %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="category_name">Category</label>
             </div>
 
-            <!---Provide image URL-->
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input id="image_url" name="image_url" type="text" class="validate" required>
-                    <label for="image_url">Image URL</label>
-                </div>
+            <!---Select year between 1980 and 2021-->
+            <div class="input-field col s12 m6">
+                <input id="year" name="year" type="number" min="1980" max="2021" class="validate"
+                    value="{{ book.year }}" required>
+                <label for="year">Year</label>
+            </div>
+        </div>
 
-                <!---Provide Amazon purchase link-->
-                <div class="input-field col s12 m6">
-                    <input id="purchase_link" name="purchase_link" type="text" class="validate" required>
-                    <label for="purchase_link">Purchase Link</label>
-                </div>
+        <!---Input description-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="description" name="description" class="materialize-textarea" data-length="200" required>
+                        {{-book.description }}
+                    </textarea>
+                <label for="description">Description</label>
+            </div>
+        </div>
+
+        <!---Provide image URL-->
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <input id="image_url" name="image_url" type="text" class="validate" value="{{ book.image_url }}" required>
+                <label for="image_url">Image URL</label>
             </div>
 
-            <!---Submit button-->
-            <div class="row">
-                <div class="col s12 center">
-                    <button type="submit" class="waves-effect waves-light btn-large">Edit Book</button>
-                </div>
+            <!---Provide Amazon purchase link-->
+            <div class="input-field col s12 m6">
+                <input id="purchase_link" name="purchase_link" type="text" class="validate" value="{{ book.purchase_link }}" required>
+                <label for="purchase_link">Purchase Link</label>
             </div>
-        </form>
-    </div>
+        </div>
+
+        <!---Submit button-->
+        <div class="row">
+            <div class="col s12 center">
+                <a href="{{ url_for('dashboard', username=session['user']) }}" class="btn-large">Cancel</a>
+                <button type="submit" class="waves-effect waves-light btn-large">Edit Book</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
 
 {% block scripts %}
-    <!---Displays a character limit for description length to user as they type--->
-    <script>
-        $('textarea#message').characterCounter();
-    </script>
+<!---Displays a character limit for description length to user as they type--->
+<script>
+    $('textarea#message').characterCounter();
+</script>
 {% endblock %}
