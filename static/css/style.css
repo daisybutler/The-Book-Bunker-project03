@@ -39,6 +39,10 @@ p {
     background-color: #cdb3f1;
 }
 
+.btn-large:hover {
+    background-color: #cdb3f1;
+}
+
 .book-title {
     color: #bb98eb;
     font-family: "Poppins", sans-serif;
@@ -331,27 +335,6 @@ nav li a {
 .login-signup-switch:hover {
      background-color: #cdb3f1;
 }
-
-/*.switch-to-login-or-signup {
-    background-color: #bb98eb;
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    color: white;
-    font-size: 18px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-.switch-to-login-or-signup:hover {
-    width: 160px;
-    height: 160px;
-    border-radius: 80px;
-}*/
 
 /* Login ------------------------------- */
 
