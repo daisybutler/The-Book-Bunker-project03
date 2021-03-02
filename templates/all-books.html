@@ -6,7 +6,7 @@
     <div class="col s12 m6 offset-m3" id="book-page-search-bar">
         <!---Search bar-->
         <p class="search-bar-prompt">Search By Keyword</p>
-        <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
+        <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
             <div class="input-field">
                 <input id="search" name="search" type="text" placeholder="E.g. 'investing'" required>
             </div>
@@ -19,9 +19,9 @@
         </a>
     </div>
 </div>
-<div class="row">
+<div class="row" style="{{ style }}">
     <div class="col s12 center">
-        <a id="show-all-books-btn" class="btn" href="{{ url_for('all_books') }}" onclick="hideAllBooksButton()">Show all books</a>
+        <a id="show-all-books-btn" class="btn" href="{{ url_for('all_books') }}">Show all books</a>
     </div>
 </div>
 

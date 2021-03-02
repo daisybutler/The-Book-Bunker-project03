@@ -35,7 +35,8 @@ def home():
 @app.route("/all-books")
 def all_books():
     all_books = list(mongo.db.books.find())
-    return render_template("all-books.html", all_books=all_books)
+    style = "display:none"
+    return render_template("all-books.html", all_books=all_books, style=style)
 
 
 # DISPLAY INDIVIDUAL BOOKS -------------------------------------
@@ -132,7 +133,8 @@ def delete_book(book_id):
 def search_categories():
     search = request.form.get('search')
     all_books = list(mongo.db.books.find({"$text": {"$search": search}}))
-    return render_template("all-books.html", all_books=all_books)
+    style = "display: inline"
+    return render_template("all-books.html", all_books=all_books, style=style)
 
 
 # SIGNUP -------------------------------------
