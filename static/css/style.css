@@ -346,6 +346,20 @@ nav li a {
     border-radius: 10px;
 }
 
+/* Login ------------------------------- */
+
+#logout-page {
+    min-height: 70vh;
+}
+
+#logout-page-message {
+    font-size: 30px;
+    font-weight: 400;
+    padding-top: 30px;
+    color: #282828;
+}
+
+
 /* FOOTER ------------------------------- */
 
 .page-footer {
