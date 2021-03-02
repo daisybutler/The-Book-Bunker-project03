@@ -8,7 +8,8 @@
     </div>
 
     <div class="container">
-    <!---Checks the selected_book main values have been retrieved from db-->
+
+    <!---Checks the selected_book values which are most important have been retrieved from db-->
         {% if selected_book.title, selected_book.author %}
             <div class="row">
                 <div class="col s12">
@@ -17,13 +18,19 @@
                 </div>
             </div>
             <div id="book-container" class="row">
+
+                <!---Book description-->
                 <div class="col s12 l8">
                     <p id="description">{{ selected_book.description }}</p>
+
+                    <!---Display username of user who added book-->
                     <div class="row">
                         <div class="col 12">
                             <p id="added-by-display">Added by: {{ selected_book.added_by }}</p>
                         </div>
                     </div>
+
+                    <!---Purchase link-->
                     <div class="row">
                         <div class="col s12">
                             {% if selected_book.purchase_link %}
@@ -31,8 +38,18 @@
                             {% else %}
                                 <p class="grey-text lighten-2">Not Available</p>
                             {% endif %}
-                            <button class="btn heart-button"><i class="heart far fa-heart"></i></button>
-                            <a class="btn"><i class="fas fa-bookmark"></i></a>
+                            <button class="btn heart-button">
+                                <i class="heart far fa-heart"></i>
+                            </button>
+                            <a class="btn">
+                                <i class="fas fa-bookmark"></i>
+                            </a>
+                            {% if selected_book.added_by == session['user'] %}
+                            <a id="edit-button" class="btn" href="{{ url_for('edit_book', book_id=selected_book._id) }}">Edit</a>
+                            <a id="delete-button" class="btn" href="{{ url_for('delete_book', book_id=selected_book._id) }}"
+                                onclick="
+                                                    return confirm('Are you sure you want to delete {{ selected_book.title }} from the database? This action will remove this book for all users and cannot be undone.');">Delete</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -49,10 +66,4 @@
             </div>
         {% endif %}
     </div>
-{% endblock %}
-
-{% block scripts %}
-<script>
-
-</script>
 {% endblock %}

@@ -43,7 +43,7 @@ def all_books():
 @app.route("/display-book/<book_id>")
 def display_book(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    selected_book = {"title": book["title"],
+    selected_book = {"_id": book["_id"], "title": book["title"],
                      "author": book["author"], "category": book["category"],
                      "year": book["year"], "image_url": book["image_url"],
                      "description": book["description"],
