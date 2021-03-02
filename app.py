@@ -196,6 +196,11 @@ def login():
 # LOGOUT -------------------------------------
 @app.route("/logout")
 def logout():
+    return render_template('logout.html')
+
+
+@app.route("/confirm_logout")
+def confirm_logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
