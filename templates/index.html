@@ -9,22 +9,27 @@
 
 <div id="homepage-content" class="container">
     <div class="row">
+        {% if session.user %}
+        <div class="col s12">
+            <!---Search bar-->
+            <p class="search-bar-prompt">Search By Keyword</p>
+            <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
+                <div class="input-field">
+                    <input class="search" name="search" type="text" placeholder="E.g. 'investing'" required>
+                </div>
+            </form>
+        </div>
+        <!---Displays login/signup call to actions if no user is logged in-->
+        {% else %}
         <div class="col s12 xl8">
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
             <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
                 <div class="input-field">
-                    <input id="search" name="search" type="text" placeholder="E.g. 'investing'" required>
+                    <input class="search" name="search" type="text" placeholder="E.g. 'investing'" required>
                 </div>
             </form>
         </div>
-        <!---Displays greeting and username if a user is logged in-->
-        {% if session.user %}
-        <!--<div id="welcome-message-circle" class="col s12 xl4">
-                <h3 id="welcome-message">What topics do you want to discover today?</h3>
-            </div> --->
-        <!---Displays login/signup call to actions if no user is logged in-->
-        {% else %}
         <div id="call-to-action-buttons" class="col s12 xl4">
             <a class="login-circle" href="{{ url_for('login') }}">
                 <p class="white-text">Login</p>
