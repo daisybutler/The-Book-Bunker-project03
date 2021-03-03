@@ -41,7 +41,7 @@
                             <button class="btn heart-button">
                                 <i class="heart far fa-heart"></i>
                             </button>
-                            <a class="btn">
+                            <a class="btn" href="{{ url_for('add_to_saved', book_id=selected_book._id) }}">
                                 <i class="fas fa-bookmark"></i>
                             </a>
                             {% if selected_book.added_by == session['user'] %}
