@@ -111,31 +111,11 @@ def add_to_saved(book_id):
                   "added_by": book["added_by"]
                   }
 
-    saved_dict = {'id': book["_id"]}
-    flash(saved_dict)
+    user = session['user']
+    saved = {user: saved_book}
+    mongo.db.libraries.insert(saved)
 
     return render_template("display-book.html", selected_book=saved_book)
-
-
-'''@app.route("/add_to_saved/<book_id>")
-def add_to_saved(book_id):
-    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    saved_book = {"_id": book["_id"], "title": book["title"],
-                  "author": book["author"],
-                  "category": book["category"],
-                  "year": book["year"],
-                  "image_url": book["image_url"],
-                  "description": book["description"],
-                  "purchase_link": book["purchase_link"],
-                  "added_by": book["added_by"]
-                  }
-    if mongo.db.libraries.find_one(session['user']):
-        flash('exists')
-    else:
-        mongo.db.libraries.insert_one({session['user']: saved_book})
-    flash('Book saved')
-
-    return render_template("display-book.html", selected_book=book)'''
 
 
 # EDIT BOOK -------------------------------------
