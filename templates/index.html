@@ -19,9 +19,11 @@
                 </div>
             </form>
         </div>
+
         <!---Displays login/signup call to actions if no user is logged in-->
         {% else %}
         <div class="col s12 xl8">
+
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
             <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
@@ -49,13 +51,13 @@
     </div>
     <div class="row">
         <div class="col m4 l3">
-            <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
+            <img class="featured-book" src="static/images/squeezing-the-orange.jpg" alt="image">
         </div>
         <div class="col m4 l3">
-            <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
+            <img class="featured-book" src="static/images/open-up.jpg" alt="image">
         </div>
         <div class="col m4 l3">
-            <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
+            <img class="featured-book" src="static/images/the-psychology-of-money.jpg" alt="image">
         </div>
         <div class="col m4 l3">
             <img class="featured-book" src="static/images/the-power-of-now.webp" alt="image">
