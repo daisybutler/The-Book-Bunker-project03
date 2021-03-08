@@ -248,6 +248,7 @@ nav li a {
     background-color: #DAD9D9;
     padding-bottom: 20px;
     padding-top: 10px;
+    box-shadow: grey 2px 5px 5px;
 }
 
 .card-image {
@@ -377,6 +378,18 @@ nav li a {
     padding-top: 30px;
     color: #282828;
 }
+
+#logout-page-confirm {
+    background-color: rgb(233, 233, 233);
+    box-shadow: rgb(189, 189, 189) 5px 5px 5px;
+    padding-bottom: 40px;
+}
+
+#back-to-profile-button {
+    padding-top: 60px;
+}
+
+
 
 /* FOOTER ------------------------------- */
 
