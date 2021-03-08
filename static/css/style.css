@@ -191,6 +191,11 @@ nav li a {
 
 #featured-section {
     margin-bottom: 50px;
+    background-color: rgb(233, 233, 233);
+    box-shadow: rgb(189, 189, 189) 2px 5px 5px;
+    border: transparent;
+    border-radius: 50px;
+    margin-top: 40px;
 }
 
 #top-picks-title {
