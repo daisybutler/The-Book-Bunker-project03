@@ -332,17 +332,34 @@ nav li a {
     margin-bottom: 0;
 }
 
-#book-actions {
-    padding-top: 15px;
+.book-actions {
+    margin-top: 15px;
+}
+
+.book-actions a {
+    width: 80px;
+    height: 50px;
+}
+
+.book-actions i {
+    margin-right: 0;
+    font-size: 30px;
+    padding-top: 6px;
 }
 
 #edit-button {
     background-color: rgb(146, 215, 238);
     margin-top: 5px;
+
 }
 
 #delete-button {
     background-color: rgb(224, 105, 105);
+    margin-top: 5px;
+}
+
+#remove-button {
+    background-color: rgb(240, 221, 115);
     margin-top: 5px;
 }
 

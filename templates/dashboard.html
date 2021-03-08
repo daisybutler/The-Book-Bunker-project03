@@ -3,37 +3,54 @@
 
 <h2>{{ username }}'s Profile</h2>
 
-
+<!--Section to display the session user's bookmarked books-->
 <div class="container">
     {% for book in bookmarked_books %}
     <ul id="reading-list" class="collapsible">
         <li>
-            <div class="collapsible-header">
-                <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
-            </div>
-            <div class="collapsible-body row">
+            <div class="collapsible-header row">
+
+                <!--Title and author display-->
+                <div class="col s9 m10">
+                    <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
+                </div>
                 
+                <!--Mark as completed and remove from bookmarked list-->
+                <div class="book-actions col s3 m2 center">
+                    <a id="remove-button" class="btn" href="#"><i class="fas fa-check"></i></a>
+                </div>
+            </div>
+
+            <!--Collapsible section containing more info about book-->
+            <div class="collapsible-body row">
                 <div class="col s6">
                     <p>{{ book.category }}</p>
                     <p>{{ book.description }}</p>
                     <div class="row">
+
+                        <!--Displays purchase link or an unavailable message-->
                         <div class="col s12">
                             {% if book.purchase_link %}
                                 <a class="btn" href="{{ book.purchase_link }}" target="_blank">Buy Now</a>
                             {% else %}
                                 <p class="grey-text lighten-2">Not Available</p>
                             {% endif %}
+                            <!--Heart and bookmark buttons -->
                             <a class="btn"><i class="fas fa-heart"></i></a>
                             <a class="btn"><i class="fas fa-bookmark"></i></a>
                         </div>
                     </div>
                 </div>
+
+                <!--Image of book-->
                 <div class="col s6">
                     <img src="{{book.image_url}}" alt="Image of {{book.title}}">
                 </div>
             </div>
         </li>
     </ul>  
+
+    <!--If user has not bookmarked any books, then following message and link to All Books page display-->
     {% else %}
     <div class="row">
         <div class="col s12 m4 offset-m4 center">
@@ -42,7 +59,9 @@
     </div>
     <div class="row">
         <div class="col s12 m2 offset-m5 center">
-            <a id="add-book-button" class="btn-floating btn-large waves-effect waves-light green"
+
+            <!--Link to All Books page-->
+            <a class="btn-floating btn-large waves-effect waves-light green"
                 href="{{ url_for('all_books') }}">
                 <i class="fas fa-plus"></i>
             </a>
@@ -51,6 +70,7 @@
     {% endfor %}  
 </div>
 
+<!--Section to display the books the session user has added to the db-->
 <div class="container">
     <div class="row">
         <div class="col s12">
@@ -61,14 +81,14 @@
     <ul id="added-list" class="collapsible">
         <li>
             <div class="collapsible-header row">
-                <div class="col s9">
+                <div class="col s9 m10">
                     <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
                 </div>
-                <div id="book-actions" class="col s3 center">
-                    <a id="edit-button" class="btn" href="{{ url_for('edit_book', book_id=book._id) }}">Edit</a>
+                <div class="book-actions col s3 m2 center">
+                    <a id="edit-button" class="btn" href="{{ url_for('edit_book', book_id=book._id) }}"><i class="fas fa-edit"></i></a>
                     <a id="delete-button" class="btn" href="{{ url_for('delete_book', book_id=book._id) }}"
                         onclick="
-                        return confirm('Are you sure you want to delete {{ book.title }} from the database? This action will remove this book for all users and cannot be undone.');">Delete</a>
+                        return confirm('Are you sure you want to delete {{ book.title }} from the database? This action will remove this book for all users and cannot be undone.');"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
             <div class="collapsible-body row">

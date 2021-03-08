@@ -92,6 +92,8 @@ def dashboard(username):
     bookmarked_books = []
     for book_id in user_bookmarked:
         book = mongo.db.books.find({"_id": ObjectId(book_id)})
+
+        # Unpacks the cursor object returned by the find() method
         for item in book:
             bookmarked_books.append(item)
 
