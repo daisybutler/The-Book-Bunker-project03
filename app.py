@@ -173,13 +173,26 @@ def like_book(book_id):
 # SEARCH ALL BOOKS -------------------------------------
 @app.route("/search-categories", methods=["GET", "POST"])
 def search_categories():
+    
+    # Gets the keyword inputted by user in the search bar
     search = request.form.get('search')
+
+    # Finds any value in book collection which contains text matching input
     all_books = list(mongo.db.books.find({"$text": {"$search": search}}))
+
+    # Changes display of Show All Books button from 'none' to 'inline'
     style = "display: inline"
+
+    # Conditonal check for feedback to give the user after search request
     if len(all_books) == 0:
+
+        # If no results match the search word, return string below
         user_message = "Sorry, we couldn't find any results for '" + search + "'."
     else:
+        # If results match the search word, return strong below
         user_message = "Showing results for '" + search + "'."
+
+    # Display All Books page but only with those matching user's search
     return render_template("all-books.html", all_books=all_books,
                            style=style, user_message=user_message)
 
