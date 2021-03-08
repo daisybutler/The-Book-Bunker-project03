@@ -173,7 +173,7 @@ def like_book(book_id):
 # SEARCH ALL BOOKS -------------------------------------
 @app.route("/search-categories", methods=["GET", "POST"])
 def search_categories():
-    
+
     # Gets the keyword inputted by user in the search bar
     search = request.form.get('search')
 
