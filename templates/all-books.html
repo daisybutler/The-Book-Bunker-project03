@@ -33,16 +33,26 @@
 </div>
 
 <div id="all-books-page-display" class="row">
+
+    <!---Loops over every book in db-->
     {% for book in all_books %}
     <div class="col s12 m6 l4 xl3 center">
-        <div class="card" height="540px">
+
+        <!---Display cards-->
+        <!--Help with display issues from https://stackoverflow.com/questions/38457266/materialize-alignment-issue-with-cards-->
+        <div class="card large" height="540px">
             <div class="card-image">
+
+                <!---Displays book on individual page when image or ellipsis clicked-->
                 <a href="{{ url_for('display_book', book_id=book._id) }}">
                     <img class="book-image center" src="{{ book.image_url }}" alt="{{ book.title }}">
                     <a id="expand-book-btn" class="btn-floating halfway-fab waves-effect waves-light"
-                        href="{{ url_for('display_book', book_id=book._id) }}"><i class="fas fa-ellipsis-h"></i></a>
+                        href="{{ url_for('display_book', book_id=book._id) }}"><i class="fas fa-ellipsis-h"></i>
+                    </a>
                 </a>
             </div>
+
+            <!---Displays book on individual page when title clicked-->
             <h3>
                 <a id="book-title-all-books" class="book-title" href="{{ url_for('display_book', book_id=book._id)}}">{{ book.title }}</a>
             </h3>
@@ -52,6 +62,5 @@
     </div>
     {% endfor %}
 </div>
-
 
 {% endblock %}
