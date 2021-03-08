@@ -4,6 +4,7 @@
 
 <div class="row">
     <div class="col s12 m6 offset-m3" id="book-page-search-bar">
+
         <!---Search bar-->
         <p class="search-bar-prompt">Search By Keyword</p>
         <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
@@ -11,20 +12,23 @@
                 <input id="search" name="search" type="text" placeholder="E.g. 'investing'" required>
             </div>
         </form>
+
+        <!---Displays what keyword results are displayed for or advises the user that there are none-->
         <div class="col s12">
-            <p>{{ user_message }}</p>
+            <p id="search-results-message">{{ user_message }}</p>
+        </div>
+        <div class="col s12 center" style="{{ style }}">
+            <a id="show-all-books-btn" class="btn" href="{{ url_for('all_books') }}">Show all books</a>
         </div>
     </div>
+
+    <!---Link to 'Add Book' page-->
     <div class="col s12 m3 center">
-        <a id="add-book-button" class="btn-floating btn-large waves-effect waves-light green"
+        <a id="add-book-button" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="bottom"
+                data-tooltip="Contribute a book recommendation"
             href="{{ url_for('add_book') }}">
             <i class="fas fa-plus"></i>
         </a>
-    </div>
-</div>
-<div class="row" style="{{ style }}">
-    <div class="col s12 center">
-        <a id="show-all-books-btn" class="btn" href="{{ url_for('all_books') }}">Show all books</a>
     </div>
 </div>
 
