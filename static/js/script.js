@@ -9,9 +9,15 @@ $(document).ready(function(){
     $('#show-all-books-btn').click(function(){
         $('#show-all-books-btn').addClass('hide-button');
     })
-    // Transforms heart buttons from outline to solid when clicked
-    $('.heart-button').click(function(){
-        $('.heart').toggleClass('fas fa-heart');
-        $('.heart').toggleClass('far fa-heart');
-    })
-  });
+    // Transforms heart buttons from outline to solid when clicked to represent a like/unlike
+    //$('.heart-button').click(function () {
+       // if ($('.heart').toggleClass('far fa-heart') == True) {
+            //$.post("/like_book", book_id=selected_book._id).done(function (reply) {
+              //  $('.heart').toggleClass('fas fa-heart');
+               // alert('Liked');
+           // })
+        //} else {
+           // alert("Already liked")            
+       // }
+    //})
+});

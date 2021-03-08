@@ -149,6 +149,20 @@ def delete_book(book_id):
     return redirect(url_for('dashboard', username=session["user"]))
 
 
+"""
+# LIKE BOOK ----------------------------------------
+@app.route('/like_book', methods=['POST', 'GET'])
+def like_book(book_id):
+    like_count = mongo.db.books.find_one(
+        {'_id': ObjectId(book_id)})["like_count"]
+    if request.method == 'POST':
+        like_count += 1
+    else:
+        flash('Whoops, something when wrong.')
+    return flash('Liked')
+    """
+
+
 # SEARCH ALL BOOKS -------------------------------------
 @app.route("/search-categories", methods=["GET", "POST"])
 def search_categories():
