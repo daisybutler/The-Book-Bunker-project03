@@ -27,7 +27,6 @@ mongo = PyMongo(app)
 # DISPLAY HOME -------------------------------------
 @app.route("/")
 def home():
-    # Passes in username to display session user when applicable
     return render_template("index.html")
 
 
@@ -79,22 +78,26 @@ def add_book():
 @app.route("/dashboard/<username>", methods=['GET', 'POST'])
 def dashboard(username):
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        {"username": session["user"]})['username']
 
+    # Books the session user has added to the site themselves
     recommended_books = mongo.db.books.find({"added_by": session['user']})
 
-    """all_books = mongo.db.books.find()
-    user_saved = mongo.db.users.find_one('saved_books')
-    saved_books_dict = {}
+    # All the key, value pairs associated with the session user in db
+    user = mongo.db.users.find_one({"username": session["user"]})
 
-    for val in user_saved.values():
-        for item in val:
-            for book in all_books:
-                if book["_id"] == item:
-                    saved_books_dict[val] = book"""
+    # Fetches books from the db which have IDs matching
+    # those listed in the user's 'bookmarked' key
+    user_bookmarked = user['bookmarked']
+    bookmarked_books = []
+    for book_id in user_bookmarked:
+        book = mongo.db.books.find({"_id": ObjectId(book_id)})
+        for item in book:
+            bookmarked_books.append(item)
 
     return render_template("dashboard.html", username=username,
-                           recommended_books=recommended_books)
+                           recommended_books=recommended_books,
+                           bookmarked_books=bookmarked_books)
 
 
 # SAVE BOOK -------------------------------------
