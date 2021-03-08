@@ -236,18 +236,15 @@ nav li a {
     border-radius: 50px;
 }
 
+/* Centers plus icon in green Add Book button */
 #add-book-button i {
     transform: translate(0, 20px);
 }
 
-#all-books-page-display {
-    margin-top: 50px;
-    margin-right: 30px;
-    display: inline;
-}
-
+/* Ellipsis 'Read More' style card button. Margin-bottom for visibility */
 #expand-book-btn {
     background-color: #bb98eb;
+    margin-bottom: 30px;
 }
 
 .card {
@@ -257,8 +254,9 @@ nav li a {
     box-shadow: grey 2px 5px 5px;
 }
 
+/* Centers the book images within card */
 .card-image {
-    padding-left: 27%;
+    padding-left: 25%;
     padding-right: 25%;
 }
 
@@ -422,4 +420,11 @@ nav li a {
 
 .footer-contents i {
     font-size: 30px;
+}
+
+/* MEDIA QUERIES ------------------------ */
+@media only screen and (min-width: 1700px) {
+    .book-image {
+    transform: translate(20px, 0);
+    }
 }
