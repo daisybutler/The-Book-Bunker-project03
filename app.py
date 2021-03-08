@@ -176,7 +176,12 @@ def search_categories():
     search = request.form.get('search')
     all_books = list(mongo.db.books.find({"$text": {"$search": search}}))
     style = "display: inline"
-    return render_template("all-books.html", all_books=all_books, style=style)
+    if len(all_books) == 0:
+        user_message = "Sorry, we couldn't find any results for '" + search + "'."
+    else:
+        user_message = "Showing results for '" + search + "'."
+    return render_template("all-books.html", all_books=all_books,
+                           style=style, user_message=user_message)
 
 
 # SIGNUP -------------------------------------
