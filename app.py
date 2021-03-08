@@ -102,9 +102,9 @@ def dashboard(username):
                            bookmarked_books=bookmarked_books)
 
 
-# SAVE BOOK -------------------------------------
-@app.route("/add_to_saved/<book_id>")
-def add_to_saved(book_id):
+# BOOKMARK BOOK -------------------------------------
+@app.route("/bookmark/<book_id>")
+def bookmark(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     saved_book = {"_id": book["_id"], "title": book["title"],
                   "author": book["author"],
@@ -116,9 +116,11 @@ def add_to_saved(book_id):
                   "added_by": book["added_by"]
                   }
 
-    user = session['user']
-    saved = {user: saved_book}
-    mongo.db.libraries.insert(saved)
+    # Successfully appends the book id to the bookmarked field
+    # (flashed on screen) but doesnt seem to post to db
+    user = mongo.db.users.find_one({"username": session["user"]})
+    user['bookmarked'].append(book_id)
+    flash(user['bookmarked'])
 
     return render_template("display-book.html", selected_book=saved_book)
 
