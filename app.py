@@ -128,16 +128,6 @@ def bookmark(book_id):
 # UNBOOKMARK BOOK -------------------------------------
 @app.route("/unbookmark/<book_id>")
 def unbookmark(book_id):
-    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    saved_book = {"_id": book["_id"], "title": book["title"],
-                  "author": book["author"],
-                  "category": book["category"],
-                  "year": book["year"],
-                  "image_url": book["image_url"],
-                  "description": book["description"],
-                  "purchase_link": book["purchase_link"],
-                  "added_by": book["added_by"]
-                  }
 
     # Removes the book_id from the 'bookmarked' field in user's db document
     mongo.db.users.update({"username": session['user']}, {

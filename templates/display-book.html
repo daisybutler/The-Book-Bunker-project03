@@ -38,9 +38,6 @@
                             {% else %}
                                 <p class="grey-text lighten-2">Not Available</p>
                             {% endif %}
-                            <button class="btn heart-button">
-                                <i class="heart far fa-heart"></i>
-                            </button>
                             <a class="btn bookmark" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
                                 <i class="far fa-bookmark"></i>
                             </a>
