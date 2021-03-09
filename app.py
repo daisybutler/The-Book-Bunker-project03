@@ -116,11 +116,20 @@ def bookmark(book_id):
                   "added_by": book["added_by"]
                   }
 
-    # Successfully appends the book id to the bookmarked field
-    # (flashed on screen) but doesnt seem to post to db
+    # Successfully appends the book id to the bookmarked
     user = mongo.db.users.find_one({"username": session["user"]})
-    user['bookmarked'].append(book_id)
-    flash(user['bookmarked'])
+
+    old_bookmarks = user['bookmarked']
+    flash(old_bookmarks)
+
+    new_bookmark = {1: book_id}
+    flash(new_bookmark)
+
+    #user['bookmarked'].insert()
+    # Doesn't like this value as a db update
+    # db_update = mongo.db.users.update(
+    # {'username': session['user']}, user['bookmarked'])
+    #lash('Book bookmarked')
 
     return render_template("display-book.html", selected_book=saved_book)
 
