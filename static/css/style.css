@@ -351,10 +351,22 @@ nav li a {
     padding-top: 6px;
 }
 
+#create-reading-list-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+/* Centers plus icon in green Find Books button */
+#create-reading-list-button i {
+    transform: translate(0, 20px);
+}
+
+
+
 #edit-button {
     background-color: rgb(146, 215, 238);
     margin-top: 5px;
-
 }
 
 #delete-button {
