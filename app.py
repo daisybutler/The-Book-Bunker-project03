@@ -116,14 +116,36 @@ def bookmark(book_id):
                   "added_by": book["added_by"]
                   }
 
-    # Appends the book_id to the 'bookmarked' field of the user's db info
-
+    # Appends the book_id to the 'bookmarked' field in user's db document
     mongo.db.users.update({"username": session['user']}, {
                                    "$push": {"bookmarked": book_id}})
 
-    flash("Book bookmarked")
+    flash("Bookmarked")
 
     return render_template("display-book.html", selected_book=saved_book)
+
+
+# UNBOOKMARK BOOK -------------------------------------
+@app.route("/unbookmark/<book_id>")
+def unbookmark(book_id):
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    saved_book = {"_id": book["_id"], "title": book["title"],
+                  "author": book["author"],
+                  "category": book["category"],
+                  "year": book["year"],
+                  "image_url": book["image_url"],
+                  "description": book["description"],
+                  "purchase_link": book["purchase_link"],
+                  "added_by": book["added_by"]
+                  }
+
+    # Removes the book_id from the 'bookmarked' field in user's db document
+    mongo.db.users.update({"username": session['user']}, {
+                                   "$pull": {"bookmarked": book_id}})
+
+    flash("Unbookmarked")
+
+    return redirect(url_for('dashboard', username=session['user']))
 
 
 # EDIT BOOK -------------------------------------

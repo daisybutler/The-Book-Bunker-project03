@@ -17,7 +17,7 @@
                 
                 <!--Mark as completed and remove from bookmarked list-->
                 <div class="book-actions col s3 m2 center">
-                    <a id="remove-button" class="btn" href="#"><i class="fas fa-check"></i></a>
+                    <a id="remove-button" class="btn" href="{{ url_for('unbookmark', book_id=book._id) }}"><i class="fas fa-check"></i></a>
                 </div>
             </div>
 
@@ -35,9 +35,6 @@
                             {% else %}
                                 <p class="grey-text lighten-2">Not Available</p>
                             {% endif %}
-                            <!--Heart and bookmark buttons -->
-                            <a class="btn"><i class="fas fa-heart"></i></a>
-                            <a class="btn"><i class="fas fa-bookmark"></i></a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +100,7 @@
                             <p class="grey-text lighten-2">Not Available</p>
                             {% endif %}
                             <a class="btn heart-button"><i class="heart far fa-heart"></i></a>
-                            <a class="btn"><i class="fas fa-bookmark"></i></a>
+                            <a class="btn"><i class="far fa-bookmark"></i></a>
                         </div>
                     </div>
                 </div>
