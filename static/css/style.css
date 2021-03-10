@@ -250,8 +250,12 @@ nav li a {
 
 /* Ellipsis 'Read More' style card button. Margin-bottom for visibility */
 #expand-book-btn {
-    background-color: #bb98eb;
+    background-color: #fff;
     margin-bottom: 30px;
+}
+
+#expand-book-btn i {
+    color: #bb98eb;
 }
 
 .card {
@@ -277,6 +281,11 @@ nav li a {
 .card-image {
     padding-left: 25%;
     padding-right: 25%;
+}
+
+/* 'Lifts' card image for the appearence of depth */
+.card-image img {
+ box-shadow: #282828 2px 2px 8px 1px;
 }
 
 #book-title-all-books {
@@ -482,7 +491,21 @@ nav li a {
     #featured-book-4 {
         display: none;
     }
+    /*.book-container {
+        vertical-align: center;
+    }*/
 }
+
+@media only screen and (min-width: 992px) {
+#added-by-display {
+    float: left;
+    }
+    #book-info-display-page {
+        text-align: left;
+    }
+
+}
+
 
 
 @media only screen and (min-width: 1200px) {

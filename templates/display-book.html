@@ -20,13 +20,13 @@
             <div id="book-container" class="row">
 
                 <!---Book description-->
-                <div class="col s12 l8">
+                <div id="book-info-display-page" class="col s12 l8 center">
                     <p class="category-display">{{ selected_book.category }}</p>
                     <p id="description">{{ selected_book.description }}</p>
 
                     <!---Display username of user who added book-->
                     <div class="row">
-                        <div class="col 12">
+                        <div class="col s12 center">
                             <p id="added-by-display">Added by: {{ selected_book.added_by }}</p>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col s12 l4">
+                <div class="col s6 offset-s3 l4 center">
                     <img id="book-image" src="{{ selected_book.image_url }}">
                 </div>
             </div>
