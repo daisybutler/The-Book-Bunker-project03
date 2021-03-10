@@ -442,11 +442,11 @@ nav li a {
     font-size: 30px;
     font-weight: 400;
     padding-top: 30px;
-    color: #282828;
+    color: #fff;
 }
 
 #logout-page-confirm {
-    background-color: rgb(233, 233, 233);
+    background-color: #cab3eb;
     box-shadow: rgb(189, 189, 189) 5px 5px 5px;
     padding-bottom: 40px;
 }
@@ -454,8 +454,6 @@ nav li a {
 #back-to-profile-button {
     padding-top: 60px;
 }
-
-
 
 /* FOOTER ------------------------------- */
 
