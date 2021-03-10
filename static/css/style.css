@@ -63,15 +63,14 @@ p {
     padding-bottom: 40px;
 }
 
+.brand-logo img {
+    padding-left: 10px;
+}
+
 /* NAVIGATION ------------------------------- */
 
 nav {
     background-color: #bb98eb;
-}
-
-.brand-logo i {
-    padding-left: 10px;
-    font-size: 30px;
 }
 
 nav li a {

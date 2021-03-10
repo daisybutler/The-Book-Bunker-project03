@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!---Favicon-->
+    <link rel="icon" type="image/png" sizes="100x100" href="./static/images/favicon-ms3.png">
     <!---For icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" type="text/css" />
@@ -24,7 +26,7 @@
         <!---Navbar with collapsible mobile element-->
         <nav>
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo"><i class="fas fa-book"></i></a>
+                <a href="{{ url_for('home') }}" class="brand-logo"><img src="./static/images/logo-ms3.png" alt="logo" width="75px" height="60px"></a>
                 <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>

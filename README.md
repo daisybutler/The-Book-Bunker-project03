@@ -72,7 +72,7 @@ I wanted The Book Bunker's visual design to be light, clean and simple. This is 
 
 This project has been imagined with a particular client in mind, who eventually might like to leverage this site as another way of growing their brand awareness. Therefore, my design reflects [their website](https://www.jason-butler.com) style and colour scheme, which is lilac, white, light grey and dark grey. PLEASE NOTE*: I designed, built and currently maintain this website and all company branding associated with it.*
 
-All these visual features and colours I experimented with and decided on in the creation of my wireframes in Figma (see Wireframes).
+All these visual features and colours I experimented with and decided on in the creation of my wireframes in Figma [see wireframes](#wireframe-mockups).
 
 **Colours**
 
@@ -90,6 +90,8 @@ The fonts used in this project are "Poppins" for headings and "Lato" for paragra
 Opting for sans serif fonts gives the site a modern and sleek feel. The specific choices from Google fonts are easy to read. The contrast between the bold weight of "Poppins" and the regular weight of "Lato" is a nice pairing to the eye.  
 
 ### Wireframe Mockups
+
+My entire Figma workspace for this project can be viewed [here](https://www.figma.com/file/WlJ4F22GdniPyiQmA1At1T/Milestone-3?node-id=0%3A1).
 
 ## Features
 
