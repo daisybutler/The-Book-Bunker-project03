@@ -340,6 +340,9 @@ nav li a {
 
 #book-image {
     margin-top: 30px;
+    box-shadow: #282828 1px 1px 6px 2px;
+    width: 300px;
+    height: 450px;
 }
 
 #added-by-display {
@@ -389,8 +392,6 @@ nav li a {
 #create-reading-list-button i {
     transform: translate(0, 20px);
 }
-
-
 
 #edit-button {
     background-color: rgb(146, 215, 238);
