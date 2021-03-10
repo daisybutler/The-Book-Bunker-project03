@@ -67,6 +67,11 @@ p {
     padding-left: 10px;
 }
 
+.category-display {
+    color: #bb98eb;
+    font-weight: 700;
+}
+
 /* NAVIGATION ------------------------------- */
 
 nav {

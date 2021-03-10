@@ -16,12 +16,12 @@
             <div class="collapsible-header row">
 
                 <!--Title and author display-->
-                <div class="col s9 m10">
+                <div class="col s9">
                     <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
                 </div>
                 
                 <!--Mark as completed and remove from bookmarked list-->
-                <div class="book-actions col s3 m2 center">
+                <div class="book-actions col s3 right-align">
                     <a id="remove-button" class="btn" href="{{ url_for('unbookmark', book_id=book._id) }}"><i class="fas fa-check"></i></a>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <!--Collapsible section containing more info about book-->
             <div class="collapsible-body row">
                 <div class="col s12 m6 center">
-                    <p>{{ book.category }}</p>
+                    <p class="category-display">{{ book.category }}</p>
                     <p>{{ book.description }}</p>
                     <div class="row">
 
@@ -83,10 +83,10 @@
     <ul id="added-list" class="collapsible">
         <li>
             <div class="collapsible-header row">
-                <div class="col s9 m10">
+                <div class="col s9">
                     <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
                 </div>
-                <div class="book-actions col s3 m2 center">
+                <div class="book-actions col s3 right-align">
                     <a id="edit-button" class="btn" href="{{ url_for('edit_book', book_id=book._id) }}"><i class="fas fa-edit"></i></a>
                     <a id="delete-button" class="btn" href="{{ url_for('delete_book', book_id=book._id) }}"
                         onclick="
@@ -95,7 +95,7 @@
             </div>
             <div class="collapsible-body row">
                 <div class="col s12 m6 center">
-                    <p>{{ book.category }}</p>
+                    <p class="category-display">{{ book.category }}</p>
                     <p>{{ book.description }}</p>
                     <div class="row">
                         <div class="col s12">
