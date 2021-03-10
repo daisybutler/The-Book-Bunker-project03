@@ -209,7 +209,7 @@ nav li a {
 }
 
 .featured-book {
-    max-width: 100%;
+    width: 100%;
     padding-bottom: 20px;
 }
 
@@ -439,6 +439,21 @@ nav li a {
 }
 
 /* MEDIA QUERIES ------------------------ */
+
+@media only screen and (max-width: 600px) {
+    .featured-book {
+        width: 200px;
+        height: 300px;
+    }
+}
+
+/* Featured section is only big enough to display 4 books on large screens */
+@media only screen and (max-width: 992px) {
+    #featured-book-4 {
+        display: none;
+    }
+}
+
 @media only screen and (min-width: 1700px) {
     .book-image {
     transform: translate(20px, 0);

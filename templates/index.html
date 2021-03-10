@@ -32,6 +32,8 @@
                 </div>
             </form>
         </div>
+
+        <!---Call to actions-->
         <div id="call-to-action-buttons" class="col s12 xl4">
             <a class="login-circle" href="{{ url_for('login') }}">
                 <p class="white-text">Login</p>
@@ -43,29 +45,33 @@
         {% endif %}
     </div>
 </div>
+
+<!---Top Picks (Featured books)-->
 <div id="featured-section" class="container">
     <div class="row">
         <div class="col s12 center">
             <p id="top-picks-title" class="book-title">Top Picks</p>
         </div>
     </div>
+
+    <!---Featured books images-->
     <div class="row">
-        <div class="col s12 m4 l3 center">
+        <div id="featured-book-1" class="col s12 m4 l3 center">
             <a href="{{ url_for('display_book', book_id='6047903b0763f0e15caff5f6') }}">
                 <img class="featured-book" src="static/images/squeezing-the-orange.jpg" alt="image">
             </a>
         </div>
-        <div class="col s12 m4 l3 center">
+        <div id="featured-book-2" class="col s12 m4 l3 center">
             <a href="{{ url_for('display_book', book_id='603e1a96c8797ba05ea7f516') }}">
                 <img class="featured-book" src="static/images/open-up.jpg" alt="image">
             </a>
             </div>
-        <div class="col s12 m4 l3 center">
+        <div id="featured-book-3" class="col s12 m4 l3 center">
             <a href="{{ url_for('display_book', book_id='6034fd242bedc68423a3c5d0') }}">
                 <img class="featured-book" src="static/images/the-psychology-of-money.jpg" alt="image">
             </a>
         </div>
-        <div class="col s12 m4 l3 center">
+        <div id="featured-book-4" class="col s12 m4 l3 center">
             <a href="{{ url_for('display_book', book_id='60478fe50763f0e15caff5f5') }}">
                 <img class="featured-book" src="static/images/the-power-of-now.jpg" alt="image">
             </a>
