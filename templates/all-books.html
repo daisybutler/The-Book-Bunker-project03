@@ -56,8 +56,8 @@
             <h3>
                 <a id="book-title-all-books" class="book-title" href="{{ url_for('display_book', book_id=book._id)}}">{{ book.title }}</a>
             </h3>
-            <p class="author-year">{{ book.author }} - {{ book.year }}</p>
-            <p class="category">{{ book.category }}</p>
+            <p id="book-author-all-books" class="author-year">{{ book.author }} - {{ book.year }}</p>
+            <p id="book-category-all-books" class="category">{{ book.category }}</p>
         </div>
     </div>
     {% endfor %}

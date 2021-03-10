@@ -255,10 +255,22 @@ nav li a {
 }
 
 .card {
-    background-color: #DAD9D9;
+    background-color: #cab3eb;
     padding-bottom: 20px;
-    padding-top: 10px;
+    padding-top: 25px;
     box-shadow: grey 2px 5px 5px;
+}
+
+#book-title-all-books {
+    color: #fff;
+}
+
+#book-author-all-books {
+    color: #fff;
+}
+
+#book-category-all-books {
+    color: #fff;
 }
 
 /* Centers the book images within card */
@@ -443,21 +455,38 @@ nav li a {
 
 /* MEDIA QUERIES ------------------------ */
 
+@media only screen and (max-width: 460px) {
+    /* Title sizes decrease to fit the space suitably on very small screens */
+    #small-title {
+        font-size: 30px;
+        line-height: 20px;
+    }
+    #large-title {
+        font-size: 50px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .featured-book {
         width: 200px;
         height: 300px;
     }
+    .brand-logo img {
+        width: 70px;
+        height: 55px;
+    }
 }
 
-/* Featured section is only big enough to display 4 books on large screens */
 @media only screen and (max-width: 992px) {
+    /* Featured section is only big enough to display 4 books on large screens */
     #featured-book-4 {
         display: none;
     }
 }
 
+
 @media only screen and (min-width: 1200px) {
+    /* Title sizes increase to fill the space suitably on larger screens */
     #small-title {
         font-size: 60px;
     }
@@ -470,8 +499,8 @@ nav li a {
     }
 }
 
-
 @media only screen and (min-width: 1700px) {
+    /* Space book images more suitably on very large screens */
     .book-image {
     transform: translate(20px, 0);
     }
