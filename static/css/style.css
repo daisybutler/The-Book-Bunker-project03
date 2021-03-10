@@ -195,17 +195,20 @@ nav li a {
 
 #featured-section {
     margin-bottom: 50px;
-    background-color: rgb(233, 233, 233);
+    background-color: #cab3eb;
     box-shadow: rgb(189, 189, 189) 2px 5px 5px;
     border: transparent;
     border-radius: 50px;
     margin-top: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #top-picks-title {
     font-size: 50px;
     margin-bottom: 0;
     font-weight: 600;
+    color: #fff;
 }
 
 .featured-book {
@@ -453,6 +456,20 @@ nav li a {
         display: none;
     }
 }
+
+@media only screen and (min-width: 1200px) {
+    #small-title {
+        font-size: 60px;
+    }
+    #large-title {
+        font-size: 100px;
+        line-height: 100px;
+    }
+    #homepage-title h1 {
+        margin-top: 70px;
+    }
+}
+
 
 @media only screen and (min-width: 1700px) {
     .book-image {
