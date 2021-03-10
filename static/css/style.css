@@ -408,6 +408,10 @@ nav li a {
     margin-top: 5px;
 }
 
+.book-image-profile-page {
+    box-shadow: #282828 1px 1px 6px 2px;
+}
+
 /* Sign Up ------------------------------- */
 
 .login-signup-switch {
