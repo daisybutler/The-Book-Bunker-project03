@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+
+ <!--Back to top button -->
+<a id="back-to-top-button" class="d-none d-sm-block" ><i class="fas fa-angle-up"></i></a>
+
+<!--Page title-->
 <h2>All Books</h2>
 
+<!---Search bar-->
 <div class="row">
     <div class="col s12 m6 offset-m3" id="book-page-search-bar">
-
-        <!---Search bar-->
         <p class="search-bar-prompt">Search By Keyword</p>
         <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
             <div class="input-field">
