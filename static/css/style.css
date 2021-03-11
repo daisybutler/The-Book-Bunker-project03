@@ -254,15 +254,15 @@ nav li a {
     margin-bottom: 30px;
 }
 
-#add-book-button {
+.add-book-button {
     width: 100px;
     height: 100px;
     border-radius: 50px;
 }
 
 /* Centers plus icon in green Add Book button */
-#add-book-button i {
-    transform: translate(0, 20px);
+.add-book-button i {
+    transform: translate(0, 30px);
 }
 
 /* Ellipsis 'Read More' style card button. Margin-bottom for visibility */

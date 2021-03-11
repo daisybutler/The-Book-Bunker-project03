@@ -26,13 +26,23 @@
         </div>
     </div>
 
-    <!---Link to 'Add Book' page-->
+    <!---Link to 'Add Book' page if a user is logged in-->
     <div class="col s12 m3 center">
-        <a id="add-book-button" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="bottom"
-                data-tooltip="Contribute a book recommendation"
+        {% if session.user %}
+        <a class="btn-floating waves-effect waves-light green tooltipped add-book-button" data-position="bottom"
+                data-tooltip="Add a book recommendation"
             href="{{ url_for('add_book') }}">
             <i class="fas fa-plus"></i>
         </a>
+
+        <!---Link to 'Login' page if no user is logged in-->
+        {% else %}
+        <a class="btn-floating waves-effect waves-light green tooltipped add-book-button" data-position="bottom"
+                data-tooltip="Please sign in to add a book recommendation"
+            href="{{ url_for('login') }}">
+            <i class="fas fa-plus"></i>
+        </a>
+        {% endif %}
     </div>
 </div>
 
