@@ -1,8 +1,8 @@
-/* FONTS ------------------------------- */
+/* ----------------------------------------------------------FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-/* SITE WIDE FEATURES ------------------------------- */
+/* ---------------------------------------------------------SITE WIDE FEATURES */
 
 .author-year
 body {
@@ -233,7 +233,7 @@ nav li a {
     margin-top: 20px;
 }
 
-/* All Books ------------------------------- */
+/* ---------------------------------------------------------ALL BOOKS */
 
 #search-results-message {
     text-align: center;
@@ -326,7 +326,7 @@ nav li a {
     display: none;
 }
 
-/* Display Book ------------------------------- */
+/*-----------------------------------------------------------DISPLAY BOOK */
 
 #back-to-books-button {
     margin-top: 15px;
@@ -364,7 +364,7 @@ nav li a {
     font-size: 12px;
 }
 
-/* My Profile ------------------------------- */
+/*-------------------------------------------------------------MY PROFILE */
 
 .collapsible {
     border-radius: 10px;
@@ -431,7 +431,7 @@ nav li a {
     box-shadow: #282828 1px 1px 6px 2px;
 }
 
-/* Sign Up ------------------------------- */
+/* -------------------------------------------------------------- SIGN UP */
 
 .login-signup-switch {
     margin-top: 40px;
@@ -441,7 +441,7 @@ nav li a {
      background-color: #cdb3f1;
 }
 
-/* Login ------------------------------- */
+/* ----------------------------------------------------------------LOGIN */
 
 .btn-large {
     background-color: #bb98eb;
@@ -451,7 +451,7 @@ nav li a {
     border-radius: 10px;
 }
 
-/* Logout ------------------------------- */
+/* -----------------------------------------------------------------LOGOUT */
 
 #logout-page {
     min-height: 70vh;
@@ -474,7 +474,7 @@ nav li a {
     padding-top: 60px;
 }
 
-/* FOOTER ------------------------------- */
+/* ---------------------------------------------------------------- FOOTER */
 
 .page-footer {
     background-color: #bb98eb;
@@ -484,8 +484,9 @@ nav li a {
     font-size: 30px;
 }
 
-/* MEDIA QUERIES ------------------------ */
+/* ------------------------------------------------------------- MEDIA QUERIES */
 
+/* Smaller phones */
 @media only screen and (max-width: 460px) {
     /* Title sizes decrease to fit the space suitably on very small screens */
     #small-title {
@@ -496,6 +497,8 @@ nav li a {
         font-size: 50px;
     }
 }
+
+/* Larger phones */
 
 @media only screen and (max-width: 600px) {
     .featured-book {
@@ -508,6 +511,8 @@ nav li a {
     }
 }
 
+/* Tablets */
+
 @media only screen and (max-width: 992px) {
     /* Featured section is only big enough to display 4 books on large screens */
     #featured-book-4 {
@@ -518,6 +523,8 @@ nav li a {
     }*/
 }
 
+/* Desktop devices */
+
 @media only screen and (min-width: 992px) {
 #added-by-display {
     float: left;
@@ -525,10 +532,9 @@ nav li a {
     #book-info-display-page {
         text-align: left;
     }
-
 }
 
-
+/* Larger desktop devices */
 
 @media only screen and (min-width: 1200px) {
     /* Title sizes increase to fill the space suitably on larger screens */
@@ -543,6 +549,8 @@ nav li a {
         margin-top: 70px;
     }
 }
+
+/* Very large desktop devices */
 
 @media only screen and (min-width: 1700px) {
     /* Space book images more suitably on very large screens */
