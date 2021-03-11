@@ -10,7 +10,7 @@
 <div id="homepage-content" class="container">
     <div class="row">
         {% if session.user %}
-        <div class="col s12">
+        <div class="col s12 l8 offset-l2">
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
             <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
@@ -34,12 +34,12 @@
         </div>
 
         <!---Call to actions-->
-        <div id="call-to-action-buttons" class="col s12 xl4">
-            <a class="login-circle" href="{{ url_for('login') }}">
-                <p class="white-text">Login</p>
+        <div id="call-to-action-buttons" class="col s12 xl4 center">
+            <a class="login-circle btn" href="{{ url_for('login') }}">
+                <span>Login</span>
             </a>
-            <a class="sign-up-circle" href="{{ url_for('signup') }}">
-                <p class="white-text" >Create An Account</p>
+            <a class="sign-up-circle btn" href="{{ url_for('signup') }}">
+                <span>Create An Account</span>
             </a>
         </div>
         {% endif %}
