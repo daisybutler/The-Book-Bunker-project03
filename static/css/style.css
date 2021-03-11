@@ -391,6 +391,7 @@ nav li a {
 .book-actions a {
     width: 80px;
     height: 50px;
+    border-radius: 10px;
 }
 
 .book-actions i {
