@@ -74,8 +74,8 @@
         <!---Submit button-->
         <div class="row">
             <div class="col s12 center">
-                <a href="{{ url_for('dashboard', username=session['user']) }}" class="btn-large">Cancel</a>
                 <button type="submit" class="waves-effect waves-light btn-large">Edit Book</button>
+                <a class="waves-effect waves-light btn-large red lighten-1" href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
             </div>
         </div>
     </form>
