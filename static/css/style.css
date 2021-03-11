@@ -123,10 +123,6 @@ nav li a {
     color: #fff;
 }
 
-#back-to-top-button:active {
-    background-color: #555;
-}
-
 #back-to-top-button.show {
     opacity: 1;
     visibility: visible;
@@ -370,12 +366,17 @@ nav li a {
 
 /* My Profile ------------------------------- */
 
+.collapsible {
+    border-radius: 10px;
+}
+
 .collapsible-header {
     font-family: "Poppins", sans-serif;
     background-color: #bb98eb;
     color: white;
     font-size: 25px;
     position: relative;
+    border-radius: 10px;
 }
 
 .collapsible-body {
