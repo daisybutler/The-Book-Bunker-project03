@@ -103,6 +103,7 @@ def dashboard(username):
 
 
 # EDIT USER INFO -------------------------------------
+"""
 @app.route("/edit-user/<username>", methods=['GET', 'POST'])
 def edit_user(username):
 
@@ -111,7 +112,7 @@ def edit_user(username):
             "username": request.form.get("username"),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
-            "bookmarked": mongo.db.users.find_one({'bookmarked'})
+            "bookmarked": mongo.db.users.find_one(list("bookmarked"))
         }
 
         mongo.db.users.update({'username': username}, updated_user)
@@ -120,6 +121,8 @@ def edit_user(username):
 
     user = mongo.db.users.find_one({'username': username})
     return render_template("edit-user.html", user=user)
+
+"""
 
 
 # BOOKMARK BOOK -------------------------------------
