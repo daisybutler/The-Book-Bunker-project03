@@ -380,6 +380,16 @@ nav li a {
 
 /*-------------------------------------------------------------MY PROFILE */
 
+/* Settings */
+#settings {
+    position: relative;
+    height: 120px;
+}
+#settings .fixed-action-btn {
+    position: absolute;
+    right: 24px;
+}
+
 #user-settings {
     border-radius: 30px ;
 }
@@ -392,6 +402,7 @@ nav li a {
     background-color: rgb(240, 221, 115);
 }
 
+/* Collapsible elements containing readings list and added books */
 .collapsible {
     border-radius: 10px;
 }
@@ -411,6 +422,7 @@ nav li a {
     margin-bottom: 0;
 }
 
+/* User controls for add/edit/check/delete */
 .book-actions {
     margin-top: 15px;
 }
@@ -453,6 +465,7 @@ nav li a {
     margin-top: 5px;
 }
 
+/* Box shadow for book images in collapsible bodies */
 .book-image-profile-page {
     box-shadow: #282828 1px 1px 6px 2px;
 }
