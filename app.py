@@ -140,20 +140,24 @@ def edit_user(user):
     return render_template("edit-user.html", user=user)
 
 
-# DELETE USER ----------------------------------
+# DISPLAY DELETE USER PAGE ----------------------------------
 
 @app.route('/delete-user<user>', methods=['GET', 'POST'])
 def delete_user(user):
-    if request.method == 'POST':
-        mongo.db.users.remove({'username': session['user']})
-        flash("User deleted")
-        return redirect(url_for('signup'))
-
     user = mongo.db.users.find_one({'username': session['user']})
     return render_template("delete-user.html", user=user)
 
 
-# BOOKMARK BOOK -------------------------------------
+# DELETE USER CONFIRMATION -------------------------------------
+
+@app.route('/confirm-delete-user', methods=['GET', 'POST'])
+def confirm_delete_user():
+    mongo.db.users.remove({'username': session['user']})
+    flash("User deleted")
+    return redirect(url_for('signup'))
+
+
+# BOOKMARK BOOK ------------------------------------------------
 @app.route("/bookmark/<book_id>")
 def bookmark(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})

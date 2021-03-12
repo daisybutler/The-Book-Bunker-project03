@@ -10,7 +10,7 @@
                 <p>Are you sure you want to delete your profile <em>{{ session["user"] }}</em> ?</p>
 
                 <!---Delete user button-->
-                <a class="waves-effect waves-light btn-large btn-yellow" href="{{ url_for('delete_user', user=session['user']) }}">Delete Profile</a>
+                <a class="waves-effect waves-light btn-large btn-yellow" method="POST" href="{{ url_for('confirm_delete_user') }}">Delete Profile</a>
                 <a class="btn-large btn-purple" href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
             </div>
         </div>
