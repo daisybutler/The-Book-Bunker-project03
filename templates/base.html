@@ -26,24 +26,26 @@
 
     <header>
         <!---Navbar with collapsible mobile element-->
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo"><img src=" {{ url_for('static', filename='images/logo-ms3.png') }}" alt="logo" width="75px" height="60px"></a>
-                <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('all_books') }}">All Books</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
-                        <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Profile</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('signup') }}">Signup</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="{{ url_for('home') }}" class="brand-logo"><img src=" {{ url_for('static', filename='images/logo-ms3.png') }}" alt="logo" width="75px" height="60px"></a>
+                    <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('all_books') }}">All Books</a></li>
+                        {% if session.user %}
+                            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+                            <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Profile</a></li>
+                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}">Login</a></li>
+                            <li><a href="{{ url_for('signup') }}">Signup</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
     
         <ul class="sidenav" id="mobile-menu">
             <li><a href="{{ url_for('home') }}">Home</a></li>
