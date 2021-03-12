@@ -100,49 +100,6 @@ nav li a {
 
 /* ---------------------------------------------------------------------------HOMEPAGE  */
 
-/* ------------------------------------- BACK TO TOP BUTTON */
-
-/* Original code credit: https://codepen.io/deveb22/pen/QxPmGz */
-
-#back-to-top-button {
-    display: inline-block;
-    background-color: rgb(245, 219, 74);
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    border-radius: 25px;
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    -webkit-transition: background-color .3s, opacity .5s, visibility .5s;
-    -o-transition: background-color .3s, opacity .5s, visibility .5s;
-    transition: background-color .3s, opacity .5s, visibility .5s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-    box-shadow: #7e7e7e 1px 1px 3px 1px;
-}
-
-.fa-angle-up {
-    color: #fff;
-    font-size: 50px;
-}
-
-#back-to-top-button:hover {
-    cursor: pointer;
-    background-color: #bb98eb;
-}
-
-.fa-angle-up:hover {
-    color: #fff;
-}
-
-#back-to-top-button.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-
 #homepage-title h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
@@ -247,7 +204,57 @@ nav li a {
     margin-top: 20px;
 }
 
+#all-books-btn-home {
+    background-color: #ffdb9c;
+}
+
+#all-books-btn-home:hover {
+    background-color: #fce6c0;
+}
+
 /* ---------------------------------------------------------ALL BOOKS */
+
+/* ------------------------------------- BACK TO TOP BUTTON */
+
+/* Original code credit: https://codepen.io/deveb22/pen/QxPmGz */
+
+#back-to-top-button {
+    display: inline-block;
+    background-color: #ffdb9c;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 25px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    -webkit-transition: background-color .3s, opacity .5s, visibility .5s;
+    -o-transition: background-color .3s, opacity .5s, visibility .5s;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    box-shadow: #7e7e7e 1px 1px 3px 1px;
+}
+
+.fa-angle-up {
+    color: #fff;
+    font-size: 50px;
+}
+
+#back-to-top-button:hover {
+    cursor: pointer;
+    background-color: #fce6c0;
+}
+
+.fa-angle-up:hover {
+    color: #fff;
+}
+
+#back-to-top-button.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 #search-results-message {
     text-align: center;
@@ -268,6 +275,11 @@ nav li a {
     width: 100px;
     height: 100px;
     border-radius: 50px;
+    background-color: #ffdb9c;
+}
+
+.add-book-button:hover {
+    background-color: #fce6c0;
 }
 
 /* Centers plus icon in green Add Book button */
@@ -395,7 +407,7 @@ nav li a {
 }
 
 #sub-setting1 {
-    background-color: rgb(240, 221, 115);
+    background-color: #ffdb9c;
 }
 
 #sub-setting2 {
@@ -443,6 +455,7 @@ nav li a {
     width: 100px;
     height: 100px;
     border-radius: 50px;
+    background-color: #ffdb9c;
 }
 
 /* Centers plus icon in green Find Books button */
@@ -451,18 +464,31 @@ nav li a {
 }
 
 #edit-button {
-    background-color: rgb(146, 215, 238);
+    background-color: #ffdb9c;
     margin-top: 5px;
+}
+
+#edit-button:hover {
+    background-color: #fce6c0;
 }
 
 #delete-button {
-    background-color: #e06969;
+    background-color: #ffdb9c;
     margin-top: 5px;
 }
 
+#delete-button:hover {
+    background-color: #fce6c0;
+}
+
+/* Unbookmark button on profile page */
 #remove-button {
-    background-color: rgb(240, 221, 115);
+    background-color: #ffdb9c;
     margin-top: 5px;
+}
+
+#remove-button:hover {
+    background-color: #fce6c0;
 }
 
 /* Box shadow for book images in collapsible bodies */
