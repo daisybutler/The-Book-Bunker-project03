@@ -43,10 +43,10 @@ btn.on('click', function (e) {
 
 
 // Floating action button for user settings
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems, {
-        direction: 'down',
-        hoverEnabled: false
+      direction: 'down',
+      hoverEnabled: false
     });
-});
+  });

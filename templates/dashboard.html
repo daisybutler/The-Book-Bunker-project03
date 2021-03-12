@@ -1,24 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Profile usename display-->
 <div class="row">
-    <div class="col s12 center fixed-action-btn direction-top">
-        <a id="user-settings" class="btn-floating btn-large">
-            <i class="fas fa-user-cog"></i>
-        </a>
-        <ul>
-            <li>
-                <a id="sub-setting1" class="btn-floating"><i class="fas fa-user-edit"></i></a>
-            </li>
-            <li>
-                <a id="sub-setting2" class="btn-floating"><i class="fas fa-user-times"></i></a>
-            </li>
-        </ul>
-    </div>
-</div>
-<div class="row">
-    <div class="col s12 center">
+    <div class="col s8 offset-s2 center">
         <h2>{{ username }}'s Profile </h2>
+    </div>
+
+    <!--User settings FABs-->
+    <div class="col s1 offset-s1" style="position: relative; height: 120px;">
+        <div class="fixed-action-btn click-to-toggle direction-top direction-bottom active"
+            style="position: absolute; right: 24px;">
+
+            <!--Main FAB which opens sub-setting buttons-->
+            <a id="user-settings" class="btn-floating btn-large">
+                <i class="fas fa-user-cog"></i>
+            </a>
+            <ul>
+                <!--User edit settings button-->
+                <li>
+                    <a id="sub-setting1" class="btn-floating yellow"><i class="fas fa-user-edit"></i></a>
+                </li>
+                <!--User delete settings button-->
+                <li>
+                    <a id="sub-setting2" class="btn-floating red lighten-1"><i class="fas fa-user-times"></i></a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
