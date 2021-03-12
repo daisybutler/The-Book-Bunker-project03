@@ -124,6 +124,15 @@ def edit_user(user):
     current_user = mongo.db.users.find_one({'username': session['user']})
 
     if request.method == 'POST':
+
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for('edit_user', user=session['user']))
+
         updated_user = {
             "username": request.form.get("username"),
             "password": generate_password_hash(request.form.get("password")),
@@ -274,7 +283,7 @@ def search_categories():
     if len(all_books) == 0:
 
         # If no results match the search word, return string below
-        user_message = "Sorry, we couldn't find any results for '" + search + "'."
+        user_message ="Sorry, we couldn't find any results for '" + search + "'."
     else:
         # If results match the search word, return strong below
         user_message = "Showing results for '" + search + "'."
