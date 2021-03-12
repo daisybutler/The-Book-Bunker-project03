@@ -47,8 +47,10 @@ def display_book(book_id):
         bookmarked = False
         if existing_user and book_id in existing_user["bookmarked"]:
             bookmarked = True
-    # else:
-        # need to not display bookmarks for non-logged in users
+
+    # Bookmark feature when not logged in crashes display book page
+    elif not session['user']:
+        bookmarked = False
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     selected_book = {"_id": book["_id"], "title": book["title"],
