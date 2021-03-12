@@ -41,11 +41,14 @@ def all_books():
 # DISPLAY INDIVIDUAL BOOKS -------------------------------------
 @app.route("/display-book/<book_id>")
 def display_book(book_id):
-    existing_user = mongo.db.users.find_one(
-        {"username": session['user']})
-    bookmarked = False
-    if existing_user and book_id in existing_user["bookmarked"]:
-        bookmarked = True
+    if session['user']:
+        existing_user = mongo.db.users.find_one(
+            {"username": session['user']})
+        bookmarked = False
+        if existing_user and book_id in existing_user["bookmarked"]:
+            bookmarked = True
+    # else:
+        # need to not display bookmarks for non-logged in users
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     selected_book = {"_id": book["_id"], "title": book["title"],
@@ -57,10 +60,10 @@ def display_book(book_id):
                      }
 
     return render_template(
-                "display-book.html",
-                selected_book=selected_book,
-                bookmarked=bookmarked
-            )
+        "display-book.html",
+        selected_book=selected_book,
+        bookmarked=bookmarked
+    )
 
 
 # ADD BOOK -------------------------------------
