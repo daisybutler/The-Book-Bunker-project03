@@ -395,11 +395,11 @@ nav li a {
 }
 
 #sub-setting1 {
-    background-color: #e06969;
+    background-color: rgb(240, 221, 115);
 }
 
 #sub-setting2 {
-    background-color: rgb(240, 221, 115);
+    background-color: #e06969;
 }
 
 /* Collapsible elements containing readings list and added books */

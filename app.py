@@ -102,6 +102,26 @@ def dashboard(username):
                            bookmarked_books=bookmarked_books)
 
 
+# EDIT USER INFO -------------------------------------
+@app.route("/edit-user/<username>", methods=['GET', 'POST'])
+def edit_user(username):
+
+    if request.method == 'POST':
+        updated_user = {
+            "username": request.form.get("username"),
+            "password": generate_password_hash(request.form.get("password")),
+            "email": request.form.get("email"),
+            "bookmarked": mongo.db.users.find_one({'bookmarked'})
+        }
+
+        mongo.db.users.update({'username': username}, updated_user)
+        flash("User info updated")
+        return redirect(url_for('dashboard', username=session["user"]))
+
+    user = mongo.db.users.find_one({'username': username})
+    return render_template("edit-user.html", user=user)
+
+
 # BOOKMARK BOOK -------------------------------------
 @app.route("/bookmark/<book_id>")
 def bookmark(book_id):
