@@ -400,6 +400,10 @@ nav li a {
 #user-settings {
     border-radius: 30px ;
 }
+#sub-setting2 {
+    background-color: #e4775c;
+}
+
 
 /* Collapsible elements containing readings list and added books */
 .collapsible {

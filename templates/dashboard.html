@@ -17,16 +17,16 @@
                 <i class="fas fa-user-cog"></i>
             </a>
             <ul>
-                <!--User edit settings button-->
-                <li>
-                    <a id="sub-setting1" class="btn-floating btn-yellow" href="{{ url_for('edit_user', user=session['user']) }}">
-                        <i class="fas fa-user-edit"></i>
-                    </a>
-                </li>
                 <!--User delete settings button-->
                 <li>
                     <a id="sub-setting2" class="btn-floating btn-yellow" href="{{ url_for('delete_user', user=session['user']) }}">
                         <i class="fas fa-user-times"></i>
+                    </a>
+                </li>
+                <!--User edit settings button-->
+                <li>
+                    <a id="sub-setting1" class="btn-floating btn-yellow" href="{{ url_for('edit_user', user=session['user']) }}">
+                        <i class="fas fa-user-edit"></i>
                     </a>
                 </li>
             </ul>
