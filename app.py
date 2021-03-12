@@ -56,7 +56,11 @@ def display_book(book_id):
                      "added_by": book["added_by"]
                      }
 
-    return render_template("display-book.html", selected_book=selected_book, bookmarked=bookmarked)
+    return render_template(
+                "display-book.html",
+                selected_book=selected_book,
+                bookmarked=bookmarked
+            )
 
 
 # ADD BOOK -------------------------------------
@@ -166,10 +170,11 @@ def bookmark(book_id):
 
     flash("Bookmarked")
 
-    return render_template("display-book.html", selected_book=saved_book)
+    return redirect(url_for(
+                "display_book", book_id=saved_book["_id"]))
 
 
-# UNBOOKMARK BOOK -------------------------------------
+# UNBOOKMARK BOOK (PROFILE PAGE) -------------------------------------
 @app.route("/unbookmark/<book_id>")
 def unbookmark(book_id):
 
@@ -180,6 +185,18 @@ def unbookmark(book_id):
     flash("Unbookmarked")
 
     return redirect(url_for('dashboard', username=session['user']))
+
+
+# UNBOOKMARK BOOK (DISPLAY PAGE) -------------------------------------
+@app.route("/unbookmark_bookpage/<book_id>")
+def unbookmark_bookpage(book_id):
+
+    # Removes the book_id from the 'bookmarked' field in user's db document
+    mongo.db.users.update({"username": session['user']}, {
+                                   "$pull": {"bookmarked": book_id}})
+
+    flash("Unbookmarked")
+    return redirect(url_for('display_book', book_id=book_id))
 
 
 # EDIT BOOK -------------------------------------
