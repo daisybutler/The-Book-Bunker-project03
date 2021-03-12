@@ -29,7 +29,7 @@
     <!---Link to 'Add Book' page if a user is logged in-->
     <div class="col s12 m3 center">
         {% if session.user %}
-        <a class="btn-floating waves-effect waves-light tooltipped add-book-button" data-position="bottom"
+        <a class="btn-floating waves-effect waves-light tooltipped add-book-button btn-yellow" data-position="bottom"
                 data-tooltip="Add a book recommendation"
             href="{{ url_for('add_book') }}">
             <i class="fas fa-plus"></i>

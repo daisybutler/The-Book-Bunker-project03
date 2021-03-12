@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col s12">
-            <a id="back-to-books-button" class="btn" href="{{ url_for('all_books') }}">Back to All Books</a>
+            <a id="back-to-books-button" class="btn btn-purple" href="{{ url_for('all_books') }}">Back to All Books</a>
         </div>
     </div>
 
@@ -35,22 +35,22 @@
                     <div class="row">
                         <div class="col s12">
                             {% if selected_book.purchase_link %}
-                                <a class="btn" href="{{ selected_book.purchase_link }}" target="_blank">Buy Now</a>
+                                <a class="btn btn-purple" href="{{ selected_book.purchase_link }}" target="_blank">Buy Now</a>
                             {% else %}
                                 <p class="grey-text lighten-2">Not Available</p>
                             {% endif %}
                             {% if bookmarked %}
-                            <a class="btn bookmark" href="{{ url_for('unbookmark_bookpage', book_id=selected_book._id) }}">
+                            <a class="btn bookmark btn-purple" href="{{ url_for('unbookmark_bookpage', book_id=selected_book._id) }}">
                                 <i class="fas fa-bookmark"></i>
                             </a>
                             {% else %}
-                            <a class="btn bookmark" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
+                            <a class="btn bookmark btn-purple" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
                                 <i class="far fa-bookmark"></i>
                             </a>
                             {% endif %}
                             {% if selected_book.added_by == session['user'] %}
-                            <a id="edit-button" class="btn" href="{{ url_for('edit_book', book_id=selected_book._id) }}">Edit</a>
-                            <a id="delete-button" class="btn" href="{{ url_for('delete_book', book_id=selected_book._id) }}"
+                            <a id="edit-button" class="btn btn-yellow" href="{{ url_for('edit_book', book_id=selected_book._id) }}">Edit</a>
+                            <a id="delete-button" class="btn btn-yellow" href="{{ url_for('delete_book', book_id=selected_book._id) }}"
                                 onclick="
                                                     return confirm('Are you sure you want to delete {{ selected_book.title }} from the database? This action will remove this book for all users and cannot be undone.');">Delete</a>
                             {% endif %}

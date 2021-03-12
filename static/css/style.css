@@ -49,21 +49,29 @@ p {
     font-family: "Lato", sans-serif;
 }
 
-.btn {
+.btn-purple {
     background-color: #bb98eb;
     cursor: pointer;
 }
 
-.btn:hover {
+.btn-purple:hover {
     background-color: #cdb3f1;
 }
 
-.btn:focus {
+.btn-purple:focus {
     background-color: #cdb3f1;
 }
 
-.btn-large:hover {
-    background-color: #cdb3f1;
+.btn-yellow {
+    background-color: #ffdb9c;
+}
+
+.btn-yellow:hover {
+    background-color: #fce6c0;
+}
+
+.btn-yellow:focus {
+    background-color: #fce6c0;
 }
 
 .book-title {
@@ -204,14 +212,6 @@ nav li a {
     margin-top: 20px;
 }
 
-#all-books-btn-home {
-    background-color: #ffdb9c;
-}
-
-#all-books-btn-home:hover {
-    background-color: #fce6c0;
-}
-
 /* ---------------------------------------------------------ALL BOOKS */
 
 /* ------------------------------------- BACK TO TOP BUTTON */
@@ -275,11 +275,6 @@ nav li a {
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    background-color: #ffdb9c;
-}
-
-.add-book-button:hover {
-    background-color: #fce6c0;
 }
 
 /* Centers plus icon in green Add Book button */
@@ -406,14 +401,6 @@ nav li a {
     border-radius: 30px ;
 }
 
-#sub-setting1 {
-    background-color: #ffdb9c;
-}
-
-#sub-setting2 {
-    background-color: #e06969;
-}
-
 /* Collapsible elements containing readings list and added books */
 .collapsible {
     border-radius: 10px;
@@ -455,7 +442,6 @@ nav li a {
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    background-color: #ffdb9c;
 }
 
 /* Centers plus icon in green Find Books button */
@@ -464,31 +450,16 @@ nav li a {
 }
 
 #edit-button {
-    background-color: #ffdb9c;
     margin-top: 5px;
-}
-
-#edit-button:hover {
-    background-color: #fce6c0;
 }
 
 #delete-button {
-    background-color: #ffdb9c;
     margin-top: 5px;
-}
-
-#delete-button:hover {
-    background-color: #fce6c0;
 }
 
 /* Unbookmark button on profile page */
 #remove-button {
-    background-color: #ffdb9c;
     margin-top: 5px;
-}
-
-#remove-button:hover {
-    background-color: #fce6c0;
 }
 
 /* Box shadow for book images in collapsible bodies */
@@ -509,7 +480,6 @@ nav li a {
 /* ----------------------------------------------------------------LOGIN */
 
 .btn-large {
-    background-color: #bb98eb;
     color: white;
     font-family: "Lato", sans-serif;
     font-weight: bold;
