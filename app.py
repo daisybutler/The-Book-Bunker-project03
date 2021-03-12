@@ -131,9 +131,11 @@ def edit_user(user):
             "bookmarked": current_user['bookmarked']
         }
 
-        # needs $ operator
-        mongo.db.users.update_one({'user': session['user']}, updated_user)
-        flash("User info updated")
+        mongo.db.users.update_one(
+                   {'username': session['user']},
+                   {"$set": updated_user})
+
+        flash(current_user)
         return redirect(url_for('dashboard', username=session["user"]))
 
     user = mongo.db.users.find_one({'username': session['user']})
