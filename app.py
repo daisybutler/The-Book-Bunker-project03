@@ -41,6 +41,12 @@ def all_books():
 # DISPLAY INDIVIDUAL BOOKS -------------------------------------
 @app.route("/display-book/<book_id>")
 def display_book(book_id):
+    existing_user = mongo.db.users.find_one(
+        {"username": session['user']})
+    bookmarked = False
+    if existing_user and book_id in existing_user["bookmarked"]:
+        bookmarked = True
+
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     selected_book = {"_id": book["_id"], "title": book["title"],
                      "author": book["author"], "category": book["category"],
@@ -49,7 +55,8 @@ def display_book(book_id):
                      "purchase_link": book["purchase_link"],
                      "added_by": book["added_by"]
                      }
-    return render_template("display-book.html", selected_book=selected_book)
+
+    return render_template("display-book.html", selected_book=selected_book, bookmarked=bookmarked)
 
 
 # ADD BOOK -------------------------------------
@@ -195,7 +202,11 @@ def edit_book(book_id):
 
     book = mongo.db.books.find_one({'_id': ObjectId(book_id)})
     categories = mongo.db.categories.find().sort('category_name', 1)
-    return render_template("edit-book.html", categories=categories, book=book)
+    return render_template(
+            "edit-book.html",
+            categories=categories,
+            book=book
+        )
 
 
 # DELETE BOOK -------------------------------------
@@ -213,8 +224,22 @@ def search_categories():
     # Gets the keyword inputted by user in the search bar
     search = request.form.get('search')
 
+    # regex query
+    regex_query = {"$regex": ".*{0}.*".format(search), "$options": "i"}
+
     # Finds any value in book collection which contains text matching input
-    all_books = list(mongo.db.books.find({"$text": {"$search": search}}))
+    all_books = list(mongo.db.books.find(
+        {
+            "$or": [
+                {"title": regex_query},
+                {"author": regex_query},
+                {"category": regex_query},
+                {"year": regex_query},
+                {"description": regex_query},
+                {"added_by": regex_query}
+            ]
+        }
+    ))
 
     # Changes display of Show All Books button from 'none' to 'inline'
     style = "display: inline"

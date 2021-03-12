@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="logout-page" class="container">
+<div id="delete-user-page" class="container">
     <h2>Delete Profile</h2>
     <div class="row">
-        <div class="col s12 m8 offset-m2 center">
+        <div class="row">
+            <div class="col s12 m8 offset-m2 center">
+                <!---Display warning message-->
+                <p>Are you sure you want to delete your profile <em>{{ session["user"] }}</em> ?</p>
 
-            <!---Display which username is currently logged in-->
-            <p>Are you sure you want to delete your profile <em>{{ session["user"] }}</em> ?</p>
-
-            <!---Log out button-->
-            <a class="waves-effect waves-light btn-large" href = "#">Delete Profile</a>
-            <a class="btn-large" href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
+                <!---Delete user button-->
+                <a class="waves-effect waves-light btn-large red lighten-1" href="{{ url_for('delete_user', user=session['user']) }}">Delete Profile</a>
+                <a class="btn-large" href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
+            </div>
         </div>
     </div>
 </div>

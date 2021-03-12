@@ -5,9 +5,9 @@
     <h2>Edit Book</h2>
 </div>
 
-<!---Add book form-->
+<!---Edit book form-->
 <div class="row container">
-    <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_book', book_id=book._id) }}">
+    <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_book', book_id=book._id, _anchor='my-recommendations') }}">
         <div class="row">
 
             <!---Add title-->
@@ -29,11 +29,11 @@
                 <select id="category_name" name="category_name" required>
                     <option value="" disabled>Select a Category</option>
                     {% for category in categories %}
-                    {% if category.category_name == book.category %}
-                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                    {% else %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                    {% endif %}
+                        {% if category.category_name == book.category %}
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% else %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="category_name">Category</label>
@@ -81,11 +81,4 @@
     </form>
 </div>
 
-{% endblock %}
-
-{% block scripts %}
-<!---Displays a character limit for description length to user as they type--->
-<script>
-    $('textarea#message').characterCounter();
-</script>
 {% endblock %}
