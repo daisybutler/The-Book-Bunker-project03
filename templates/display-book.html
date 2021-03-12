@@ -34,25 +34,35 @@
                     <!---Purchase link-->
                     <div class="row">
                         <div class="col s12">
+
+                            <!---Display Buy Now button if a purchase link has been provided-->
                             {% if selected_book.purchase_link %}
                                 <a class="btn btn-purple" href="{{ selected_book.purchase_link }}" target="_blank">Buy Now</a>
+                            
+                                <!---Disable Buy Now button if a purchase link has not been provided-->
                             {% else %}
-                                <p class="grey-text lighten-2">Not Available</p>
+                                <a class="btn btn-purple" href="#" target="_blank" disabled>Buy Now</a>
                             {% endif %}
+
+                            <!---User has already bookmarked book, and may unbookmark it-->
                             {% if bookmarked %}
                             <a class="btn bookmark btn-purple" href="{{ url_for('unbookmark_bookpage', book_id=selected_book._id) }}">
                                 <i class="fas fa-bookmark"></i>
                             </a>
+
+                            <!---User has not bookmarked book, and may bookmark it-->
                             {% else %}
                             <a class="btn bookmark btn-purple" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
                                 <i class="far fa-bookmark"></i>
                             </a>
                             {% endif %}
+
+                            <!---If the book's "add_by" field is equal to session['user'], edit and delete options are available -->
                             {% if selected_book.added_by == session['user'] %}
                             <a id="edit-button" class="btn btn-yellow" href="{{ url_for('edit_book', book_id=selected_book._id) }}">Edit</a>
                             <a id="delete-button" class="btn btn-yellow" href="{{ url_for('delete_book', book_id=selected_book._id) }}"
                                 onclick="
-                                                    return confirm('Are you sure you want to delete {{ selected_book.title }} from the database? This action will remove this book for all users and cannot be undone.');">Delete</a>
+                                        return confirm('Are you sure you want to delete {{ selected_book.title }} from the site?');">Delete</a>
                             {% endif %}
                         </div>
                     </div>
@@ -61,7 +71,7 @@
                     {% if selected_book.image_url %}
                     <img id="book-image" src="{{ selected_book.image_url }}">
                     {% else %}
-                    <img class="book-image" src="./static/images/book-placeholder.png" alt="{{ selected_book.title }}">
+                    <img class="book-image" src="{{ url_for('static', filename='images/book-placeholder.png') }}" alt="{{ selected_book.title }}">
                     {% endif %}
                 </div>
             </div>

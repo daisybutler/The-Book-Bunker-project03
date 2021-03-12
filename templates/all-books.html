@@ -62,7 +62,7 @@
                     {% if book.image_url %}
                     <img class="book-image center" src="{{ book.image_url }}" alt="{{ book.title }}">
                     {% else %}
-                    <img class="book-image center" src="./static/images/book-placeholder.png" alt="{{ book.title }}">
+                    <img class="book-image center" src="./static/images/book-placeholder.png" style="box-shadow: none;" alt="{{ book.title }}">
                     {% endif %}
                     <a id="expand-book-btn" class="btn-floating halfway-fab waves-effect waves-light"
                         href="{{ url_for('display_book', book_id=book._id) }}"><i class="fas fa-ellipsis-h"></i>
