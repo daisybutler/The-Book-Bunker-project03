@@ -103,26 +103,27 @@ def dashboard(username):
 
 
 # EDIT USER INFO -------------------------------------
-"""
-@app.route("/edit-user/<username>", methods=['GET', 'POST'])
-def edit_user(username):
+
+@app.route("/edit-user/<user>", methods=['GET', 'POST'])
+def edit_user(user):
+
+    current_user = mongo.db.users.find_one({'username': session['user']})
 
     if request.method == 'POST':
         updated_user = {
             "username": request.form.get("username"),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
-            "bookmarked": mongo.db.users.find_one(list("bookmarked"))
+            "bookmarked": current_user['bookmarked']
         }
 
-        mongo.db.users.update({'username': username}, updated_user)
+        # needs $ operator
+        mongo.db.users.update_one({'user': session['user']}, updated_user)
         flash("User info updated")
         return redirect(url_for('dashboard', username=session["user"]))
 
-    user = mongo.db.users.find_one({'username': username})
+    user = mongo.db.users.find_one({'username': session['user']})
     return render_template("edit-user.html", user=user)
-
-"""
 
 
 # BOOKMARK BOOK -------------------------------------

@@ -19,7 +19,7 @@
             <ul>
                 <!--User edit settings button-->
                 <li>
-                    <a id="sub-setting1" class="btn-floating" href="#">
+                    <a id="sub-setting1" class="btn-floating" href="{{ url_for('edit_user', user=session['user']) }}">
                         <i class="fas fa-user-edit"></i>
                     </a>
                 </li>

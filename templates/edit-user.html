@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!---<div class="row container">
+<div class="row container">
     <div class="row">
         <div class="col s12 m4 offset-m4">
             <h2>Edit User Info</h2>
         </div>
     </div>
     <div class="row">
-        <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_user', username=session['user']) }}">
+        <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_user', user=user) }}">
             <div class="row">
                 <div class="input-field col s12">
                     <input value="{{ user.username }}" id="username" name="username" type="text" minlength="5" maxlength="15"
@@ -36,4 +36,4 @@
         </form>
     </div>
 </div>
-{% endblock %} ---->
+{% endblock %}
