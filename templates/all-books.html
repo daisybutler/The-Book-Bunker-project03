@@ -23,9 +23,11 @@
         <div class="col s12">
             <p id="search-results-message">{{ user_message }}</p>
         </div>
-        <div class="col s12 center" style="{{ style }}">
+        {% if all_books_button %}
+        <div class="col s12 center">
             <a id="show-all-books-btn" class="btn btn-purple" href="{{ url_for('all_books') }}">Show all books</a>
         </div>
+        {% endif %}
     </div>
 
     <!---Link to 'Add Book' page if a user is logged in-->

@@ -1,8 +1,8 @@
 import os
 
 from flask import (
-        Flask, flash, render_template, redirect,
-        request, session, url_for)
+    Flask, flash, render_template, redirect,
+    request, session, url_for)
 
 from flask_pymongo import PyMongo
 
@@ -24,21 +24,28 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# DISPLAY HOME -------------------------------------
+# DISPLAY HOME -------------------------------------------------------------
+
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-# DISPLAY ALL BOOKS -------------------------------------
+# DISPLAY ALL BOOKS ---------------------------------------------------------
+
 @app.route("/all-books")
 def all_books():
     all_books = list(mongo.db.books.find())
-    style = "display:none"
-    return render_template("all-books.html", all_books=all_books, style=style)
+    all_books_button = False
+    return render_template(
+            "all-books.html",
+            all_books=all_books,
+            all_books_button=all_books_button
+        )
 
 
-# DISPLAY INDIVIDUAL BOOKS -------------------------------------
+# DISPLAY INDIVIDUAL BOOKS ---------------------------------------------------
+
 @app.route("/display-book/<book_id>")
 def display_book(book_id):
     if session['user']:
@@ -68,7 +75,8 @@ def display_book(book_id):
     )
 
 
-# ADD BOOK -------------------------------------
+# ADD BOOK -------------------------------------------------------
+
 @app.route("/add-book", methods=['GET', 'POST'])
 def add_book():
     if request.method == 'POST':
@@ -90,7 +98,8 @@ def add_book():
     return render_template("add-book.html", categories=categories)
 
 
-# DISPLAY USER DASHBOARD -------------------------------------
+# DISPLAY USER DASHBOARD --------------------------------------------------
+
 @app.route("/dashboard/<username>", methods=['GET', 'POST'])
 def dashboard(username):
     username = mongo.db.users.find_one(
@@ -118,7 +127,7 @@ def dashboard(username):
                            bookmarked_books=bookmarked_books)
 
 
-# EDIT USER INFO -------------------------------------
+# EDIT USER INFO ---------------------------------------------------------
 
 @app.route("/edit-user/<user>", methods=['GET', 'POST'])
 def edit_user(user):
@@ -143,8 +152,8 @@ def edit_user(user):
         }
 
         mongo.db.users.update_one(
-                   {'username': session['user']},
-                   {"$set": updated_user})
+            {'username': session['user']},
+            {"$set": updated_user})
 
         flash(current_user)
         return redirect(url_for('dashboard', username=session["user"]))
@@ -153,7 +162,7 @@ def edit_user(user):
     return render_template("edit-user.html", user=user)
 
 
-# DISPLAY DELETE USER PAGE ----------------------------------
+# DISPLAY DELETE USER PAGE -----------------------------------------------
 
 @app.route('/delete-user<user>', methods=['GET', 'POST'])
 def delete_user(user):
@@ -161,7 +170,7 @@ def delete_user(user):
     return render_template("delete-user.html", user=user)
 
 
-# DELETE USER CONFIRMATION -------------------------------------
+# DELETE USER CONFIRMATION ------------------------------------------------
 
 @app.route('/confirm-delete-user', methods=['GET', 'POST'])
 def confirm_delete_user():
@@ -170,7 +179,8 @@ def confirm_delete_user():
     return redirect(url_for('signup'))
 
 
-# BOOKMARK BOOK ------------------------------------------------
+# BOOKMARK BOOK (VIA ALL PAGES) -------------------------------------------
+
 @app.route("/bookmark/<book_id>")
 def bookmark(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
@@ -186,40 +196,43 @@ def bookmark(book_id):
 
     # Appends the book_id to the 'bookmarked' field in user's db document
     mongo.db.users.update({"username": session['user']}, {
-                                   "$push": {"bookmarked": book_id}})
+        "$push": {"bookmarked": book_id}})
 
     flash("Bookmarked")
 
     return redirect(url_for(
-                "display_book", book_id=saved_book["_id"]))
+        "display_book", book_id=saved_book["_id"]))
 
 
-# UNBOOKMARK BOOK (PROFILE PAGE) -------------------------------------
+# UNBOOKMARK BOOK (VIA PROFILE PAGE) ----------------------------------------
+
 @app.route("/unbookmark/<book_id>")
 def unbookmark(book_id):
 
     # Removes the book_id from the 'bookmarked' field in user's db document
     mongo.db.users.update({"username": session['user']}, {
-                                   "$pull": {"bookmarked": book_id}})
+        "$pull": {"bookmarked": book_id}})
 
     flash("Unbookmarked")
 
     return redirect(url_for('dashboard', username=session['user']))
 
 
-# UNBOOKMARK BOOK (DISPLAY PAGE) -------------------------------------
+# UNBOOKMARK BOOK (VIA DISPLAY BOOK PAGE) -----------------------------------
+
 @app.route("/unbookmark_bookpage/<book_id>")
 def unbookmark_bookpage(book_id):
 
     # Removes the book_id from the 'bookmarked' field in user's db document
     mongo.db.users.update({"username": session['user']}, {
-                                   "$pull": {"bookmarked": book_id}})
+        "$pull": {"bookmarked": book_id}})
 
     flash("Unbookmarked")
     return redirect(url_for('display_book', book_id=book_id))
 
 
-# EDIT BOOK -------------------------------------
+# EDIT BOOK ----------------------------------------------------------------
+
 @app.route('/edit-book<book_id>', methods=['GET', 'POST'])
 def edit_book(book_id):
     if request.method == 'POST':
@@ -240,13 +253,14 @@ def edit_book(book_id):
     book = mongo.db.books.find_one({'_id': ObjectId(book_id)})
     categories = mongo.db.categories.find().sort('category_name', 1)
     return render_template(
-            "edit-book.html",
-            categories=categories,
-            book=book
-        )
+        "edit-book.html",
+        categories=categories,
+        book=book
+    )
 
 
-# DELETE BOOK -------------------------------------
+# DELETE BOOK -------------------------------------------------------
+
 @app.route('/delete-book<book_id>', methods=['GET', 'POST'])
 def delete_book(book_id):
     mongo.db.books.remove({'_id': ObjectId(book_id)})
@@ -254,7 +268,8 @@ def delete_book(book_id):
     return redirect(url_for('dashboard', username=session["user"]))
 
 
-# SEARCH ALL BOOKS -------------------------------------
+# SEARCH ALL BOOKS --------------------------------------------------
+
 @app.route("/search-categories", methods=["GET", "POST"])
 def search_categories():
 
@@ -279,23 +294,31 @@ def search_categories():
     ))
 
     # Changes display of Show All Books button from 'none' to 'inline'
-    style = "display: inline"
+    # style = "display: inline"
 
     # Conditonal check for feedback to give the user after search request
     if len(all_books) == 0:
 
         # If no results match the search word, return string below
-        user_message ="Sorry, we couldn't find any results for '" + search + "'."
+        user_message = "Sorry, no results for '" + search + "'."
+
     else:
         # If results match the search word, return strong below
         user_message = "Showing results for '" + search + "'."
 
+    all_books_button = True
+
     # Display All Books page but only with those matching user's search
-    return render_template("all-books.html", all_books=all_books,
-                           style=style, user_message=user_message)
+    return render_template(
+                        "all-books.html",
+                        all_books=all_books,
+                        all_books_button=all_books_button,
+                        user_message=user_message
+                    )
 
 
-# SIGNUP -------------------------------------
+# SIGNUP ----------------------------------------------------------
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -323,7 +346,8 @@ def signup():
     return render_template("signup.html")
 
 
-# LOGIN -------------------------------------
+# LOGIN -----------------------------------------------------------
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -352,7 +376,8 @@ def login():
     return render_template("login.html")
 
 
-# LOGOUT -------------------------------------
+# LOGOUT -----------------------------------------------------------
+
 @app.route("/logout")
 def logout():
     return render_template('logout.html')
