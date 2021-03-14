@@ -277,6 +277,13 @@ nav li a {
 
 }
 
+.add-book-prompt {
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #282828;
+
+}
+
 .add-book-button {
     width: 100px;
     height: 100px;

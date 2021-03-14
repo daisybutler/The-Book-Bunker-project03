@@ -31,6 +31,7 @@
     <!---Link to 'Add Book' page if a user is logged in-->
     <div class="col s12 m3 center">
         {% if session.user %}
+        <p class="add-book-prompt">Add Book</p>
         <a class="btn-floating waves-effect waves-light tooltipped add-book-button btn-yellow" data-position="bottom"
             data-tooltip="Add a book recommendation" href="{{ url_for('add_book') }}">
             <i class="fas fa-plus"></i>
@@ -38,7 +39,8 @@
 
         <!---Link to 'Login' page if no user is logged in-->
         {% else %}
-        <a class="btn-floating waves-effect waves-light green tooltipped add-book-button" data-position="bottom"
+        <p class="add-book-prompt">Add Book</p>
+        <a class="btn-floating waves-effect waves-light tooltipped add-book-button btn-yellow" data-position="bottom"
             data-tooltip="Please sign in to add a book recommendation" href="{{ url_for('login') }}">
             <i class="fas fa-plus"></i>
         </a>
