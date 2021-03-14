@@ -404,7 +404,6 @@ nav li a {
     background-color: #e4775c;
 }
 
-
 /* Collapsible elements containing readings list and added books */
 .collapsible {
     border-radius: 10px;
@@ -431,15 +430,15 @@ nav li a {
 }
 
 .book-actions a {
-    width: 80px;
-    height: 50px;
+    width: 50px;
+    height: 40px;
     border-radius: 10px;
 }
 
 .book-actions i {
-    margin-right: 0;
-    font-size: 30px;
-    padding-top: 6px;
+    font-size: 20px;
+    padding-top: 3px;
+    padding-right: 10px;
 }
 
 #create-reading-list-button {
@@ -469,6 +468,13 @@ nav li a {
 /* Box shadow for book images in collapsible bodies */
 .book-image-profile-page {
     box-shadow: #282828 1px 1px 6px 2px;
+    width: 200px;
+    height: 300px;
+}
+
+.book-placeholder-profile-page {
+    width: 200px;
+    height: 300px;
 }
 
 /* -------------------------------------------------------------- SIGN UP */
