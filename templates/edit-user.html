@@ -1,26 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Page heading-->
 <div class="row container">
     <div class="row">
         <div class="col s12 m4 offset-m4">
             <h2>Edit User Info</h2>
         </div>
     </div>
+
+    <!--Form for editing user info-->
     <div class="row">
         <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_user', user=user) }}">
             <div class="row">
+
+                <!--Username-->
                 <div class="input-field col s12">
                     <input value="{{ user.username }}" id="username" name="username" type="text" minlength="5"
                         maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
+
+                <!--Password-->
                 <div class="input-field col s12">
                     <input id="password" name="password" type="password" minlength="6" maxlength="15"
                         pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
+
+            <!--Email-->
             <div class="row">
                 <div class="input-field col s12">
                     <input value="{{ user.email }}" id="email" name="email" type="email" class="validate" required>
@@ -29,7 +38,11 @@
             </div>
             <div class="row">
                 <div class="col s12 center">
+
+                    <!--Submit button-->
                     <button type="submit" class="waves-effect waves-light btn-large btn-yellow">Edit</button>
+
+                    <!--Cancel button-->
                     <a class="waves-effect waves-light btn-large btn-purple"
                         href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
                 </div>

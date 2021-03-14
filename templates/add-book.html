@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!---Page heading-->
 <div id="add-book-page">
     <h2>Add Book</h2>
 </div>
@@ -81,7 +82,7 @@
                 {% elif back_btn == "all-books" %}
                 <a class="waves-effect waves-light btn-large btn-purple" href="{{ url_for('all_books') }}">Cancel</a>
 
-                <!--If user access this page from the Add Book tab directly, the 'Cancel' button returns them to Home-->
+                <!--If user access this page from the Add Book tab directly, the 'Cancel' button returns them to homepage-->
                 {% else %}
                 <a class="waves-effect waves-light btn-large btn-purple" href="{{ url_for('home') }}">Cancel</a>
                 {% endif %}
@@ -89,5 +90,4 @@
         </div>
     </form>
 </div>
-
 {% endblock %}

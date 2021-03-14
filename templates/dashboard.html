@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!--Profile usename display-->
+<!--Page heading-->
 <div class="row">
     <div class="col s8 offset-s2 center">
         <h2>{{ username }}'s Profile </h2>
@@ -16,15 +16,17 @@
             <a id="user-settings" class="btn-floating btn-large btn-purple">
                 <i class="fas fa-user-cog"></i>
             </a>
+
+            <!--User-delete settings button-->
             <ul>
-                <!--User delete settings button-->
                 <li>
                     <a id="sub-setting2" class="btn-floating btn-yellow"
                         href="{{ url_for('delete_user', user=session['user']) }}">
                         <i class="fas fa-user-times"></i>
                     </a>
                 </li>
-                <!--User edit settings button-->
+
+                <!--User-edit settings button-->
                 <li>
                     <a id="sub-setting1" class="btn-floating btn-yellow"
                         href="{{ url_for('edit_user', user=session['user']) }}">
@@ -36,13 +38,15 @@
     </div>
 </div>
 
-<!--Section to display the session user's bookmarked books-->
+<!--MY READING LIST: Section to display the user's bookmarked books-->
 <div class="container">
     <div class="row">
         <div class="col s12">
             <h3 class="book-title">My Reading List</h3>
         </div>
     </div>
+
+    <!--For each book in user's 'bookmarked' array, display in a collapsible element-->
     {% for book in bookmarked_books %}
     <ul id="reading-list" class="collapsible">
         <li>
@@ -53,7 +57,7 @@
                     <p>{{ book.title }}<small> &nbsp;&nbsp;&nbsp;{{ book.author }}</small></p>
                 </div>
 
-                <!--Mark as completed and remove from bookmarked list-->
+                <!--Button to remove book from bookmarked-->
                 <div class="book-actions col s3 right-align">
                     <a id="remove-button" class="btn tooltipped btn-yellow" data-position="right"
                         data-tooltip="Unbookmark" href="{{ url_for('unbookmark', book_id=book._id) }}">
@@ -62,9 +66,11 @@
                 </div>
             </div>
 
-            <!--Collapsible section containing more info about book-->
+            <!--Collapsible body containing more info about the book-->
             <div class="collapsible-body row">
                 <div class="col s12 m6 center">
+
+                    <!--Display category and description-->
                     <p class="category-display">{{ book.category }}</p>
                     <p>{{ book.description }}</p>
 
@@ -75,7 +81,7 @@
                         </div>
                     </div>
 
-                    <!--Displays purchase link or an unavailable message-->
+                    <!--Displays buying link if purchase_link, else a disabled button-->
                     <div class="row">
                         <div class="col s12">
                             {% if book.purchase_link %}
@@ -87,7 +93,7 @@
                     </div>
                 </div>
 
-                <!--Book image-->
+                <!--Displays book image if book_url, else display placeholder image-->
                 <div class="col s12 m6 center">
                     {% if book.image_url %}
                     <img class="book-image-profile-page" src="{{ book.image_url }}" alt="{{ book.title }}">
@@ -100,7 +106,7 @@
         </li>
     </ul>
 
-    <!--If user has not bookmarked any books, then following message and link to All Books page display-->
+    <!--If user has not bookmarked any books, then the following message and link to All Books page are displayed-->
     {% else %}
     <div class="row">
         <div class="col s12 m4 offset-m4 center">
@@ -120,13 +126,15 @@
     {% endfor %}
 </div>
 
-<!--Section to display the books the session user has added to the db-->
+<!--RECOMMENDED BOOKS: Section to display the books the session user has added to the site-->
 <div class="container" id="my-recommendations">
     <div class="row">
         <div class="col s12">
             <h3 class="book-title">My Recommendations</h3>
         </div>
     </div>
+
+    <!--For each book with the field 'added_by' equal to session user, display in a collapsible element-->
     {% for book in recommended_books %}
     <ul id="added-list" class="collapsible">
         <li>
@@ -144,12 +152,12 @@
                     <a id="delete-button" class="btn tooltipped btn-yellow" data-position="right" data-tooltip="Delete"
                         href="{{ url_for('delete_book', book_id=book._id) }}"
                         onclick="
-                        return confirm('Are you sure you want to delete {{ book.title }} from the database? This action will remove this book for all users and cannot be undone.');"><i
+                        return confirm('Are you sure you want to delete {{ book.title }} from the site?');"><i
                             class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
 
-            <!--Collapsible section containing more info about book-->
+            <!--Collapsible body containing more info about book-->
             <div class="collapsible-body row">
                 <div class="col s12 m6 center">
 
@@ -164,7 +172,7 @@
                         </div>
                     </div>
 
-                    <!--Displays purchase link or an unavailable message-->
+                    <!--Displays purchase link or a displayed button if not provided-->
                     <div class="row">
                         <div class="col s12">
                             {% if book.purchase_link %}
@@ -176,7 +184,7 @@
                     </div>
                 </div>
 
-                <!--Book image-->
+                <!--Displays book image if book_url, else display placeholder image-->
                 <div class="col s12 m6 center">
                     {% if book.image_url %}
                     <img class="book-image-profile-page" src="{{ book.image_url }}" alt="{{ book.title }}">
@@ -189,7 +197,7 @@
         </li>
     </ul>
 
-    <!--Display of the user has not add any recommendations to the site yet-->
+    <!--If user has not added any books, then following message and link to Add Book page are displayed-->
     {% else %}
     <div class="row">
         <div class="col s12 m4 offset-m4 center">
@@ -208,5 +216,4 @@
     </div>
     {% endfor %}
 </div>
-
 {% endblock %}

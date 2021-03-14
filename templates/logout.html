@@ -13,6 +13,8 @@
             <a class="waves-effect waves-light btn-large btn-yellow" href="{{ url_for('confirm_logout') }}">Log Out</a>
         </div>
     </div>
+
+    <!--Link to user's profile page-->
     <div class="row">
         <div id="back-to-profile-button" class="col s12 m8 offset-m2 center">
             <a class="btn-large btn-purple" href="{{ url_for('dashboard', username=session['user']) }}">Return to my
@@ -20,5 +22,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

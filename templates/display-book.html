@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Button to return to All Books page-->
 <div class="row">
     <div class="col s12">
         <a id="back-to-books-button" class="btn btn-purple" href="{{ url_for('all_books') }}">Back to All Books</a>
@@ -18,10 +19,12 @@
         </div>
     </div>
     <div id="book-container" class="row">
-
-        <!---Book description-->
         <div id="book-info-display-page" class="col s12 l8 center">
+
+            <!---Book category-->
             <p class="category-display">{{ selected_book.category }}</p>
+
+            <!---Book description-->
             <p id="description">{{ selected_book.description }}</p>
 
             <!---Display username of user who added book-->
@@ -51,7 +54,7 @@
                         <i class="fas fa-bookmark"></i>
                     </a>
 
-                    <!---User has not bookmarked book, and may bookmark it-->
+                    <!---User has not bookmarked book, and can bookmark it-->
                     {% else %}
                     <a class="btn bookmark btn-purple" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
                         <i class="far fa-bookmark"></i>
@@ -70,6 +73,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Display book image if book_url, else display placeholder book--->
         <div class="col s6 offset-s3 l4 center">
             {% if selected_book.image_url %}
             <img id="book-image" src="{{ selected_book.image_url }}">
@@ -79,6 +84,7 @@
             {% endif %}
         </div>
     </div>
+
     <!---If selected_book main values have not been retrieved then error message displays to user -->
     {% else %}
     <div class="row">

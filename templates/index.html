@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Page heading-->
 <div id="homepage-title">
     <h1><span id="small-title">Personal Finance<br></span>
         <span id="large-title">Book Bunker</span>
@@ -9,6 +10,8 @@
 
 <div id="homepage-content" class="container">
     <div class="row">
+
+        <!--Homepage display for logged in users-->
         {% if session.user %}
         <div class="col s12 l8 offset-l2">
 
@@ -23,7 +26,7 @@
             </form>
         </div>
 
-        <!---Displays login/signup call to actions if no user is logged in-->
+        <!---Homepage display with login/signup call to actions if no user is logged in-->
         {% else %}
         <div class="col s12 xl8">
 
@@ -82,11 +85,12 @@
             </a>
         </div>
     </div>
+
+    <!--All Books button-->
     <div class="row">
         <div id="more-books-button" class="col s12 center">
             <a id="all-books-btn-home" class="btn-large btn-yellow" href="{{ url_for('all_books') }}">See All Books</a>
         </div>
     </div>
 </div>
-
 {% endblock %}

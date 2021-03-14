@@ -4,8 +4,10 @@
 <!--Back to top button -->
 <a id="back-to-top-button" class="d-none d-sm-block"><i class="fas fa-angle-up"></i></a>
 
-<!--Page title-->
-<h2>All Books</h2>
+<!--Page heading-->
+<div>
+    <h2>All Books</h2>
+</div>
 
 <!---Search bar-->
 <div class="row">
@@ -14,15 +16,19 @@
         <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
             <div class="input-field">
                 <input class="search" name="search" type="text" placeholder="E.g. 'investing'" required>
+
+                <!---Search button-->
                 <button class="btn btn-purple search-button right" type="submit"><i class="fas fa-search"
                         style="cursor: pointer;"></i></button>
             </div>
         </form>
 
-        <!---Displays what keyword results are displayed for or advises the user that there are none-->
+        <!---Displays for what keyword results are displayed or advises the user that there are no results-->
         <div class="col s12">
             <p id="search-results-message">{{ user_message }}</p>
         </div>
+
+        <!---If a search has been carried out, the Show All Books button appears which lets the user reset the page-->
         {% if all_books_button %}
         <div class="col s12 center">
             <a id="show-all-books-btn" class="btn btn-purple" href="{{ url_for('all_books') }}">Show all books</a>
@@ -39,7 +45,7 @@
             <i class="fas fa-plus"></i>
         </a>
 
-        <!---Link to 'Login' page if no user is logged in-->
+        <!---Link to 'Login' page if no user is logged in. Session user must be in place for Add Book function to be enabled-->
         {% else %}
         <p class="add-book-prompt">Add Book</p>
         <a class="btn-floating waves-effect waves-light tooltipped add-book-button btn-yellow" data-position="bottom"
@@ -50,9 +56,8 @@
     </div>
 </div>
 
+<!---Loops over every book in db-->
 <div id="all-books-page-display" class="row">
-
-    <!---Loops over every book in db-->
     {% for book in all_books %}
     <div class="col s12 m6 l4 xl3 center">
 
@@ -61,10 +66,14 @@
         <div class="card large">
             <div class="card-image">
 
-                <!---Displays book on individual page when image or ellipsis clicked-->
+                <!---Displays book on individual page when book image or ellipsis icon clicked-->
                 <a href="{{ url_for('display_book', book_id=book._id) }}">
+
+                    <!---If an image_url is present for the book, display this image-->
                     {% if book.image_url %}
                     <img class="book-image center" src="{{ book.image_url }}" alt="{{ book.title }}">
+
+                    <!---If no image_url is present for the book, display placeholder image-->
                     {% else %}
                     <img class="book-image center" src="./static/images/book-placeholder.png" style="box-shadow: none;"
                         alt="{{ book.title }}">
@@ -80,6 +89,8 @@
                 <a id="book-title-all-books" class="book-title"
                     href="{{ url_for('display_book', book_id=book._id)}}">{{ book.title }}</a>
             </h3>
+
+            <!---Basic book information--->
             <p id="book-author-all-books" class="author-year">{{ book.author }} - {{ book.year }}</p>
             <p id="book-category-all-books" class="category">{{ book.category }}</p>
             <p class="white-text"><small>Added by: {{ book.added_by }}</small></p>
@@ -87,5 +98,4 @@
     </div>
     {% endfor %}
 </div>
-
 {% endblock %}

@@ -24,14 +24,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# DISPLAY HOME -------------------------------------------------------------
+# -------------------------------------------------------------DISPLAY HOME
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-# DISPLAY ALL BOOKS ---------------------------------------------------------
+# ---------------------------------------------------------DISPLAY ALL BOOKS
 
 @app.route("/all-books")
 def all_books():
@@ -44,7 +44,7 @@ def all_books():
         )
 
 
-# DISPLAY INDIVIDUAL BOOKS ---------------------------------------------------
+# ---------------------------------------------------DISPLAY INDIVIDUAL BOOKS
 
 @app.route("/display-book/<book_id>")
 def display_book(book_id):
@@ -55,6 +55,7 @@ def display_book(book_id):
         if existing_user and book_id in existing_user["bookmarked"]:
             bookmarked = True
 
+# --------------------------------------------------------------------BUG<<<<<<<<<<<<
     # Bookmark feature when not logged in crashes display book page
     elif not session['user']:
         bookmarked = False
@@ -75,10 +76,11 @@ def display_book(book_id):
     )
 
 
-# ADD BOOK -------------------------------------------------------
+# ------------------------------------------------------------------ADD BOOK
 
-@app.route("/add-book<back_btn>", methods=['GET', 'POST'])
+@app.route("/add-book/<back_btn>", methods=['GET', 'POST'])
 def add_book(back_btn):
+
     if request.method == 'POST':
         new_book = {
             "title": request.form.get("title").title(),
@@ -102,14 +104,14 @@ def add_book(back_btn):
         )
 
 
-# DISPLAY USER DASHBOARD --------------------------------------------------
+# ------------------------------------------------------DISPLAY USER DASHBOARD
 
 @app.route("/dashboard/<username>", methods=['GET', 'POST'])
 def dashboard(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})['username']
 
-    # Books the session user has added to the site themselves
+    # Books the session user has added to the site
     recommended_books = mongo.db.books.find({"added_by": session['user']})
 
     # All the key, value pairs associated with the session user in db
@@ -131,7 +133,7 @@ def dashboard(username):
                            bookmarked_books=bookmarked_books)
 
 
-# EDIT USER INFO ---------------------------------------------------------
+# ---------------------------------------------------------EDIT USER INFO
 
 @app.route("/edit-user/<user>", methods=['GET', 'POST'])
 def edit_user(user):
@@ -140,7 +142,7 @@ def edit_user(user):
 
     if request.method == 'POST':
 
-        # check if username already exists in db
+        # Checks if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -166,15 +168,15 @@ def edit_user(user):
     return render_template("edit-user.html", user=user)
 
 
-# DISPLAY DELETE USER PAGE -----------------------------------------------
+# ----------------------------------------------------DISPLAY DELETE USER PAGE
 
-@app.route('/delete-user<user>', methods=['GET', 'POST'])
+@app.route('/delete-user/<user>', methods=['GET', 'POST'])
 def delete_user(user):
     user = mongo.db.users.find_one({'username': session['user']})
     return render_template("delete-user.html", user=user)
 
 
-# DELETE USER CONFIRMATION ------------------------------------------------
+# ----------------------------------------------------DELETE USER CONFIRMATION
 
 @app.route('/confirm-delete-user', methods=['GET', 'POST'])
 def confirm_delete_user():
@@ -183,7 +185,7 @@ def confirm_delete_user():
     return redirect(url_for('signup'))
 
 
-# BOOKMARK BOOK (VIA ALL PAGES) -------------------------------------------
+# -------------------------------------------BOOKMARK BOOK (VIA ALL PAGES)
 
 @app.route("/bookmark/<book_id>")
 def bookmark(book_id):
@@ -208,7 +210,7 @@ def bookmark(book_id):
         "display_book", book_id=saved_book["_id"]))
 
 
-# UNBOOKMARK BOOK (VIA PROFILE PAGE) ----------------------------------------
+# -------------------------------------------UNBOOKMARK BOOK (VIA PROFILE PAGE)
 
 @app.route("/unbookmark/<book_id>")
 def unbookmark(book_id):
@@ -222,7 +224,7 @@ def unbookmark(book_id):
     return redirect(url_for('dashboard', username=session['user']))
 
 
-# UNBOOKMARK BOOK (VIA DISPLAY BOOK PAGE) -----------------------------------
+# --------------------------------------UNBOOKMARK BOOK (VIA DISPLAY BOOK PAGE)
 
 @app.route("/unbookmark_bookpage/<book_id>")
 def unbookmark_bookpage(book_id):
@@ -235,7 +237,7 @@ def unbookmark_bookpage(book_id):
     return redirect(url_for('display_book', book_id=book_id))
 
 
-# EDIT BOOK ---------------------------------------------
+# -------------------------------------------------------------EDIT BOOK
 
 @app.route('/edit-book<book_id>/<back_btn>', methods=['GET', 'POST'])
 def edit_book(book_id, back_btn):
@@ -251,6 +253,7 @@ def edit_book(book_id, back_btn):
             "purchase_link": request.form.get("purchase_link"),
             "added_by": session["user"]
         }
+
         mongo.db.books.update({'_id': ObjectId(book_id)}, edited_book)
         flash("Book edited")
         return redirect(url_for('dashboard', username=session["user"]))
@@ -265,7 +268,7 @@ def edit_book(book_id, back_btn):
     )
 
 
-# DELETE BOOK -------------------------------------------------------
+# -------------------------------------------------------------DELETE BOOK
 
 @app.route('/delete-book<book_id>', methods=['GET', 'POST'])
 def delete_book(book_id):
@@ -274,12 +277,12 @@ def delete_book(book_id):
     return redirect(url_for('dashboard', username=session["user"]))
 
 
-# SEARCH ALL BOOKS --------------------------------------------------
+# ---------------------------------------------------------SEARCH ALL BOOKS
 
 @app.route("/search-categories", methods=["GET", "POST"])
 def search_categories():
 
-    # Gets the keyword inputted by user in the search bar
+    # Retrieves the keyword inputted by user in the search bar
     search = request.form.get('search')
 
     # regex query
@@ -299,9 +302,6 @@ def search_categories():
         }
     ))
 
-    # Changes display of Show All Books button from 'none' to 'inline'
-    # style = "display: inline"
-
     # Conditonal check for feedback to give the user after search request
     if len(all_books) == 0:
 
@@ -312,6 +312,7 @@ def search_categories():
         # If results match the search word, return strong below
         user_message = "Showing results for '" + search + "'."
 
+    # Sets the need for an all-books button to True
     all_books_button = True
 
     # Display All Books page but only with those matching user's search
@@ -323,10 +324,11 @@ def search_categories():
                     )
 
 
-# SIGNUP ----------------------------------------------------------
+# --------------------------------------------------------------SIGNUP
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -352,17 +354,18 @@ def signup():
     return render_template("signup.html")
 
 
-# LOGIN -----------------------------------------------------------
+# -----------------------------------------------------------LOGIN
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
     if request.method == "POST":
         # Checks if there is a matching username in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
+            # Ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -370,24 +373,26 @@ def login():
                     "dashboard", username=session["user"]))
 
             else:
-                # invalid password match
+                # Invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # Username does not exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
 
 
-# LOGOUT -----------------------------------------------------------
+# --------------------------------------------------------DISPLAY LOGOUT PAGE
 
 @app.route("/logout")
 def logout():
     return render_template('logout.html')
 
+
+# --------------------------------------------------------LOGOUT CONFIRMATION
 
 @app.route("/confirm_logout")
 def confirm_logout():
@@ -396,6 +401,8 @@ def confirm_logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
+# -------------------------------------------------------- #
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
