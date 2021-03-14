@@ -231,10 +231,11 @@ def unbookmark_bookpage(book_id):
     return redirect(url_for('display_book', book_id=book_id))
 
 
-# EDIT BOOK ----------------------------------------------------------------
+# EDIT BOOK ---------------------------------------------
 
-@app.route('/edit-book<book_id>', methods=['GET', 'POST'])
-def edit_book(book_id):
+@app.route('/edit-book<book_id>/<back_btn>', methods=['GET', 'POST'])
+def edit_book(book_id, back_btn):
+
     if request.method == 'POST':
         edited_book = {
             "title": request.form.get("title").title(),
@@ -255,7 +256,8 @@ def edit_book(book_id):
     return render_template(
         "edit-book.html",
         categories=categories,
-        book=book
+        book=book,
+        back_btn=back_btn
     )
 
 

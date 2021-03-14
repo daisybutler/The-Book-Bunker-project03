@@ -8,7 +8,7 @@
 <!---Edit book form-->
 <div class="row container">
     <form class="col s10 offset-s1 m8 offset-m2" method="POST"
-        action="{{ url_for('edit_book', book_id=book._id, _anchor='my-recommendations') }}">
+        action="{{ url_for('edit_book', book_id=book._id, back_btn=back_btn, _anchor='my-recommendations') }}">
         <div class="row">
 
             <!---Add title-->
@@ -78,8 +78,13 @@
         <div class="row">
             <div class="col s12 center">
                 <button type="submit" class="waves-effect waves-light btn-yellow btn-large">Edit Book</button>
+                {% if back_btn == "profile" %}
                 <a class="waves-effect waves-light btn-large lighten-1 btn-purple"
                     href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
+                {% elif back_btn == "display_book" %}
+                <a class="waves-effect waves-light btn-large lighten-1 btn-purple"
+                    href="{{ url_for('display_book', book_id=book._id) }}">Cancel</a>
+                {% endif %}
             </div>
         </div>
     </form>
