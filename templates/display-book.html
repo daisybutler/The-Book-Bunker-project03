@@ -11,7 +11,7 @@
 <div class="container">
 
     <!---Checks the selected_book values which are most important have been retrieved from db-->
-    {% if selected_book.title, selected_book.author %}
+    {% if selected_book.title, selected_book.author, selected_book.description %}
     <div class="row">
         <div class="col s12">
             <h3 class="book-title">{{ selected_book.title }}</h3>
@@ -47,18 +47,22 @@
                     <a class="btn btn-purple" href="#" target="_blank" disabled>Buy Now</a>
                     {% endif %}
 
+                    <!--If session user is place, display bookmark option-->
+                    {% if session['user'] %}
+                    
                     <!---User has already bookmarked book, and may unbookmark it-->
-                    {% if bookmarked %}
-                    <a class="btn bookmark btn-purple"
-                        href="{{ url_for('unbookmark_bookpage', book_id=selected_book._id) }}">
-                        <i class="fas fa-bookmark"></i>
-                    </a>
+                        {% if bookmarked %}
+                        <a class="btn bookmark btn-purple"
+                            href="{{ url_for('unbookmark_bookpage', book_id=selected_book._id) }}">
+                            <i class="fas fa-bookmark"></i>
+                        </a>
 
-                    <!---User has not bookmarked book, and can bookmark it-->
-                    {% else %}
-                    <a class="btn bookmark btn-purple" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
-                        <i class="far fa-bookmark"></i>
-                    </a>
+                        <!---User has not bookmarked book, and can bookmark it-->
+                        {% else %}
+                        <a class="btn bookmark btn-purple" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
+                            <i class="far fa-bookmark"></i>
+                        </a>
+                        {% endif %}
                     {% endif %}
 
                     <!---If the book's "add_by" field is equal to session['user'], edit and delete options are available -->
