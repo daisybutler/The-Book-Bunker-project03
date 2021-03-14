@@ -7,7 +7,7 @@
 
 <!---Add book form-->
 <div class="row container">
-    <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('add_book') }}">
+    <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('add_book', back_btn=back_btn) }}">
         <div class="row">
 
             <!---Add title-->
@@ -71,17 +71,23 @@
         <div class="row">
             <div class="col s12 center">
                 <button type="submit" class="waves-effect waves-light btn-yellow btn-large">Add Book</button>
+
+                <!--If user access this page from their profile, the 'Cancel' button returns them there-->
+                {% if back_btn == "profile" %}
+                <a class="waves-effect waves-light btn-large btn-purple"
+                    href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
+                
+                <!--If user access this page from the All Books page, the 'Cancel' button returns them there-->
+                {% elif back_btn == "all-books" %}
                 <a class="waves-effect waves-light btn-large btn-purple" href="{{ url_for('all_books') }}">Cancel</a>
+
+                <!--If user access this page from the Add Book tab directly, the 'Cancel' button returns them to Home-->
+                {% else %}
+                <a class="waves-effect waves-light btn-large btn-purple" href="{{ url_for('home') }}">Cancel</a>
+                {% endif %}
             </div>
         </div>
     </form>
 </div>
 
-{% endblock %}
-
-{% block scripts %}
-<!---Displays a character limit for description length to user as they type--->
-<script>
-    $('textarea#message').characterCounter();
-</script>
 {% endblock %}

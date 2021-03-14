@@ -78,9 +78,13 @@
         <div class="row">
             <div class="col s12 center">
                 <button type="submit" class="waves-effect waves-light btn-yellow btn-large">Edit Book</button>
+
+                <!---If the user has accessed the page from their profile, the cancel button will return them there-->
                 {% if back_btn == "profile" %}
                 <a class="waves-effect waves-light btn-large lighten-1 btn-purple"
                     href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
+
+                <!---If the user has accessed the page from the book's display page, the cancel button will return them there-->
                 {% elif back_btn == "display_book" %}
                 <a class="waves-effect waves-light btn-large lighten-1 btn-purple"
                     href="{{ url_for('display_book', book_id=book._id) }}">Cancel</a>

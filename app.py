@@ -77,8 +77,8 @@ def display_book(book_id):
 
 # ADD BOOK -------------------------------------------------------
 
-@app.route("/add-book", methods=['GET', 'POST'])
-def add_book():
+@app.route("/add-book<back_btn>", methods=['GET', 'POST'])
+def add_book(back_btn):
     if request.method == 'POST':
         new_book = {
             "title": request.form.get("title").title(),
@@ -95,7 +95,11 @@ def add_book():
         return redirect(url_for('all_books'))
 
     categories = mongo.db.categories.find().sort('category_name', 1)
-    return render_template("add-book.html", categories=categories)
+    return render_template(
+            "add-book.html",
+            categories=categories,
+            back_btn=back_btn
+        )
 
 
 # DISPLAY USER DASHBOARD --------------------------------------------------

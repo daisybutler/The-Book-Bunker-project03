@@ -35,7 +35,7 @@
         {% if session.user %}
         <p class="add-book-prompt">Add Book</p>
         <a class="btn-floating waves-effect waves-light tooltipped add-book-button btn-yellow" data-position="bottom"
-            data-tooltip="Add a book recommendation" href="{{ url_for('add_book') }}">
+            data-tooltip="Add a book recommendation" href="{{ url_for('add_book', back_btn='all-books') }}">
             <i class="fas fa-plus"></i>
         </a>
 
