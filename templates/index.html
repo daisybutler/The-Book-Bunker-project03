@@ -11,12 +11,14 @@
     <div class="row">
         {% if session.user %}
         <div class="col s12 l8 offset-l2">
+            
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
-            <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
+            <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
                 <div class="input-field">
                     <input class="search" name="search" type="text" placeholder="E.g. 'investing'" required>
-                    <button class="btn search-button" type="submit"><i class="fas fa-search" style="cursor: pointer;"></i></button>
+                    <button class="btn btn-purple search-button right" type="submit"><i class="fas fa-search"
+                            style="cursor: pointer;"></i></button>
                 </div>
             </form>
         </div>
@@ -27,9 +29,11 @@
 
             <!---Search bar-->
             <p class="search-bar-prompt">Search By Keyword</p>
-            <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}" onsubmit="showAllBooksBtn()">
+            <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
                 <div class="input-field">
                     <input class="search" name="search" type="text" placeholder="E.g. 'investing'" required>
+                    <button class="btn btn-purple search-button right" type="submit"><i class="fas fa-search"
+                            style="cursor: pointer;"></i></button>
                 </div>
             </form>
         </div>
@@ -66,7 +70,7 @@
             <a href="{{ url_for('display_book', book_id='603e1a96c8797ba05ea7f516') }}">
                 <img class="featured-book" src="static/images/open-up.jpg" alt="image">
             </a>
-            </div>
+        </div>
         <div id="featured-book-3" class="col s12 m4 l3 center">
             <a href="{{ url_for('display_book', book_id='6034fd242bedc68423a3c5d0') }}">
                 <img class="featured-book" src="static/images/the-psychology-of-money.jpg" alt="image">

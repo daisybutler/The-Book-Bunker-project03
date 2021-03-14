@@ -271,6 +271,12 @@ nav li a {
     margin-bottom: 30px;
 }
 
+.search-button {
+    position: absolute;
+    transform: translate(-55px, 0px);
+
+}
+
 .add-book-button {
     width: 100px;
     height: 100px;
@@ -309,6 +315,7 @@ nav li a {
 
 #book-category-all-books {
     color: #fff;
+    margin-bottom: 10px;
 }
 
 /* Centers the book images within card */

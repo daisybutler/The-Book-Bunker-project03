@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The one-stop location for browsing recommended personal finance books.">
-    <meta name="keywords" content="personal finance, financial planning, investing, saving, property investing, building wealth, money, financial education, finance books">
-     <!---Favicon-->
-    <link rel=" shortcut icon" type="image/png" sizes="100x100" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <meta name="keywords"
+        content="personal finance, financial planning, investing, saving, property investing, building wealth, money, financial education, finance books">
+    <!---Favicon-->
+    <link rel=" shortcut icon" type="image/png" sizes="100x100"
+        href="{{ url_for('static', filename='images/favicon.ico') }}">
     <!---For icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" type="text/css" />
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" type="text/css" />
     <!---For Materialize framework-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
     <!---Custom CSS file-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!---For any custom CSS-->
@@ -29,34 +34,36 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="{{ url_for('home') }}" class="brand-logo"><img src=" {{ url_for('static', filename='images/logo-ms3.png') }}" alt="logo" width="75px" height="60px"></a>
+                    <a href="{{ url_for('home') }}" class="brand-logo"><img
+                            src=" {{ url_for('static', filename='images/logo-ms3.png') }}" alt="logo" width="75px"
+                            height="60px"></a>
                     <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('all_books') }}">All Books</a></li>
                         {% if session.user %}
-                            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
-                            <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Profile</a></li>
-                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+                        <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                         {% else %}
-                            <li><a href="{{ url_for('login') }}">Login</a></li>
-                            <li><a href="{{ url_for('signup') }}">Signup</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('signup') }}">Signup</a></li>
                         {% endif %}
                     </ul>
                 </div>
             </nav>
         </div>
-    
+
         <ul class="sidenav" id="mobile-menu">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('all_books') }}">All Books</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
-                <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Profile</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('dashboard', username=session['user']) }}">My Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('signup') }}">Signup</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Signup</a></li>
             {% endif %}
         </ul>
     </header>
@@ -64,21 +71,21 @@
     <section>
         <!-- Display any flash messages at top of page -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div id="flash-message" class="row flashes">
-                        <h4 class="center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div id="flash-message" class="row flashes">
+            <h4 class="center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 
     <main>
 
-    <!--For main content on page-->
-    {% block content %}
-    {% endblock %}
+        <!--For main content on page-->
+        {% block content %}
+        {% endblock %}
 
     </main>
 
@@ -90,9 +97,12 @@
                 </div>
                 <div class="right">
                     <ul>
-                        <li><a class="white-text" href="https://twitter.com/jbthewealthman" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a class="white-text" href="https://www.instagram.com/jbthewealthman" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a class="white-text" href="https://www.youtube.com/channel/UCpIUeMqY8dCvnCVxerUntMg" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a class="white-text" href="https://twitter.com/jbthewealthman" target="_blank"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li><a class="white-text" href="https://www.instagram.com/jbthewealthman" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                        <li><a class="white-text" href="https://www.youtube.com/channel/UCpIUeMqY8dCvnCVxerUntMg"
+                                target="_blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -106,7 +116,8 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <!---For any custom Javascript-->
@@ -114,4 +125,5 @@
     {% endblock %}
 
 </body>
+
 </html>
