@@ -122,18 +122,19 @@ All these visual features and colours I experimented with and decided on in the 
 
 **Colours**
 
-All pages comprise of these base colours:
+All pages comprise of this colour combination:
 
 - ![#BB98EB](https://placehold.it/15/bb98eb/000000?text=+) #BB98EB (lilac)
 - ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) #FFFFFF (white)
-- ![#DAD9D9](https://placehold.it/15/dad9d9/000000?text=+) #DAD9D9 (light grey)
-- ![#282828](https://placehold.it/15/282828/000000?text=+) #282828 (dark grey)
+- ![#CAB3EB](https://placehold.it/15/CAB3EB/000000?text=+) #CAB3EB (lighter purple)
+- ![#FFDC9C](https://placehold.it/15/FFDC9C/000000?text=+) #FFDC9C (light yellow - certain buttons)
+- ![#282828](https://placehold.it/15/282828/000000?text=+) #282828 (dark grey - certain text)
 
 **Fonts**
 
 The fonts used in this project are "Poppins" for headings and "Lato" for paragraphs from Google fonts. All text has been assigned the generic font "sans serif" should Google fonts fail to load.
 
-Opting for sans serif fonts gives the site a modern and sleek feel. The specific choices from Google fonts are easy to read. The contrast between the bold weight of "Poppins" and the regular weight of "Lato" is a nice pairing to the eye.  
+Choosing sans-serif fonts gives the site a modern and sleek feel. The specific choices from Google fonts are easy to read. The contrast between the bold weight of "Poppins" and the regular weight of "Lato" is a nice pairing to the eye.  
 
 ### Wireframe Mockups
 
