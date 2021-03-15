@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* ---------------------------------------------------------------FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -5,15 +12,22 @@
 /* ---------------------------------------------------------------SITE WIDE FEATURES */
 
 body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     scroll-behavior: smooth;
   }
 
   /* Facilitates sticky footer */
   main {
-    flex: 1 0 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
     background-image: url('/static/images/background-pattern1.png');
     background-position: center;
     background-repeat: repeat-y;
@@ -83,6 +97,7 @@ p {
 }
 
 /* -----------------------------INSTANCES OF BOOK TITLES */
+
 .book-title {
     color: #bb98eb;
     font-family: "Poppins", sans-serif;
@@ -97,12 +112,14 @@ p {
 }
 
 /* -----------------------------CONTAINERS */
+
 .container {
     margin-bottom: 0;
     padding-bottom: 40px;
 }
 
 /* -----------------------------LOGO */
+
 .brand-logo img {
     padding-left: 10px;
 }
@@ -146,6 +163,7 @@ nav li a {
 }
 
 /* -----------------------------SEARCH BAR */
+
 .search-bar {
     border: 2px solid #bb98eb;
     padding: 0 5px 0 5px;
@@ -164,7 +182,6 @@ nav li a {
     margin: 0;
     font-family: "Lato", sans-serif;
 }
-
 
 /* -----------------------------CALL TO ACTIONS */
 
@@ -200,7 +217,8 @@ nav li a {
 #featured-section {
     margin-bottom: 50px;
     background-color: #cab3eb;
-    box-shadow: rgb(189, 189, 189) 2px 5px 5px;
+    -webkit-box-shadow: rgb(189, 189, 189) 2px 5px 5px;
+            box-shadow: rgb(189, 189, 189) 2px 5px 5px;
     border: transparent;
     border-radius: 50px;
     margin-top: 40px;
@@ -246,7 +264,8 @@ nav li a {
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
-    box-shadow: #7e7e7e 1px 1px 3px 1px;
+    -webkit-box-shadow: #7e7e7e 1px 1px 3px 1px;
+            box-shadow: #7e7e7e 1px 1px 3px 1px;
 }
 
 .fa-angle-up {
@@ -282,16 +301,20 @@ nav li a {
 } 
 
 /* -----------------------------SEARCH BAR */
+
 #book-page-search-bar {
     margin-bottom: 30px;
 }
 
 .search-button {
     position: absolute;
-    transform: translate(-55px, 0px);
+    -webkit-transform: translate(-55px, 0px);
+        -ms-transform: translate(-55px, 0px);
+            transform: translate(-55px, 0px);
 }
 
 /* -----------------------------ADD BOOK BUTTON */
+
 .add-book-prompt {
     margin-bottom: 5px;
     font-weight: 700;
@@ -306,7 +329,9 @@ nav li a {
 
 /* Centers plus icon in green Add Book button */
 .add-book-button i {
-    transform: translate(0, 30px);
+    -webkit-transform: translate(0, 30px);
+        -ms-transform: translate(0, 30px);
+            transform: translate(0, 30px);
 }
 
 
@@ -336,7 +361,8 @@ nav li a {
     background-color: #cab3eb;
     padding-bottom: 20px;
     padding-top: 25px;
-    box-shadow: grey 2px 5px 5px;
+    -webkit-box-shadow: grey 2px 5px 5px;
+            box-shadow: grey 2px 5px 5px;
 }
 
 /* Book titles */
@@ -365,7 +391,8 @@ nav li a {
 
 /* 'Lifts' card image for the appearence of depth */
 .card-image img {
- box-shadow: #282828 2px 2px 8px 1px;
+ -webkit-box-shadow: #282828 2px 2px 8px 1px;
+         box-shadow: #282828 2px 2px 8px 1px;
 }
 
 /* Book author and year */
@@ -417,7 +444,8 @@ nav li a {
 
 #book-image {
     margin-top: 30px;
-    box-shadow: #282828 1px 1px 6px 2px;
+    -webkit-box-shadow: #282828 1px 1px 6px 2px;
+            box-shadow: #282828 1px 1px 6px 2px;
     width: 300px;
     height: 450px;
 }
@@ -498,7 +526,9 @@ nav li a {
 
 /* Centers plus icon in green Find Books button */
 #create-reading-list-button i {
-    transform: translate(0, 20px);
+    -webkit-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+            transform: translate(0, 20px);
 }
 
 #edit-button {
@@ -516,7 +546,8 @@ nav li a {
 
 /* Box shadow for book images in collapsible bodies */
 .book-image-profile-page {
-    box-shadow: #282828 1px 1px 6px 2px;
+    -webkit-box-shadow: #282828 1px 1px 6px 2px;
+            box-shadow: #282828 1px 1px 6px 2px;
     width: 200px;
     height: 300px;
 }
@@ -560,7 +591,8 @@ nav li a {
 
 #logout-page-confirm {
     background-color: #cab3eb;
-    box-shadow: rgb(189, 189, 189) 5px 5px 5px;
+    -webkit-box-shadow: rgb(189, 189, 189) 5px 5px 5px;
+            box-shadow: rgb(189, 189, 189) 5px 5px 5px;
     padding-bottom: 40px;
 }
 
@@ -595,6 +627,7 @@ nav li a {
 /* ------------------------------------------------------------- MEDIA QUERIES */
 
 /* Smaller phones */
+
 @media only screen and (max-width: 460px) {
     /* Title sizes decrease to fit the space suitably on very small screens */
     #small-title {
@@ -663,6 +696,8 @@ nav li a {
 @media only screen and (min-width: 1700px) {
     /* Space book images more suitably on very large screens */
     .book-image {
-    transform: translate(20px, 0);
+    -webkit-transform: translate(20px, 0);
+        -ms-transform: translate(20px, 0);
+            transform: translate(20px, 0);
     }
 }
