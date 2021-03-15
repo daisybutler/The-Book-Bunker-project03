@@ -137,6 +137,23 @@ Opting for sans serif fonts gives the site a modern and sleek feel. The specific
 
 ### Wireframe Mockups
 
+The wireframes I made in the planning stage of my project creation can be viewed using the links below:
+
+- [Home](static/images/README-images/home-wireframe.png)
+
+- [All Books/Display Individual Book](static/images/README-images/all-books/display-book.png)
+
+- [Add Book](static/images/README-images/add-book-wireframe.png)
+
+- [My Profile](static/images/README-images/profile-wireframe.png)
+
+- [Add Book](static/images/README-images/add-book-wireframe.png)
+
+- [Login](static/images/README-images/login-wireframe.png)
+
+- [Signup](static/images/README-images/signup-wireframe.png)
+
+
 My entire Figma workspace for this project can be viewed [here](https://www.figma.com/file/WlJ4F22GdniPyiQmA1At1T/Milestone-3?node-id=0%3A1).
 
 ## Features
