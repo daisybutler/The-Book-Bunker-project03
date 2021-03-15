@@ -56,6 +56,11 @@ def display_book(book_id):
         if existing_user and book_id in existing_user["bookmarked"]:
             bookmarked = True
 
+# ---------------------------------------------------BUG
+    else:
+        bookmarked = False
+# ---------------------------------------------------BUG
+
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     selected_book = {"_id": book["_id"], "title": book["title"],
                      "author": book["author"], "category": book["category"],
@@ -283,7 +288,7 @@ def search_categories():
     # Retrieves the keyword inputted by user in the search bar
     search = request.form.get('search')
 
-    # regex query
+    # regex query - credit to my mentor Seun Owonikoko for help with this
     regex_query = {"$regex": ".*{0}.*".format(search), "$options": "i"}
 
     # Finds any value in book collection which contains text matching input
