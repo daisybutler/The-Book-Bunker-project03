@@ -336,16 +336,55 @@ To deploy to Heroku, I took the following steps:
 2. Then I created a Procfile to specify the commands that are executed by the app on startup using the command `echo web: python app.py > Procfile` in the terminal window.
 3. Having used the `git add` and `git commit` commands on these changes, I pushed them to the Github repository for the project with the command `git push`.
 4. In my Heroku account, to create a new app for the project, I clicked the 'New'button within my dashboard, assigned it the name 'personal-finance-book-bunker' and selected Europe as my region.
-5. Once Heroku had created my new app, from my dashbaord I clicked "Deploy" and then "Deployment Method" within this page. I connected the Heroku app to my GitHub repository "book-bunker-ms3" and set deployments from the master branch to automatic.
+5. Once Heroku had created my new app, from my dashbaord I clicked "Deploy" and then "Deployment Method" within this page. I connected the Heroku app to my GitHub repository "book-bunker-ci-project-03" and set deployments from the master branch to automatic.
 6. Following this, to set my config vars for the app, I went to "Settings" tab in the app dashboard and clicked "Reveal Config Vars". The config vars were set as follows:
 
 ![App Config Vars](static/images/README-images/app-config-vars.png)
 
-7. Back in Gitpod, to add the Heroku app as a remote repository, I used the command `git remote add heroku` followedby the Heroku git url `https://git.heroku.com/personal-finance-book-bunker.git`.
+7. Back in Gitpod, to add the Heroku app as a remote repository, I used the command `git remote add heroku` followed by the Heroku git url `https://git.heroku.com/personal-finance-book-bunker.git`.
 8. To push the project code to Heroku, I used the command `git push -u heroku master
 9. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku using the commands `git add`, `git commit` and `git push`.
 
 ### How to run this project locally
+
+To clone this project locally, you will need a GitHub account. Create a Github account [here](https://github.com/).
+
+To clone this project into Gitpod in Chrome, follow these steps:
+
+1. Install the [Gitpod Chrome extension](https://www.gitpod.io/docs/browser-extension/). After installation, the extension will appear in the top right-hand corner of the browser.
+
+2. Login into Gitpod with your GitHub username and password.
+
+3. In GitHub, with this project's repository (daisybutler/book-bunker-ci-project-03) selected, click the green "Gitpod" button at the top right-hand corner of the repository.
+This will create a new Gitpod workspace from the code in the GitHub repository. You can now work on the project locally.
+
+To clone this project into a local IDE, follow these steps:
+
+1. Navigate to the GitHub repository for this project (daisybutler/book-bunker-ci-project-03).
+
+2. Click "Code" in the top right-hand corner of the repository, next to the green Gitpod button.
+
+3. With HTTPS selected, click the clipboard icon to the right of the HTTPS link to copy the clone URL to your clipboard.
+
+4. In your local IDE, open the terminal. Ensure the current working directory is the one which you want the cloned directory to be made in.
+
+5. Type `git clone` into the terminal, and then paste the URL you copied in Step 3: e.g. `git clone https://github.com/USERNAME/REPOSITORY`.
+
+6. After pressing enter, you will have a clone of the project in your local IDE.
+
+To set up a database and install all dependancies:
+
+1. Create a database in MongoDB for the cloned project.
+
+2. Return to the terminal window in your IDE and enter the following to install all required dependencies from the requirements.txt file: `pip3 install -r requirements.txt`.
+
+3. Import `os` with the command `import os`. Then create an env.py file and replace the 'username','password', 'cluster_name' and 'database_name' with your MongoDB database values:
+`os.environ["MONGO_URI"] = "mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority"`
+Note: env.py file must be added to .gitignore so database information is not pushed to GitHub.
+
+The project is now cloned locally and can be viewed in the browser by running the following command in the terminal window: `python3 app.py` and opening port 8080.
+
+For more on cloning a repository from GitHub, visit [this link](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
 ## Credits
 
