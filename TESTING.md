@@ -44,6 +44,30 @@
 
 <img width="1342" alt="pep8-validate" src="https://user-images.githubusercontent.com/68863341/111221444-68095300-85d2-11eb-935a-83d68f0da939.png">
 
+### Browser Validation
+
+Chrome - displays correctly [(view here)](static/images/README-images/chrome-display.png).
+
+Safari - displays correctly [(view here)](static/images/README-images/safari-display.png).
+
+[Autoprefixer CSS online](https://autoprefixer.github.io/) was used to add the necessary prefixers to CSS so that the live website renders across all other browsers.
+
+### Device Validation
+
+The live deployment of this project displays correctly on all of the following device types which were tested via DevTools:
+
+- iPhone 5C
+- iPhone 6/7/8
+- Galaxy S5
+- Pixel 2
+- Pixel 2 XL
+- iPhone X
+- iPhone 6/7/8 Plus
+- iPad
+- iPad Pro
+- Laptop with touch
+- Laptop with MDPI screen
+- Laptop with HiDPI screen
 
 ## User Testing
 

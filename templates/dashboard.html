@@ -68,7 +68,7 @@
 
             <!--Collapsible body containing more info about the book-->
             <div class="collapsible-body row">
-                <div class="col s12 m6 center">
+                <div class="col s12 l6 center">
 
                     <!--Display category and description-->
                     <p class="category-display">{{ book.category }}</p>
@@ -94,7 +94,7 @@
                 </div>
 
                 <!--Displays book image if book_url, else display placeholder image-->
-                <div class="col s12 m6 center">
+                <div class="col s12 l6 center">
                     {% if book.image_url %}
                     <img class="book-image-profile-page" src="{{ book.image_url }}" alt="{{ book.title }}">
                     {% else %}
@@ -159,7 +159,7 @@
 
             <!--Collapsible body containing more info about book-->
             <div class="collapsible-body row">
-                <div class="col s12 m6 center">
+                <div class="col s12 l6 center">
 
                     <!--Category and description-->
                     <p class="category-display">{{ book.category }}</p>
@@ -185,7 +185,7 @@
                 </div>
 
                 <!--Displays book image if book_url, else display placeholder image-->
-                <div class="col s12 m6 center">
+                <div class="col s12 l6 center">
                     {% if book.image_url %}
                     <img class="book-image-profile-page" src="{{ book.image_url }}" alt="{{ book.title }}">
                     {% else %}
