@@ -139,6 +139,24 @@ This project uses JQuery to implement interactive features using Javascript. Thi
 - Materialize interactive features including the collapsible elements, tooltips, mobile navbar, form select and floating action buttons.
 - The addition and removal of the 'Show All Books Button' from the 'All Books' page depending on if all books or those matching a certain criterion are being shown.
 
+### Database Structure
+
+This project uses MongoDB to host its document-based database. The use of a non-relational database was most suited to this project because the nesting of its data in a single data structure was the most effect and the easily way to manage and display it.
+
+This project's database, book_bunker comprises of three collections: books, categories and users.
+
+The books collection contains information about each book that is added to the site. These seven fields in each document are: ObjectId _ _id_, title, author, category, year, image_url, description, purchase_link, add_by. image_url. image_url and purchase_link are optional fields for the user to fill out, so may have the value fo an empty string.
+
+The categories collection contains each personal fiannce category available for a user to assign to a book. The two fields each document contains are: ObjectId _ _id_ and category_name.
+
+The users collection contains all information about each user that creates an account on the website. The five fields in each document are: ObjectId _ _id_, username, password, email, bookmarked. The bookmarked field is an array that holds the ObjectId _ _id_ of each book they have choosen to save to their profile.
+
+There is a relationship between several fields across all of the collections. The ObjectId _ _id_ value in each document in the books collection may be stored in the bookmarked array field of any document in the user collection.
+
+The category value in each document in the books collection matches the category_name value of one document in the categories collection.
+
+The added_by value in each document in the books collection matches the username value of one document in the users collection.
+
 ### Features to Implement in the Future
 
 - I would like to add a 'like' option to the website in the future. If a user likes a book that has already been added as a recommendation, they can affirm this by hitting a heart icon displayed next to the bookmark icon below each book. A tally of how many people have clicked like will appear next to the icon. This would be a useful way for users to gauge the popularity of a book among many users not just the user who has recommended. This feature could even be used to upvote a book and render those with the highest number fo likes at the top of the 'All Books' page and those with the lowest at the bottom.
