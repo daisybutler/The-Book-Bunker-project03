@@ -78,10 +78,10 @@
             </div>
         </div>
 
-        <!--Display book image if book_url, else display placeholder book--->
+        <!--Display book image if book_url, else display placeholder book-->
         <div class="col s6 offset-s3 l4 center">
             {% if selected_book.image_url %}
-            <img id="book-image" src="{{ selected_book.image_url }}">
+            <img id="book-image" src="{{ selected_book.image_url }}" alt="book-image">
             {% else %}
             <img class="book-image" src="{{ url_for('static', filename='images/book-placeholder.png') }}"
                 alt="{{ selected_book.title }}">

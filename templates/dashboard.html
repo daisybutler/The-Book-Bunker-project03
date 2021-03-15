@@ -87,7 +87,7 @@
                             {% if book.purchase_link %}
                             <a class="btn btn-purple" href="{{ book.purchase_link }}" target="_blank">Buy Now</a>
                             {% else %}
-                            <a class="btn btn-purple" href="{{ book.purchase_link }}" disabled>Not Available</a>
+                            <button class="btn btn-purple" disabled>Not Available</button>
                             {% endif %}
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                     {% if book.image_url %}
                     <img class="book-image-profile-page" src="{{ book.image_url }}" alt="{{ book.title }}">
                     {% else %}
-                    <img class="book-placeholder-profile-page" width="200px" height="300px"
+                    <img class="book-placeholder-profile-page" width="200" height="300"
                         src="{{ url_for('static', filename='images/book-placeholder.png') }}" alt="{{ book.title }}">
                     {% endif %}
                 </div>
@@ -178,7 +178,7 @@
                             {% if book.purchase_link %}
                             <a class="btn btn-purple" href="{{ book.purchase_link }}" target="_blank">Buy Now</a>
                             {% else %}
-                            <a class="btn btn-purple" href="{{ book.purchase_link }}" disabled>Not Available</a>
+                            <button class="btn btn-purple" disabled>Not Available</button>
                             {% endif %}
                         </div>
                     </div>
@@ -189,7 +189,7 @@
                     {% if book.image_url %}
                     <img class="book-image-profile-page" src="{{ book.image_url }}" alt="{{ book.title }}">
                     {% else %}
-                    <img class="book-placeholder-profile-page" width="200px" height="300px"
+                    <img class="book-placeholder-profile-page" width="200" height="300"
                         src="{{ url_for('static', filename='images/book-placeholder.png') }}" alt="{{ book.title }}">
                     {% endif %}
                 </div>

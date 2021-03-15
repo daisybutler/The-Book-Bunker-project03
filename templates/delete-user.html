@@ -16,11 +16,12 @@
                 <p>Are you sure you want to delete your profile <em>{{ session["user"] }}</em> ?</p>
 
                 <!---Delete user button-->
-                <a class="waves-effect waves-light btn-large btn-yellow" method="POST"
-                    href="{{ url_for('confirm_delete_user') }}">Delete Profile</a>
+                <form method="POST" action="{{ url_for('confirm_delete_user') }}">
+                    <button type="submit" class="waves-effect waves-light btn-large btn-yellow">Delete Profile</button>
                 
-                <!--Cancel button-->
-                <a class="btn-large btn-purple" href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
+                    <!--Cancel button-->
+                    <a class="btn-large btn-purple" href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
+                </form>
             </div>
         </div>
     </div>
