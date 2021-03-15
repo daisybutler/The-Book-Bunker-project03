@@ -142,7 +142,7 @@ The wireframes I made in the planning stage of my project creation can be viewed
 
 - [Home](static/images/README-images/home-wireframe.png)
 
-- [All Books/Display Individual Book](static/images/README-images/all-books/display-book.png)
+- [All Books/Display Individual Book](static/images/README-images/all-books-display-book-wireframe.png)
 
 - [Add Book](static/images/README-images/add-book-wireframe.png)
 
