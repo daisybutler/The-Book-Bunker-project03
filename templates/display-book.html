@@ -83,7 +83,7 @@
         </div>
 
         <!--Display book image if book_url, else display placeholder book-->
-        <div class="col s6 offset-s3 l4 center">
+        <div id="book-image-section" class="col s12 center l4">
             {% if selected_book.image_url %}
             <img id="book-image" src="{{ selected_book.image_url }}" alt="book-image">
             {% else %}
