@@ -154,11 +154,13 @@ def edit_user(user):
         }
 
         mongo.db.users.update_one(
-            {'username': session['user']},
+            {"username": session['user']},
             {"$set": updated_user})
 
-        flash(current_user)
-        return redirect(url_for('dashboard', username=session["user"]))
+        # Reassign the session user value as the updated username
+        session['user'] = updated_user['username']
+
+        return redirect(url_for('dashboard', username=session['user']))
 
     user = mongo.db.users.find_one({'username': session['user']})
     return render_template("edit-user.html", user=user)
