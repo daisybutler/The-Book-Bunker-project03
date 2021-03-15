@@ -425,6 +425,8 @@ nav li a {
 #settings {
     position: relative;
     height: 120px;
+    /* Travels under the fixed navbar on scroll */
+    z-index: 1;
 }
 
 #settings .fixed-action-btn {
