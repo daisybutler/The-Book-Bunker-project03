@@ -66,7 +66,7 @@
         <div class="card large">
             <div class="card-image">
 
-                <!---Displays book on individual page when book image or ellipsis icon clicked-->
+                <!---Displays book on individual page when book image clicked-->
                 <a href="{{ url_for('display_book', book_id=book._id) }}">
 
                     <!---If an image_url is present for the book, display this image-->
@@ -78,9 +78,11 @@
                     <img class="book-image center" src="./static/images/book-placeholder.png" style="box-shadow: none;"
                         alt="{{ book.title }}">
                     {% endif %}
-                    <button class="expand-book-btn btn-floating halfway-fab waves-effect waves-light"
-                        href="{{ url_for('display_book', book_id=book._id) }}"><i class="fas fa-ellipsis-h"></i>
-                    </button>
+                </a>
+
+                <!---Displays book on individual page when ellipsis icon clicked-->
+                <a class="expand-book-btn btn-floating halfway-fab waves-effect waves-light"
+                    href="{{ url_for('display_book', book_id=book._id) }}"><i class="fas fa-ellipsis-h"></i>
                 </a>
             </div>
 
