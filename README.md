@@ -290,7 +290,8 @@ How to replicate.
 - This project also received inspiration from the financial education community on [Instagram](https://www.instagram/com) by recognising the importance of personal finance book recommendations to its members.
 
 ### Media
-- All background images were created for this project by me in Canva.
+- All background images were created for this project in Canva.
 
 ### Code
-- Materialize features provided in their documentation were used throughout this project and altered for the website's needs throughout.
+- This project makes use of many Materialize features provided in its documentation and was modified for this website's specific requirements.
+- The #back-to-top button was modelled off of the code found at [here](https://codepen.io/deveb22/pen/QxPmGz).
