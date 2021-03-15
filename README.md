@@ -97,31 +97,89 @@ My entire Figma workspace for this project can be viewed [here](https://www.figm
 
 ### Home
 
-The homepage is the landing page for users. The focus is the title of the the website in large font and a search bar accompanied by the prompt 'Search By Keyword'. A placeholder 'E.g. investing' in the input box also helps guide the user as to the sort of word they might search for. Once the user hits enter to search for their keyword, they will be redirected to the 'All Books' page. For users not logged in/signed up, a larger circle with the call to action 'Create An Account' and a smaller call to action 'Login' appear tot he left hand side of the search bar. Once a user is logged in, these do not display and the search bar spans the centre of the page completely. Below this is a section for 'Top Picks', or featured books as decided by the site owner. Click on a book takes the user to the book's individual page displaying all of its information. A 'See All Books' button also appears below this and takes the user to the 'All Books' page.
+The homepage is the landing page for users. The focus is the title of the the website in large font and a search bar accompanied by the prompt 'Search By Keyword'. A placeholder 'E.g. investing' in the input box also helps guide the user as to the sort of word they might search for. Once the user hits enter to search for their keyword, they will be redirected to the 'All Books' page. For users not logged in/signed up, a larger circle with the call to action 'Create An Account' and a smaller call to action 'Login' appear tot he left hand side of the search bar. Once a user is logged in, these do not display and the search bar spans the centre of the page completely.
+
+![Homepage](static/images/README-images/homepage1.png)
+
+Below this is a section for 'Top Picks', or featured books as decided by the site owner. Click on a book takes the user to the book's individual page displaying all of its information. A 'See All Books' button also appears below this and takes the user to the 'All Books' page.
+
+![Homepage Top Picks](static/images/README-images/homepage2.png)
 
 ### All Books
 
-The All Books page also contains a search bar at the very top of the page. Once a user enters a word and hits enter, the page will only display books matching this search. The keyword for the user has search for this indicated in a string at the top of the page just under the search bar. If no results match the search term, a string in the same location indicating this appears. When a user as performed a search, a 'Show All Books' button appears just about the books displayed. When the user clicks this, all books display once again and this button disappears again. To the right hand side fo the search bar is a green button, which when hovered over tells the user than can add their own book recommendations (with a Materialize tooltip). If they user clicks this, they are redirected to the 'Add Book' page. Books display below this in Materialize cards for visual uniformity. The image, title, author, year and category are displayed and access to more information on the book is indicated by an ellipsis icon. Click on the book takes the user to an individual book page for that particular book and provides the user with more information.
+The All Books page also contains a search bar at the very top of the page. Once a user enters a word and hits enter, the page will only display books matching this search. 
+
+![All Books search bar](static/images/README-images/all-books1.png)
+
+The keyword for the user has search for this indicated in a string at the top of the page just under the search bar. If no results match the search term, a string in the same location indicating this appears. When a user as performed a search, a 'Show All Books' button appears just about the books displayed. When the user clicks this, all books display once again and this button disappears again. 
+
+![Show all books button](static/images/README-images/all-books3.png)
+
+To the right hand side of the search bar is a yellow button, which when hovered over tells the user than can add their own book recommendations (with a Materialize tooltip). If they user clicks this, they are redirected to the 'Add Book' page. Books display below this in Materialize cards for visual uniformity. The image, title, author, year and category are displayed and access to more information on the book is indicated by an ellipsis icon. Click on the book takes the user to an individual book page for that particular book and provides the user with more information.
+
+![All Books display](static/images/README-images/all-books2.png)
 
 ### Book Display Page
 
 Individual book pages contain the title and author of the book in the heading of the page. Below this is the book description to the left hand side and the book image to the right hand side. The user who added the book is displayed below the description and below this are 'Buy Now' and 'Bookmark' buttons. If the session user matches the user who added the book, options to edit and delete the book also appear. A 'Back to All Books' button in the top left hand corner of the page returns the user to the 'All Books' page.
 
+![Display Book](static/images/README-images/display-book.png)
+
+### Login
+
+The Login page provides the user with two fields to fill out to log in to their account: username and password. There is a flashing button in the top right-hand corner which allows the user to switch to the signup page if they have not created an account yet.
+
+![Homepage](static/images/README-images/login.png)
+
+### Signup
+
+The Signup page provides new users with a form to create an account with the fields username, password and email. A message appears to advise the user to choose another username if the one they enter already exists in the database. There is a flashing button in the top right-hand corner which takes the user to the login page if they already have an account.
+
+![Homepage](static/images/README-images/signup.png)
+
 ### Add Book
 
 The 'Add Book' page is only visible to a user who is logged in since the site does not want to allow anyone to add books to the database with providing a username and email address. A simple form containing the following fields is displayed for the user to add a book: title, author, category (dropdown), year (limited to between 2021 and 1980), description, image URL and purchase URL. All fields are set to required and the session user's username will be associated with the book upon submit. The 'Add Book' button at the bottom of the form adds the book to the 'Books' collection in the database. The user is then redirected to the All Books page.
 
+![Add Book](static/images/README-images/add-book.png)
+
 ### My Profile
 
-The 'My Profile' page is only visible to logged in users. The user's username is displayed at the top of the page and underneath this are two collapsible elements. The first is a reading list. Books the user has bookmarked appear here. The title and author appear in the head element and the book description and purchase link appear in the collapsing body element. A complete button appears in yellow on the right hand side of the book title, which allows the user to remove the book from their reading list. Below the reading list is a list of books which the logged in user has added to the database. The same details are displayed as in the reading list, but the user has the option to edit or delete the book. The delete button triggers the warning dropdown to the user that the deletion is permanent for all users and asks that they confirm this action or cancel.
+The 'My Profile' page is only visible to logged in users. The user's username is displayed at the top of the page and underneath this are two collapsible elements. The first is a reading list. Books the user has bookmarked appear here. The title and author appear in the head element and the book description and purchase link appear in the collapsing body element. A complete button appears in yellow on the right hand side of the book title, which allows the user to remove the book from their reading list. 
+
+![My reading List](static/images/README-images/profile1.png)
+
+Below the reading list is a list of books which the logged in user has added to the database. The same details are displayed as in the reading list, but the user has the option to edit or delete the book. The delete button triggers the warning dropdown to the user that the deletion is permanent for all users and asks that they confirm this action or cancel.
+
+![My Recommendations](static/images/README-images/profile2.png)
+
+If a user has neither bookmarked any books nor added any books to the site, buttons encouraging them to do so appear in each section.
+
+![Profile CTAs](static/images/README-images/profile3.png)
+
+### User Settings
+
+In the top right-hand corner of the My Profile page is a floating action button for access to user settings. Hovering over it triggers the display of two settings controls: Edit User and Delete User.
+
+- Edit User takes the user to a page where they can edit their username, password or email.
+
+![Homepage](static/images/README-images/edit-user.png)
+
+- Delete User  takes the user to a confirmation page that they do want to delete their profile. There is a button which can return them to their profile below the confirmation message.
+
+![Homepage](static/images/README-images/delete-user.png)
 
 ### Edit Book
 
 The 'Edit Book' page presents the same form as on the 'Add Book' page, however the form is pre-filled with the current values. The user can then enter changes and once clicking 'Edit Book' button, the book is updated in the books collection database. 
 
+![Homepage](static/images/README-images/edit-book.png)
+
 ### Log Out
 
 The 'Log Out' page displays the name of the user who is currently logged in. The 'Log Out' button below this will remove this user from the current session and return the user to the "Login' page. Below this button is another button which takes the user to their profile page if clicked. 
+
+![Homepage](static/images/README-images/logout.png)
 
 The website is fully responsive on all screen sizes, with all text sizes and block dimensions adjusting appropriately.
 
@@ -138,12 +196,13 @@ This project uses JQuery to implement interactive features using Javascript. Thi
 
 - Materialize interactive features including the collapsible elements, tooltips, mobile navbar, form select and floating action buttons.
 - The addition and removal of the 'Show All Books Button' from the 'All Books' page depending on if all books or those matching a certain criterion are being shown.
+- The Back To Top button on the All Books page uses Javascript to display only when a user scrolls below a certain screen height and disappear when either activated or the user scrolls above a certain screen height.
 
 ### Database Structure
 
 This project uses MongoDB to host its document-based database. The use of a non-relational database was most suited to this project. Nesting data in a single data structure was an effective and easy way to manage and display it. Below is a visual representation of how the database is structured.
 
-![Database Structure](static/images/database-structure.png)
+![Database Structure](static/images/README-images/database-structure.png)
 
 #### Structure Overview
 
@@ -161,15 +220,15 @@ There is a relationship between several fields across all of the collections.
 
 - The ObjectId _ _id_ value in each document in the books collection may be stored in the bookmarked array field of any document in the user collection.
 
-![Book ID/user bookmarked relationship](static/images/book-id-user-bookmarked-relationship.png)
+![Book ID/user bookmarked relationship](static/images/README-images/book-id-user-bookmarked-relationship.png)
 
 - The category value in each document in the books collection matches the category_name value of one document in the categories collection.
 
-![Book category/category_name relationship](static/images/category-book-category-name-relationship.png)
+![Book category/category_name relationship](static/images/README-images/category-book-category-name-relationship.png)
 
 - The added_by value in each document in the books collection matches the username value of one document in the users collection.
 
-![Book added_by/user username relationship](static/images/added-by-username-relationship.png)
+![Book added_by/user username relationship](static/images/README-images/added-by-username-relationship.png)
 
 ### Features to Implement in the Future
 
@@ -185,7 +244,9 @@ Time limitations meant that these features were not able to be implemented in th
 - HTML - base language for this project.
 - CSS - used for styling the HTML code.
 - JavaScript - used to make the website interactive.
-- Python3 - used to build the backend of this project.
+- **[Python3](https://www.python.org/download/releases/3.0/)** - used to build the backend of this project.
+- **[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)** - this prject uses the templating language Jinja for referencing Python in the frontend.
+
 
 ### Tools
 - [**Gitpod**](https://www.gitpod.io/) - the IDE Gitpod was used in the building process of this website.
@@ -196,11 +257,10 @@ Time limitations meant that these features were not able to be implemented in th
 - [**Free Formatter**](https://www.freeformatter.com/) - Free Formatter was used to format all HTML, CSS and Javascript files.
 - [**Google Chrome DevTools**](https://developers.google.com/web/tools/chrome-devtools) - DevTools were used to debug and test code in the browser.
 
+### Frameworks
+- **[Flask](https://flask.palletsprojects.com/en/1.1.x/)** - this project uses the Flask framework for its Python backend programming.
 
 ### Libraries
-- Flask
-- Jinja
-- os
 - **[Materialize](https://www.materializecss.com/)** - this project uses Materialize to optimise its layout and structure.
 - **[FontAwesome](https://fontawesome.com/)** - this project uses FontAwesome 5 to provide icons.
 - **[Google Fonts](https://fonts.google.com/)** - this project uses Google Fonts to style the website's fonts.
@@ -212,7 +272,7 @@ Time limitations meant that these features were not able to be implemented in th
 ### Graphics
 
 - **[Figma](https://www.figma.com/)** - this project used Figma to construct wireframes in the design stage of the website.
-- **[Canva](https://www.canva.com/)** - this project used Canva to make the background-pattern1.png image.
+- **[Canva](https://www.canva.com/)** - this project used Canva to make all graphics.
 
 ## Testing
 
