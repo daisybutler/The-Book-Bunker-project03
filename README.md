@@ -1,4 +1,12 @@
+# The Book Bunker
+
 ![Live Demo Of Website](static/images/README-images/live-demo.png)
+
+The live website for this project can be viewed here: https://personal-finance-book-bunker.herokuapp.com/
+
+The Book Bunker is a one-stop directory for browsing personal finance books. Everyone can browse the books available on the website. However, only users with an account can create a "Reading List" of bookmarked books and add their own book recommendations for other users to see. This project is orientated around user input and offers several different 'Create', 'Read', 'Update' and 'Delete' functions.
+
+I wanted to create a comprehensive database of books relating to personal finance based on my observations of the Instagram finance community. These observations were that many people interested in the topic of finance show far higher levels of engagement with a post about book recommendations than most others. Having found little of what I had in mind in Google, I decided that a website collating everyone's recommendations would be a valuable traffic destination to create and eventually monetise with affliate links.
 
 ## Table of Contents
 
