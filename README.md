@@ -141,21 +141,35 @@ This project uses JQuery to implement interactive features using Javascript. Thi
 
 ### Database Structure
 
-This project uses MongoDB to host its document-based database. The use of a non-relational database was most suited to this project because the nesting of its data in a single data structure was the most effect and the easily way to manage and display it.
+This project uses MongoDB to host its document-based database. The use of a non-relational database was most suited to this project. Nesting data in a single data structure was an effective and easy way to manage and display it. Below is a visual representation of how the database is structured.
+
+![Database Structure](static/images/database-structure.png)
+
+#### Structure Overview
 
 This project's database, book_bunker comprises of three collections: books, categories and users.
 
-The books collection contains information about each book that is added to the site. These seven fields in each document are: ObjectId _ _id_, title, author, category, year, image_url, description, purchase_link, add_by. image_url. image_url and purchase_link are optional fields for the user to fill out, so may have the value fo an empty string.
+- The books collection contains information about each book that is added to the site. These seven fields in each document are: ObjectId _ _id_, title, author, category, year, image_url, description, purchase_link, add_by. image_url. image_url and purchase_link are optional fields for the user to fill out, so may have the value fo an empty string.
 
-The categories collection contains each personal fiannce category available for a user to assign to a book. The two fields each document contains are: ObjectId _ _id_ and category_name.
+- The categories collection contains each personal fiannce category available for a user to assign to a book. The two fields each document contains are: ObjectId _ _id_ and category_name.
 
-The users collection contains all information about each user that creates an account on the website. The five fields in each document are: ObjectId _ _id_, username, password, email, bookmarked. The bookmarked field is an array that holds the ObjectId _ _id_ of each book they have choosen to save to their profile.
+- The users collection contains all information about each user that creates an account on the website. The five fields in each document are: ObjectId _ _id_, username, password, email, bookmarked. The bookmarked field is an array that holds the ObjectId _ _id_ of each book they have choosen to save to their profile.
 
-There is a relationship between several fields across all of the collections. The ObjectId _ _id_ value in each document in the books collection may be stored in the bookmarked array field of any document in the user collection.
+#### Field Relationships
 
-The category value in each document in the books collection matches the category_name value of one document in the categories collection.
+There is a relationship between several fields across all of the collections.
 
-The added_by value in each document in the books collection matches the username value of one document in the users collection.
+- The ObjectId _ _id_ value in each document in the books collection may be stored in the bookmarked array field of any document in the user collection.
+
+![Book ID/user bookmarked relationship](static/images/book-id-user-bookmarked-relationship.png)
+
+- The category value in each document in the books collection matches the category_name value of one document in the categories collection.
+
+![Book category/category_name relationship](static/images/category-book-category-name-relationship.png)
+
+- The added_by value in each document in the books collection matches the username value of one document in the users collection.
+
+![Book added_by/user username relationship](static/images/added-by-username-relationship.png)
 
 ### Features to Implement in the Future
 
