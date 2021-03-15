@@ -326,20 +326,26 @@ Testing information can be found in this [TESTING.md file](TESTING.md).
 
 ## Deployment
 
+This project was created in the IDE Gitpod and Github as remote repository. The deployed project on Heroku can be viewed [here](https://personal-finance-book-bunker.herokuapp.com/).
+
 ### Deployment to Heroku
 
-The Book Bunker is deployed to Heroku. To deploy to Heroku, I took the following steps:
+To deploy to Heroku, I took the following steps:
 
-1. I created a `requirements.txt` file to store all of the project's dependancies in using the command `pip3 freeze > requirements.txt` in the terminal window.
+1. In the terminal of Gitpod, I created a `requirements.txt` file to store all of the project's dependancies in using the command `pip3 freeze > requirements.txt` in the terminal window.
 2. Then I created a Procfile to specify the commands that are executed by the app on startup using the command `echo web: python app.py > Procfile` in the terminal window.
 3. Having used the `git add` and `git commit` commands on these changes, I pushed them to the Github repository for the project with the command `git push`.
-4. Within Heroku, to create a new app for the project, I clicked the 'New'button within my dashboard, assigned it the name 'personal-finance-book-bunker' and selected Europe as my region.
-5. Once Heroku had created my new app, from my dashbaord I clicked "Deploy" and then "Deployment Method" within this page. I connected the Heroku app to my GitHub repository "book-bunker-ms3".
+4. In my Heroku account, to create a new app for the project, I clicked the 'New'button within my dashboard, assigned it the name 'personal-finance-book-bunker' and selected Europe as my region.
+5. Once Heroku had created my new app, from my dashbaord I clicked "Deploy" and then "Deployment Method" within this page. I connected the Heroku app to my GitHub repository "book-bunker-ms3" and set deployments from the master branch to automatic.
 6. Following this, to set my config vars for the app, I went to "Settings" tab in the app dashboard and clicked "Reveal Config Vars". The config vars were set as follows:
 
 ![App Config Vars](static/images/README-images/app-config-vars.png)
 
-### How to run this prject locally
+7. Back in Gitpod, to add the Heroku app as a remote repository, I used the command `git remote add heroku` followedby the Heroku git url `https://git.heroku.com/personal-finance-book-bunker.git`.
+8. To push the project code to Heroku, I used the command `git push -u heroku master
+9. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku using the commands `git add`, `git commit` and `git push`.
+
+### How to run this project locally
 
 ## Credits
 
