@@ -14,13 +14,13 @@
 
             <!---Add title-->
             <div class="input-field col s12 m6">
-                <input id="title" name="title" type="text" class="validate" value="{{ book.title }}" required>
+                <input id="title" name="title" type="text" class="validate" value="{{ book.title }}" maxlength="33" required>
                 <label for="title">Title *</label>
             </div>
 
             <!---Add author-->
             <div class="input-field col s12 m6">
-                <input id="author" name="author" type="text" class="validate" value="{{ book.author }}" required>
+                <input id="author" name="author" type="text" class="validate" value="{{ book.author }}" maxlength="25" required>
                 <label for="author">Author *</label>
             </div>
         </div>
