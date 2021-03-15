@@ -78,21 +78,21 @@
                     <img class="book-image center" src="./static/images/book-placeholder.png" style="box-shadow: none;"
                         alt="{{ book.title }}">
                     {% endif %}
-                    <a id="expand-book-btn" class="btn-floating halfway-fab waves-effect waves-light"
+                    <button class="expand-book-btn btn-floating halfway-fab waves-effect waves-light"
                         href="{{ url_for('display_book', book_id=book._id) }}"><i class="fas fa-ellipsis-h"></i>
-                    </a>
+                    </button>
                 </a>
             </div>
 
             <!---Displays book on individual page when title clicked-->
             <h3>
-                <a id="book-title-all-books" class="book-title"
+                <a class="book-title-all-books"
                     href="{{ url_for('display_book', book_id=book._id)}}">{{ book.title }}</a>
             </h3>
 
             <!---Basic book information--->
-            <p id="book-author-all-books" class="author-year">{{ book.author }} - {{ book.year }}</p>
-            <p id="book-category-all-books" class="category">{{ book.category }}</p>
+            <p class="book-author-all-books">{{ book.author }} - {{ book.year }}</p>
+            <p class="book-category-all-books">{{ book.category }}</p>
             <p class="white-text"><small>Added by: {{ book.added_by }}</small></p>
         </div>
     </div>

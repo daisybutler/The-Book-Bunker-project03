@@ -313,13 +313,21 @@ nav li a {
 /* --------------------------BOOK CARDS */
 
 /* Ellipsis 'Read More' style card button. Margin-bottom for visibility */
-#expand-book-btn {
+.expand-book-btn {
     background-color: #fff;
     margin-bottom: 30px;
 }
 
+.expand-book-btn:hover {
+    background-color: #fff;
+}
+
+.expand-book-btn:focus {
+    background-color: #fff;
+}
+
 /* Ellipsis icon */
-#expand-book-btn i {
+.expand-book-btn i {
     color: #bb98eb;
 }
 
@@ -332,20 +340,21 @@ nav li a {
 }
 
 /* Book titles */
-#book-title-all-books {
+.book-title-all-books {
     color: #fff;
     font-size: 20px;
 }
 
 /* Book authors */
-#book-author-all-books {
+.book-author-all-books {
     color: #fff;
 }
 
 /* Book categories */
-#book-category-all-books {
+.book-category-all-books {
     color: #fff;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 /* Centers the book images within card */

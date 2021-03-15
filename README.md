@@ -279,9 +279,12 @@ Time limitations meant that these features were not able to be implemented in th
 To be found in TESTING.md.
 
 ## Deployment
+
+### Deployment to Heroku
+
 How I deployed to Heroku.
 
-How to replicate.
+### How to run this prject locally
 
 ## Credits
 
