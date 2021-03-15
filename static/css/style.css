@@ -627,6 +627,13 @@ nav li a {
 
 /* ------------------------------------------------------------- MEDIA QUERIES */
 
+/* Very small phones */
+
+@media only screen and (max-width: 360px) {
+ #settings {
+        margin-top: 50px;
+    }
+
 /* Smaller phones */
 
 @media only screen and (max-width: 460px) {
@@ -638,6 +645,22 @@ nav li a {
     #large-title {
         font-size: 50px;
     }
+    #my-recommendations .book-title {
+        font-size: 30px;
+    }
+    #my-reading-list .book-title {
+        font-size: 30px;
+    }
+    #settings a {
+        width: 50px;
+        height: 50px;
+    }
+    .collapsible-header p {
+        font-size: smaller;
+    }
+    h2 {
+        font-size: 40px;
+    }
 }
 
 /* Larger phones */
@@ -646,10 +669,6 @@ nav li a {
     .featured-book {
         width: 200px;
         height: 300px;
-    }
-    .brand-logo img {
-        width: 70px;
-        height: 55px;
     }
 }
 
@@ -660,9 +679,10 @@ nav li a {
     #featured-book-4 {
         display: none;
     }
-    /*.book-container {
-        vertical-align: center;
-    }*/
+    .brand-logo img {
+        width: 60px;
+        height: 45px;
+    }
 }
 
 /* Desktop devices */
