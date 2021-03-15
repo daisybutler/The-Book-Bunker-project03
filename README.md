@@ -276,7 +276,7 @@ Time limitations meant that these features were not able to be implemented in th
 
 ## Testing
 
-To be found in TESTING.md.
+Testing information can be found in this [TESTING.md file](TESTING.md).
 
 ## Deployment
 

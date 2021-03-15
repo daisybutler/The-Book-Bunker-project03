@@ -392,7 +392,7 @@ def logout():
 
 @app.route("/confirm_logout")
 def confirm_logout():
-    
+
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
