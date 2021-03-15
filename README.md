@@ -2,6 +2,50 @@
 
 ## Table of Contents
 
+1. [UX](#ux)
+    * [Primary Goal](#primary-goal)
+    * [User Profile](#user-profile)
+    * [User Stories](#user-stories)
+    * [Design Process](#design-process)
+        * [UX Design](#ux-design)
+        * [Colours](#colours)
+        * [Fonts](#fonts)
+    * [Wireframe Mockups](#wireframe-mockups)
+
+2. [Features](#features)
+    * [Home](#home)
+    * [All Books](#all-books)
+    * [Book Display Page](#book-display-page)
+    * [Login](#login)
+    * [Signup](#signup)
+    * [Add Book](#add-book)
+    * [My Profile](#my-profile)
+    * [User Settings](#user-settings)
+    * [Edit Book](#edit-book)
+    * [Logout](#logout)
+    * [CRUD Functionality](#crud-functionality)
+    * [Database Structure](#database-structure)
+        * [Structure overview](#structure-overview)
+        * [Field Relationships](#field-relationships)
+    * [Features to Implement in the Future](#features-to-implement-in-the-future)
+
+3. [Technologies Used](#technologies-used)
+    * [Languages](#languages)
+    * [Tools](#tools)
+    * [Frameworks](#frameworks)
+    * [Libraries](#libraries)
+    * [Database Management System](#database-management-system)
+    * [Graphics](#graphics)
+
+4. [Testing](#testing)
+
+5. [Deployment](#deployment)
+
+6. [Credits](#credits)
+    * [Inspiration](#inspiration)
+    * [Media](#media)
+    * [Code](#code)
+
 ## UX
 
 ### Primary Goal
