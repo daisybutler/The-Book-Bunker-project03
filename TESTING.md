@@ -31,6 +31,7 @@ I manually tested each page and feature on the website. By going through ass of 
 - The brand logo returns the user to the home page from all pages.
 - On medium screen sizes and below, the navbar collapses into a mobile navbar element, triggerable by clicking on the burger icon. Each link within this mobile nav renders the correct template.
 - The footer contains the brand logo and a copyright claim. The social links appear to the right-hand side of the footer and all open in a new window to display the appropriate personal finance account on Twitter, Instagram and YouTube.
+- A favicon is correctly displayed in the browser tab of every page.
 
 ### Home (all users)
 
@@ -101,10 +102,12 @@ I manually tested each page and feature on the website. By going through ass of 
 ### Delete User
 - The Delete User page is accessible via the floating action button on the Profile page (see [Profile](#profile)). The button redirects the user to a simple page with a simple warning message 'Are you sure you want to delete your profile [username]?'.
 - The 'Cancel' button returns the user to their profile.
-- The 'Delete Profile' button removes the document matching the user's ObjectId from the database and returns the user to the Signup page and displays the flash message 'User deleted'. Manual testing did reveal and error here - the process of deleting the user from the database worked successfully, however, my route had neglected to remove the session user and thus display the navbar tabs for a user not logged in.
+- The 'Delete Profile' button removes the document matching the user's ObjectId from the database and returns the user to the Signup page and displays the flash message 'User deleted'. Manual testing did reveal and error here - the process of deleting the user from the database worked successfully, however, my route had neglected to remove the session user and thus display the navbar tabs for a user not logged in. Clicking the Logout tab broke the page since their was not a session['user'] in place as required for the rendering of the page. This was fixed by including `session.clear()` in the `delete_user` route in app.py.
 
 ### Logout
-- The Logout page is only visible in the navbar to users who are logged in. 
+- The Logout page is only visible in the navbar to users who are logged in and only able to be navigated to via the navbar.
+- A message appears showing the username of the user who is currently logged in. Clicking the 'Logout' button removes the session user, redirects the user to the Login page (see [Login](#login)) and displays the flash message 'You have been logged out'.
+- The 'Return To Profile' page (see [Profile](#profile)) correctly redirects the user to their profile page should they change their mind about logging out.
 
 ## Automated Testing
 
