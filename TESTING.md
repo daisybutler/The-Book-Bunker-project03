@@ -60,6 +60,9 @@ I manually tested each page and feature on the website. By going through ass of 
 
 - To the right-hand side fo the searchbar is a yellow button with a + icon. For a user who is logged in, on hover a Materialize tooltip displays to indicate they can add a book recommendation. It returns the Add Book page when clicked (see [Add Book](#add-book)). For the user who is not logged in, on hover a Materialize tooltip is displayed advising them to log in if they wish to add a book recommendation. When clicked it renders the Login page (see [Login](#login)).
 - The main body of the page displays all books from the database, contained within Materialize cards of equal size. There is up to four books per row displayed on larger and as little as one per row on mobile. Each card contains a book image, title, author-year, category and user who it was added by. If no image_url is associated with the book, the placeholder image in the website style is displayed in its place.
+
+<img width="1454" alt="placeholder-book-image-example" src="https://user-images.githubusercontent.com/68863341/111534006-64570700-875f-11eb-9d72-f4f3d9c3f25e.png">
+
 - Click on the book title, image or ellipsis icon renders a page with only the selected book on it and further information.
 
 ### Display Individual Book (all users)
