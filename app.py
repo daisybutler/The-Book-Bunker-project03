@@ -184,6 +184,7 @@ def delete_user(user):
 @app.route('/confirm-delete-user', methods=['GET', 'POST'])
 def confirm_delete_user():
     mongo.db.users.remove({'username': session['user']})
+    session.clear()
     flash("User deleted")
     return redirect(url_for('signup'))
 
