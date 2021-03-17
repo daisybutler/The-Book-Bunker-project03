@@ -56,11 +56,27 @@ I manually tested each page and feature on the website. By going through ass of 
 - The Display Book page renders a template with all of the information associated with a particular book on its own page. This is achieved by using the unique book _ _id_ in the URL. The book title, author, category, full description and user who it was added by are all displayed correctly. In the top left-hand corner, a button which allows the user to go 'Back To All Books' is displayed.
 - Below the book description are a number of user buttons and links. The 'Buy Now' button opens a new window and returns the UK Amazon page for the book. If no link is associated with the book then the button appears as disabled and is has the text 'Not Available' instead.
 - The button with the outline of a bookmark icon allows the user to save the particluar book to their reading list. On click, the flash message 'Bookmarked' appears at the top of the page. The action can be confirmed by navigating to the My Profile page where the book will now display in one of the collapsibles in the 'My Reading List' section.
-- For users who have added the book which is being displayed to the database themselves (ie it is their recommendation), two controls also appear next to the Buy Now and bookmark buttons: 'Edit' and 'Delete'. They are distinguished from the generic buttons by their yellow background colour. Clicking on the 'Edit' button renders the 'Edit Book' page and clicking on the 'Delete Button' renders triggers a warning which requires the user to confirm they wish to delete the book. If they confirm using the 'OK' button, the book is removed from the database and the user is returned to the All Books page.
+- For users who have added the book which is being displayed to the database themselves (ie it is their recommendation), two controls also appear next to the Buy Now and bookmark buttons: 'Edit' and 'Delete'. They are distinguished from the generic buttons by their yellow background colour. Clicking on the 'Edit' button renders the 'Edit Book' page and clicking on the 'Delete Button' renders triggers a warning which requires the user to confirm they wish to delete the book. If they confirm using the 'OK' button, the book is removed from the database and the user is returned to the My Profile page and a flash message saying 'Book Deleted' appears at the top of the screen.
 
 ### Login
+- The Login in page renders a form with the following input fields: username and password. Each field flashes red if left empty, which is the expected response of the Materialize 'validate' feature. If a user enters details which match the username and password of a user in the database's 'users' collection, the user is redirected to their profile page and all navbar links appear. If the details do not match, a flash message at the top of the screen states 'Incorrect Username and/or Password' and resets the form.
+- The flashing add user button in the top right-hand corner displays a Materialize tooltip 'New Here?' when a user hovers over it. Clicking the button renders the signup page template.
+
 ### Signup
+- The Signup page renders a from with the following input fields: username, password and email. All are make as invalid with a red line if they do not conform to the requirements. Usernames must be a minumum of 5 characters and only numbers and letters. Password must be a minimum of 6 characters and only numbers and letters. Email addresses must contain an @ symbol. If a user tries to submit a form with inputs that do not match this format, a message appears next to the problematic field.
+- If a user enters a username that already exists in the database, a flash message appears stating 'Username already exists' and resets the form.
+- If a user submits the form and all fields are valid, the user is redirected to the My Profile page and a flash message 'Registration Successful!' appears at the top of the page.
+- The flashing existing user button in the top right-hand corner displays the tooltip 'Have An Account?' when a user hovers over it. Clicking the button takes the user to the login page.
+
 ### Add Book
+- The Add Book page is only visible to logged in users. It can be accessed from the navbar, the user's profile and the All Books page. 
+- The page displays a form with 7 fields, 5 of which are required. These 5 fields are: title, author, category, year and description.
+- The category field allows the user to select one option from a dropdown. 
+- The year field always keyboard input or the use of up and down arrows to navigate to a particular year. The range is restricted to between 1980 and 2021.
+- The description is a textarea field and limited to 200 characters for optimum display purposes.
+- The two optional fields - Image URL and Purchase Link require the prefix https:// to ensure a valid URL is entered. If not, the Materialize input field indicates the error with a red invalid line.
+- The cancel button discards the form and returns the user to the page they were last on. Thus, navigating to the Add Book page via the navbar returns the user to the homepage, via their profile to their profile, and via All Books to All Books.
+
 ### Profile
 ### Edit User
 ### Delete User
