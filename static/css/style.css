@@ -577,6 +577,12 @@ nav li a {
     border-radius: 10px;
 }
 
+.signup-login-hint {
+    padding-left: 4px;
+    margin-top: 2px;
+    color: #bb98eb;
+}
+
 /* -----------------------------------------------------------------LOGOUT */
 
 #logout-page {
@@ -633,6 +639,7 @@ nav li a {
  #settings {
         margin-top: 50px;
     }
+}
 
 /* Smaller phones */
 
