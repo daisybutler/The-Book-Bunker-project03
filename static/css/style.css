@@ -677,6 +677,10 @@ nav li a {
         width: 200px;
         height: 300px;
     }
+     .brand-logo img {
+        width: 65px;
+        height: 55px;
+    }
 }
 
 /* Tablets */
@@ -685,10 +689,6 @@ nav li a {
     /* Featured section is only big enough to display 4 books on large screens */
     #featured-book-4 {
         display: none;
-    }
-    .brand-logo img {
-        width: 60px;
-        height: 45px;
     }
 }
 
