@@ -22,7 +22,21 @@
 
 ## DevTools
 
-## Manuel Testing
+## Manual Testing
+
+I manually tested each page and feature on the website. By going through ass of these processes, I was able to finely comb throug the entire site and pick up on an problems.
+
+### Home (all users)
+### Home (logged in user)
+### All Books
+### Display Individual Book (all users)
+### Login
+### Signup
+### Add Book
+### Profile
+### Edit User
+### Delete User
+### Logout
 
 ## Automated Testing
 
@@ -70,4 +84,8 @@ The live deployment of this project displays correctly on all of the following d
 - Laptop with HiDPI screen
 
 ## User Testing
+
+### Mentor Review
+
+### User Review
 
