@@ -63,7 +63,11 @@ I manually tested each page and feature on the website. By going through ass of 
 
 <img width="1454" alt="placeholder-book-image-example" src="https://user-images.githubusercontent.com/68863341/111534006-64570700-875f-11eb-9d72-f4f3d9c3f25e.png">
 
-- Click on the book title, image or ellipsis icon renders a page with only the selected book on it and further information.
+- Clicking on the book title, image or ellipsis icon renders a page with only the selected book on it and further information.
+
+- At a scroll position of greater than 300px, a yellow 'back to top' button appears in the top right-hand corner of the screen. When clicked it returns the user to the top of the page and returns to display:none.
+
+<img width="1459" alt="back-to-top-button-demo pmg" src="https://user-images.githubusercontent.com/68863341/111534919-6c637680-8760-11eb-8c5b-2afd48addfd8.png">
 
 ### Display Individual Book (all users)
 
@@ -91,6 +95,8 @@ I manually tested each page and feature on the website. By going through ass of 
 <img width="1452" alt="confirm-book-delete" src="https://user-images.githubusercontent.com/68863341/111532880-1261b180-875e-11eb-9733-08613350a8a8.png">
 
 - If they confirm using the 'OK' button, the book is removed from the database and the user is returned to the My Profile page and a flash message saying 'Book Deleted' appears at the top of the screen.
+
+![book-deleted](https://user-images.githubusercontent.com/68863341/111535157-b8aeb680-8760-11eb-90cf-10c5cd78b603.png)
 
 ### Login
 - The Login in page renders a form with the following input fields: username and password. Each field flashes red if left empty, which is the expected response of the Materialize 'validate' feature. If a user enters details which match the username and password of a user in the database's 'users' collection, the user is redirected to their profile page and all navbar links appear. If the details do not match, a flash message at the top of the screen states 'Incorrect Username and/or Password' and resets the form.
