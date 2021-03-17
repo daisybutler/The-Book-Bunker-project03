@@ -75,10 +75,21 @@ I manually tested each page and feature on the website. By going through ass of 
 - The year field always keyboard input or the use of up and down arrows to navigate to a particular year. The range is restricted to between 1980 and 2021.
 - The description is a textarea field and limited to 200 characters for optimum display purposes.
 - The two optional fields - Image URL and Purchase Link require the prefix https:// to ensure a valid URL is entered. If not, the Materialize input field indicates the error with a red invalid line.
-- The cancel button discards the form and returns the user to the page they were last on. Thus, navigating to the Add Book page via the navbar returns the user to the homepage, via their profile to their profile, and via All Books to All Books.
+- The cancel button discards the form and returns the user to the page they were last on. Thus, navigating to the Add Book page via the navbar returns the user back to the homepage, via their profile back to their profile, and via All Books back to All Books.
 
 ### Profile
+- The profile page displays the current logged in user's username as the main heading of the page. In the top right-hand corner is a floating action button containing user settings which, when hovered over, drops down two further user settings. These two buttons take the user to the Delete User (see #delete-user) and Edit User (see #edit-user) pages respectively.
+- For a user who has not yet bookmarked any books to their reading list and/or not added any book recommendations to the website, a yellow + button appears in these section in the place of content. Clicking the button in the 'My Reading List' section takes the user to the All Books page (see #all-books) and clicking the button in the 'My Recommendations' section takes the user to the Add Book page (see #add-book).
+- If a user has bookmarked a book, The title and author of the book appear in a collapsible head element and further information associated with it appears in the collapsing body element. The collapsing element is toggle up and down on click. The book can be removed from the reading list by clicking the bookmark button on the right-hand side of the element and an unbookmarked flash message displays.
+- If a user has added recommendations to the site, they appear in the same style as the reading list in the 'My Recommendations' section below it. The buttons on the right-hand side allow the user to both edit and delete the book.
+- Each 'Buy Now' link in the collapsing element of the book display opens a new window and takes the user to the external site where they can purchase the book.
+
+### Edit Book
+- The Edit Book page can be navigated to by the indivudual book's display page or from a user's profile. A book can only be edited by a user if they added the book to the site via the Add Book page (see #add-book).
+
 ### Edit User
+
+
 ### Delete User
 ### Logout
 
