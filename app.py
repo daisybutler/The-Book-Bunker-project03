@@ -247,6 +247,7 @@ def unbookmark_bookpage(book_id):
 def edit_book(book_id, back_btn):
 
     if request.method == 'POST':
+
         edited_book = {
             "title": request.form.get("title").title(),
             "author": request.form.get("author").title(),
