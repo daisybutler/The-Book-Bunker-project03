@@ -27,15 +27,19 @@ _2. As a new user, I want to read the description of a book to see if I am inter
 A user can view more details about a book from the All Books page by clicking on it. This renders the book on its own page with a full description and links to buy the book or bookmark it within the site. Full book details are also available to the user if they have bookmarked it via their profile page by expanding the collapsible element.
 
 _3. As a new or existing user, I want to find a link to buy a book I have decided I want to read._
-A 'Buy Now' button is available on each book's individual display page 
+A purple 'Buy Now' button is available on each book's individual display page. If the book has been saved by the user to their reading list on their profile, the 'Buy Now' button also appears in the collapsing body.
 
 _4. As a new user, I want to create an account containing a personal reading list I have created._
+Using the signup form, a user can create an account. On their profile page, they can add books to their reading list. This creates an easily accessible list of books with all their information and links in one place. Books can be removed from the list using the bookmark button to unbookmark them, located both in the reading list of their profile or on each book's individual display page.
 
-_5. As an existing user, I want to view, add and remove books from my reading list._
+5.
 
 _6. As an existing user, I want add a book recommendation to the website and be able to edit or delete it later on._
+A logged in user can add a book to the website via the Add Book page. This book will then appear on the site for all users. A user can edit or delete any book they are responsible for adding to the site. 
 
 _7. As the owner of the website, I want to build up a mailing list of people with an interest in personal finance to market my resources, services and platforms to._
+
+
 
 _8. As the owner of the website, I want to receive a commission from the affiliate links users have used to buy books they have found out about from my website._
 
