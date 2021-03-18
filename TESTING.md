@@ -18,7 +18,26 @@
     * [Mentor Review](#mentor-review)
     * [User Review](#user-review)
 
-## Testing user Stories
+## Testing User Stories
+
+_1. As a new user, I want to quickly find a book related to a particular topic, for example, 'pensions'._
+A user can use the searchbar at the top of the Home page or the All Books page to find all results relating to a particular input. This can be a complete word or a slice of a word, for exmaple, 'pysch' would return results with the word 'Pyschology' in it. It is not case sensitive.
+
+_2. As a new user, I want to read the description of a book to see if I am interested in buying it._
+A user can view more details about a book from the All Books page by clicking on it. This renders the book on its own page with a full description and links to buy the book or bookmark it within the site. Full book details are also available to the user if they have bookmarked it via their profile page by expanding the collapsible element.
+
+_3. As a new or existing user, I want to find a link to buy a book I have decided I want to read._
+A 'Buy Now' button is available on each book's individual display page 
+
+_4. As a new user, I want to create an account containing a personal reading list I have created._
+
+_5. As an existing user, I want to view, add and remove books from my reading list._
+
+_6. As an existing user, I want add a book recommendation to the website and be able to edit or delete it later on._
+
+_7. As the owner of the website, I want to build up a mailing list of people with an interest in personal finance to market my resources, services and platforms to._
+
+_8. As the owner of the website, I want to receive a commission from the affiliate links users have used to buy books they have found out about from my website._
 
 ## DevTools
 
