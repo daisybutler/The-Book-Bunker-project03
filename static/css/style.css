@@ -302,10 +302,6 @@ nav li a {
 
 /* -----------------------------SEARCH BAR */
 
-#book-page-search-bar {
-    margin-bottom: 30px;
-}
-
 .search-button {
     position: absolute;
     -webkit-transform: translate(-55px, 0px);
@@ -680,6 +676,9 @@ nav li a {
      .brand-logo img {
         width: 65px;
         height: 55px;
+    }
+    #add-book-button-all-books {
+        display: none;
     }
 }
 
