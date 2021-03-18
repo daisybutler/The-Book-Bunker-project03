@@ -32,18 +32,38 @@ A purple 'Buy Now' button is available on each book's individual display page. I
 _4. As a new user, I want to create an account containing a personal reading list I have created._
 Using the signup form, a user can create an account. On their profile page, they can add books to their reading list. This creates an easily accessible list of books with all their information and links in one place. Books can be removed from the list using the bookmark button to unbookmark them, located both in the reading list of their profile or on each book's individual display page.
 
-5.
-
-_6. As an existing user, I want add a book recommendation to the website and be able to edit or delete it later on._
+_5. As an existing user, I want add a book recommendation to the website and be able to edit or delete it later on._
 A logged in user can add a book to the website via the Add Book page. This book will then appear on the site for all users. A user can edit or delete any book they are responsible for adding to the site. 
 
+_6. As an existing user, I want to edit my user details, or delete my account altogether._
+A user can edit or delete their details from the website's database using the settings button on their profile page. The Edit User page always the user to ammend one or all values at a time and has the option to discard changes with the cancel button. The Delete User page ensures the user would definitely like to delete their profile.
+
 _7. As the owner of the website, I want to build up a mailing list of people with an interest in personal finance to market my resources, services and platforms to._
+A user is required to provide a valid email address when they signup. This allows the website owner to benefit from users using the website since they are email them about other resources or services they might be interested in. In terms of privacy, the website would have to provide the user with the option to unsubscribe from receiving emails and agree what marketing messages they are happy to receive. Howver, for this version of the website, this is not something I have implemented yet.
 
-
-
-_8. As the owner of the website, I want to receive a commission from the affiliate links users have used to buy books they have found out about from my website._
+_8. As the owner of the website, I want to have the option to monetize the site through affiliate links._
+The Buy Now button links, which are positioned on the Display Book and Profile pages, could easily be swapped out for affiliate links provided by a company who intends to pay the site owner a commission for every purchase convertion made through their site links.
 
 ## DevTools
+
+The use of browser DevTools was a vital part of building this project. Changes needed in the project's HTML and CSS could be experiemented with without changing the actual files, for example, padding, margin and position values. Reloading DevTools and the original code in the browser is far easier then having to restore a file in my IDE terminal.
+
+### Responsiveness
+This project uses Materialize as a frontend framework for building a responsive layout. Responsiveness was tested in DevTools by viewing the website on every screen size, the smallest being an iPhone 5C and the largest being a laptop with HiDPI screen.
+
+Multiple media queries for each screen size are set out at the end of the style.css file. Such queries ensure an optimal layout on screen sizes of all widths.
+
+The most significant changes dependent on screen size were these to book image displays. Altering how many books were displayed on a row on varying screen sizes was controlled directly in the project's HTML using the Materialize col class. For example:
+
+ `<div class="input-field col s12 m6">
+      <input id="title" name="title" type="text" class="validate" maxlength="33" required>
+      <label for="title">Title *</label>
+  </div>`
+
+This example creates a div which spans the full width of its container on small devices (<=600px) and half the width of its container on medium screens and above (>600px).
+
+### Console Debugging
+Viewing the console in DevTools was a useful way to debug code. For example, when the favicon failed to load on some pages (see [Manual Testing for Sitewide Features](#sitewide-features), the console demonstrated that this was because of a 404 error: file not found. This narrowed the scope of fixing the problem significantly and I was able to use a more suitable Jinja `url_for` link.
 
 ## Manual Testing
 
