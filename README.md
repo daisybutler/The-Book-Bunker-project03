@@ -257,57 +257,71 @@ The website is fully responsive on all screen sizes, with all text sizes and blo
 
 ### CRUD Functionality
 
-- **Create** functionality of the website is fulfilled by several areas. Secondly, a user can add a book for the website as a recommendation on the "Add Book' page. Thirdly, a user can create a library of bookmarked (saved) books which they can view at any time on their profile
-- **Read** functionality is provided by the website in several ways. Users are able to search the site for book and learn about titles, authors and book descriptions. They can access external links to buy a book and they can see what user has recommended a certain book.
-- **Update** functionality is fulfilled by the 'Edit Book' page, accessible using the edit buttons next to a book if a user is logged in and responsible for the recommendation of the book. All fields associated with the book can be changed and updated in the database by the user.
-- **Delete** functionality is provided by the delete buttons located next to a book if a user is logged in and responsible for the recommendation of the book. After the user has confirmed the action, the book is entirely deleted from the books collection in the database.
+**Create** functionality:
+- Firstly, a user can create an account on the website.
+- Secondly, a user can add a book for the website as a recommendation on the "Add Book' page. 
+- Thirdly, a user can create a library of bookmarked (saved) books which they can view at any time on their profile.
+
+**Read** functionality:
+- Users are able to search the site for books via full or part input of titles, authors and book descriptions to the two searchbars.
+- Users can access external links to buy a book and they can see which user has recommended a certain book.
+- Users can read the full descriptions of books on each book's individual display page.
+
+**Update** functionality:
+- A user has the ability to edit the details of a book, accessible using the edit buttons next to a book, if they are logged in and responsible for the recommendation of the book. All fields associated with the book can be changed and updated in the database by the user.
+- A user can edit their own details (username, password and email) via the Edit User page.
+
+**Delete** functionality:
+- A user can delete a book from their reading list by using the unbookmark buttons either on their profile or on the book's individual display page. This removes the book's ID from the array 'bookmarked' associated with the user.
+-  A user can delete a book from the database if they are logged in and responsible for the recommendation of the book. After the user has confirmed the action, the book is entirely deleted from the books collection in the database.
+-  A user can delete their own profile from the database via the the 'Delete User' button on their profile. 
 
 ### Interactive Features
 
 This project uses JQuery to implement interactive features using Javascript. This includes:
 
-- Materialize interactive features including the collapsible elements, tooltips, mobile navbar, form select and floating action buttons.
-- The addition and removal of the 'Show All Books Button' from the 'All Books' page depending on if all books or those matching a certain criterion are being shown.
-- The Back To Top button on the All Books page uses Javascript to display only when a user scrolls below a certain screen height and disappear when either activated or the user scrolls above a certain screen height.
+- Materialize interactive features such as the collapsible elements on the profile page, tooltips, the mobile navbar, form select and floating action buttons.
+- The floating action button containing user settings on the profile page uses Javascript to hid and reveal the sub-settings on hover.
+- The 'Back To Top' button on the All Books page uses Javascript to display only when a user scrolls below a certain screen height and disappear when either activated or the user scrolls above a certain screen height.
 
 ### Database Structure
 
-This project uses MongoDB to host its document-based database. The use of a non-relational database was most suited to this project. Nesting data in a single data structure was an effective and easy way to manage and display it. Below is a visual representation of how the database is structured.
+This project uses MongoDB to host its document-based database. The use of a non-relational database was most suited to this project because nesting data in a single data structure was an effective and easy way to manage and display it. Below is a visual representation of how the database is structured.
 
 ![Database Structure](static/images/README-images/database-structure.png)
 
 #### Structure Overview
 
-This project's database, book_bunker comprises of three collections: books, categories and users.
+This project's database, book_bunker comprises of three collections: `books, categories` and `users`.
 
-- The books collection contains information about each book that is added to the site. These seven fields in each document are: ObjectId _ _id_, title, author, category, year, image_url, description, purchase_link, add_by. image_url. image_url and purchase_link are optional fields for the user to fill out, so may have the value fo an empty string.
+- The `books` collection contains information about each book that is added to the site. These seven fields in each document are: `ObjectId _ _id_, title, author, category, year, image_url, description, purchase_link, add_by` and `image_url`. `image_url` and `purchase_link` are optional fields for the user to fill out, so may have the value fo an empty string.
 
-- The categories collection contains each personal fiannce category available for a user to assign to a book. The two fields each document contains are: ObjectId _ _id_ and category_name.
+- The categories collection contains each personal finance category available for a user to assign to a book. The two fields each document contains are: `ObjectId _ _id_` and `category_name`.
 
-- The users collection contains all information about each user that creates an account on the website. The five fields in each document are: ObjectId _ _id_, username, password, email, bookmarked. The bookmarked field is an array that holds the ObjectId _ _id_ of each book they have choosen to save to their profile.
+- The `users` collection contains all information about each user that creates an account on the website. The five fields in each document are: `ObjectId _ _id_, username, password, email, bookmarked.` The `bookmarked` field is an array that holds the `ObjectId _ _id_` of each book they have chosen to save to their profile.
 
 #### Field Relationships
 
 There is a relationship between several fields across all of the collections.
 
-- The ObjectId _ _id_ value in each document in the books collection may be stored in the bookmarked array field of any document in the user collection.
+- The `ObjectId _ _id_` value in each document in the `books` collection may be stored in the `bookmarked` array field of any user in the `user` collection.
 
 ![Book ID/user bookmarked relationship](static/images/README-images/book-id-user-bookmarked-relationship.png)
 
-- The category value in each document in the books collection matches the category_name value of one document in the categories collection.
+- The `category` value in each document in the `books` collection matches the `category_name` value of one document in the `categories` collection.
 
 ![Book category/category_name relationship](static/images/README-images/category-book-category-name-relationship.png)
 
-- The added_by value in each document in the books collection matches the username value of one document in the users collection.
+- The `added_by` value in each document in the `books` collection matches the `username` value of one document in the `users` collection.
 
 ![Book added_by/user username relationship](static/images/README-images/added-by-username-relationship.png)
 
 ### Features to Implement in the Future
 
-- I would like to add a 'like' option to the website in the future. If a user likes a book that has already been added as a recommendation, they can affirm this by hitting a heart icon displayed next to the bookmark icon below each book. A tally of how many people have clicked like will appear next to the icon. This would be a useful way for users to gauge the popularity of a book among many users not just the user who has recommended. This feature could even be used to upvote a book and render those with the highest number fo likes at the top of the 'All Books' page and those with the lowest at the bottom.
+- I would like to add a 'like' option to the website in the future. If a user likes a book that has already been added as a recommendation, they can affirm this by clicking a heart icon displayed next to the bookmark icon below each book. A tally of how many people have clicked 'like' will appear next to the icon. This would be a useful way for users to gauge the popularity of a book among many users, not just the user who has recommended. This feature could even be used to upvote a book and render those with the highest number of likes at the top of the 'All Books' page, and those with the lowest at the bottom.
 - I would like to implement a feature which allows logged in users to leave a comment below a book on each individual display page of a book. This would create a more engaging community and allow users to interact with each other and discuss different books.
 
-Time limitations meant that these features were not able to be implemented in this version of the website but they are things I am excited to introduce soon.
+Time limitations meant that these features were not able to be implemented in this version of the website but they are things I am excited to introduce in a later version.
 
 ## Technologies Used
 
@@ -315,9 +329,9 @@ Time limitations meant that these features were not able to be implemented in th
 
 - HTML - base language for this project.
 - CSS - used for styling the HTML code.
-- JavaScript - used to make the website interactive.
+- **[JavaScript](https://www.javascript.com/)** - used to make the website interactive.
 - **[Python3](https://www.python.org/download/releases/3.0/)** - used to build the backend of this project.
-- **[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)** - this prject uses the templating language Jinja for referencing Python in the frontend.
+- **[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)** - this project uses the templating language Jinja for incorporating Python functionality into the frontend.
 
 
 ### Tools
@@ -325,12 +339,12 @@ Time limitations meant that these features were not able to be implemented in th
 - [**HTML Validation**](https://validator.w3.org/) - HTML was validated using W3C Validator.
 - [**CSS Validation**](https://jigsaw.w3.org/css-validator/) - CSS was validated using W3C CSS Validator.
 - [**JSHint**](https://jshint.com/) - Javascript was validated using JSHint.
-- Python validator
+- [**PEP8 Online**](http://pep8online.com/) - Python was validated using PEP8 Online.
 - [**Free Formatter**](https://www.freeformatter.com/) - Free Formatter was used to format all HTML, CSS and Javascript files.
 - [**Google Chrome DevTools**](https://developers.google.com/web/tools/chrome-devtools) - DevTools were used to debug and test code in the browser.
 
 ### Frameworks
-- **[Flask](https://flask.palletsprojects.com/en/1.1.x/)** - this project uses the Flask framework for its Python backend programming.
+- **[Flask](https://flask.palletsprojects.com/en/1.1.x/)** - this project uses the Flask framework for its Python functionality.
 
 ### Libraries
 - **[Materialize](https://www.materializecss.com/)** - this project uses Materialize to optimise its layout and structure.
