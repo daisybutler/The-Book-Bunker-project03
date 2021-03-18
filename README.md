@@ -169,7 +169,7 @@ My entire Figma workspace for this project can be viewed [here](https://www.figm
 
 ### Home
 
-The homepage is the landing page for users. The focus is the title of the the website in large font and a search bar accompanied by the prompt 'Search By Keyword'. A placeholder 'E.g. investing' in the input box also helps guide the user as to the sort of word they might search for. Once the user hits enter to search for their keyword, they will be redirected to the 'All Books' page. For users not logged in/signed up, a larger circle with the call to action 'Create An Account' and a smaller call to action 'Login' appear tot he left hand side of the search bar. Once a user is logged in, these do not display and the search bar spans the centre of the page completely.
+The homepage is the landing page for users. The focus is the title of the the website in large font and a search bar accompanied by the prompt 'Search By Keyword'. A placeholder 'E.g. investing' in the input box also helps guide the user as to the sort of word they might search for. Once the user hits enter to search for their keyword, they will be redirected to the 'All Books' page. For users not logged in/signed up, a larger circle with the call to action 'Create An Account' and a smaller call to action 'Login' appears to the left hand side of the search bar. Once a user is logged in, these do not display and the search bar spans the centre of the page completely.
 
 ![Homepage](static/images/README-images/homepage1.png)
 
@@ -233,11 +233,11 @@ If a user has neither bookmarked any books nor added any books to the site, butt
 
 In the top right-hand corner of the My Profile page is a floating action button for access to user settings. Hovering over it triggers the display of two settings controls: Edit User and Delete User.
 
-- Edit User takes the user to a page where they can edit their username, password or email.
+Edit User takes the user to a page where they can edit their username, password or email.
 
 ![Homepage](static/images/README-images/edit-user.png)
 
-- Delete User  takes the user to a confirmation page that they do want to delete their profile. There is a button which can return them to their profile below the confirmation message.
+Delete User  takes the user to a confirmation page that they do want to delete their profile. There is a button which can return them to their profile below the confirmation message.
 
 ![Homepage](static/images/README-images/delete-user.png)
 
