@@ -77,7 +77,7 @@ The ideal user of the website is someone who has an amateur interest in personal
 
 - A search function among trusted suggestions for personal finance books.
 - The ability to create an account on the website, allowing users to save books to a personal reading list which they can manage themselves.
-- Option to uplaod a book recommendation to the website, as well as edit or delete it at a later date.
+- Option to upload a book recommendation to the website, as well as edit or delete it at a later date.
 
 ### User Stories
 
@@ -85,10 +85,10 @@ The ideal user of the website is someone who has an amateur interest in personal
 2. As a new user, I want to read the description of a book to see if I am interested in buying it.
 3. As a new or existing user, I want to find a link to buy a book I have decided I want to read.
 4. As a new user, I want to create an account containing a personal reading list I have created.
-5. As an existing user, I want to view, add and remove books from my reading list.
-6. As an existing user, I want add a book recommendation to the website and be able to edit or delete it later on.
-10. As the owner of the website, I want to build up a mailing list of people with an interest in personal finance to market my resources, services and platforms to.
-11. As the owner of the website, I want to receive a commission from the affiliate links users have used to buy books they have found out about from my website.
+5. As an existing user, I want add a book recommendation to the website and be able to edit or delete it later on.
+6. As an existing user, I want to edit my user details, or delete my account altogether.
+7. As the owner of the website, I want to build up a mailing list of people with an interest in personal finance to market my resources, services and/or platforms to.
+8. As the owner of the website, I want to have the option to monetize the site through affiliate links.
 
 ### Design Process
 
