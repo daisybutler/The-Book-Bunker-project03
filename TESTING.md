@@ -53,7 +53,7 @@ This project uses Materialize as a frontend framework for building a responsive 
 
 Multiple media queries for each screen size are set out at the end of the style.css file. Such queries ensure an optimal layout on screen sizes of all widths.
 
-The most significant changes dependent on screen size were these to book image displays. Altering how many books were displayed on a row on varying screen sizes was controlled directly in the project's HTML using the Materialize col class. For example:
+The most significant changes dependent on screen size were these to book image displays. Altering how many books were displayed on a row on varying screen sizes was controlled directly in the project's HTML using the Materialize `col` class. For example:
 
  ```
  <div class="input-field col s12 m6">
