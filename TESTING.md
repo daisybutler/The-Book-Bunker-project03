@@ -55,10 +55,12 @@ Multiple media queries for each screen size are set out at the end of the style.
 
 The most significant changes dependent on screen size were these to book image displays. Altering how many books were displayed on a row on varying screen sizes was controlled directly in the project's HTML using the Materialize col class. For example:
 
- ```<div class="input-field col s12 m6">
-      <input id="title" name="title" type="text" class="validate" maxlength="33" required>
-      <label for="title">Title *</label>
-  </div>```
+ ```
+ <div class="input-field col s12 m6">
+   <input id="title" name="title" type="text" class="validate" maxlength="33" required>
+   <label for="title">Title *</label>
+</div>
+  ```
 
 This example creates a div which spans the full width of its container on small devices (<=600px) and half the width of its container on medium screens and above (>600px).
 
