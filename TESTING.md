@@ -34,7 +34,8 @@ I manually tested each page and feature on the website. By going through these p
 <img width="763" alt="mobile-navbar" src="https://user-images.githubusercontent.com/68863341/111609676-72923b00-87d2-11eb-8e9d-3a22ed614ef8.png">
 
 - The footer displays the brand logo and copyright claim. The social links appear to the right-hand side of the footer and all open in a new window to display the appropriate personal finance account on Twitter, Instagram and YouTube.
-- PROBLEM: Initially, my favicon was not displaying on certain pages, but was on others. These pages seemed to be ones that had an additional component to their URL e.g. `.../display-book/5603g68gv0`. Via a helpful [thread on Slack](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1601551370280000), I resolved it by replacing the standard src filepath in the head of my base.html with a url_for, as is the more reliable convention in Flask. The favicon is now correctly displayed in the browser tab of every page.
+- PROBLEM: Initially, my favicon was not displaying on certain pages, but was on others. These pages seemed to be ones that had an additional component to their URL e.g. `.../display-book/5603g68gv0`. 
+- SOLUTION: Via a helpful [thread on Slack](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1601551370280000), I resolved it by replacing the standard src filepath in the head of my base.html with a url_for, as is the more reliable convention in Flask. The favicon is now correctly displayed in the browser tab of every page.
 
 <img width="1209" alt="favicon-fix" src="https://user-images.githubusercontent.com/68863341/111609180-f4ce2f80-87d1-11eb-860a-6b43878b554e.png">
 
