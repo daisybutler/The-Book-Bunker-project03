@@ -671,31 +671,6 @@ nav li a {
 }
 
 
-/* -----------------------------------------------------------------LOGOUT */
-
-#logout-page {
-    min-height: 70vh;
-}
-
-#logout-page-message {
-    font-size: 30px;
-    font-weight: 400;
-    padding-top: 30px;
-    color: #fff;
-}
-
-#logout-page-confirm {
-    background-color: #cab3eb;
-    -webkit-box-shadow: rgb(189, 189, 189) 5px 5px 5px;
-    box-shadow: rgb(189, 189, 189) 5px 5px 5px;
-    padding-bottom: 40px;
-}
-
-#back-to-profile-button {
-    padding-top: 60px;
-}
-
-
 /* ---------------------------------------------------------------- FOOTER */
 
 .page-footer {
