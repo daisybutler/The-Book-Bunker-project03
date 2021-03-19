@@ -201,7 +201,7 @@ Individual book pages contain the title and author of the book in the heading of
 
 The Login page provides the user with two fields to fill out to log in to their account: username and password. There is a flashing button in the top right-hand corner which allows the user to switch to the signup page if they have not created an account yet.
 
-![Homepage](static/images/README-images/login.png)
+<img width="1046" alt="login" src="https://user-images.githubusercontent.com/68863341/111788539-1bff2c80-88b8-11eb-8cc3-c43a6a812b03.png">
 
 ### Signup
 
@@ -379,7 +379,7 @@ To deploy to Heroku, I took the following steps:
 5. Once Heroku had created my new app, from my dashbaord I clicked "Deploy" and then "Deployment Method" within this page. I connected the Heroku app to my GitHub repository "book-bunker-ci-project-03" and set deployments from the master branch to automatic.
 6. Following this, to set my config vars for the app, I went to "Settings" tab in the app dashboard and clicked "Reveal Config Vars". The config vars were set as follows:
 
-![App Config Vars](static/images/README-images/app-config-vars.png)
+<img width="943" alt="app-config-vars" src="https://user-images.githubusercontent.com/68863341/111789250-d4c56b80-88b8-11eb-98a3-c81302cea0da.png">
 
 7. Back in Gitpod, to add the Heroku app as a remote repository, I used the command `git remote add heroku` followed by the Heroku git url `https://git.heroku.com/personal-finance-book-bunker.git`.
 8. To push the project code to Heroku, I used the command `git push -u heroku master
