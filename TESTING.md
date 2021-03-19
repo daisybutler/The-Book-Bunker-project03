@@ -126,7 +126,13 @@ I manually tested each page and feature on the website. By going through these p
 
 This was because my route display_book performs a conditional check using the session user to see whether a book has been bookmarked or not by that particular user. The purpose of this is to either allow the user to bookmark the book using the bookmark button or, if already bookmarked, unbookmark it using the bookmark button (via checking the book IDs listed in the user.bookmarked field in database). Since there is no session user when a user is not logged in, the check for session user threw an error.
 
-SOLUTION:
+- SOLUTION:I needed to add a conditional check for `session` as well as `session['user']` in my `if` statement in the display_book route. This is line 52 of app.py: 
+
+`if session and session['user']:`
+
+Since no session would be found when a user is not logged in, the default display of the bookmark button would be set to `False` and display page will render correctly with the button displaying as disabled.
+
+<img width="1480" alt="bookmarked-disabled" src="https://user-images.githubusercontent.com/68863341/111787932-76e45400-88b7-11eb-8b2e-cc5aac01a152.png">
 
 ### Display Individual Book (logged in user)
 - The Display Book page renders a template with all of the information associated with a particular book on its own page. This is achieved by using the unique book _ _id_ in the URL. The book title, author, category, full description and user who it was added by are all displayed correctly. 
