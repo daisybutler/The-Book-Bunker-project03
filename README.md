@@ -70,7 +70,7 @@ The ideal user of the website is someone who has an amateur interest in personal
 
 - Begin educating themselves on personal finance. Or perhaps they already follow several financial education platforms on Instagram, Twitter or YouTube and want to take the next step.
 - Improve their relationship with money or their general financial wellbeing.
-- Find out what books those those in the financial community recommend.
+- Find out what books other people in the financial community recommend.
 - Discover a single location to find, read about, save and buy personal finance books.
 
 **This website facilitates this for the user by providing:**
@@ -110,11 +110,11 @@ Once I had decided on the features I wanted to include, I moved on to the struct
 
 4. Skeleton Plane
 
-Having planned out my structure, I created wireframes in Figma (see wireframes). The 'Home' page would be the page the user lands on upon first visiting the site. The purpose of this page would be to fulfil the user's wish to search for books, so the search bar should be the main focus along with call to action login/sign up buttons tot he right hand side when the user is not logged in.
+Having planned out my structure, I created wireframes in Figma (see #wireframes). The 'Home' page would be the page the user lands on upon first visiting the site. The purpose of this page would be to fulfil the user's wish to search for books, so the search bar should be the main focus along with call to action login/sign up buttons to the right-hand side when the user is not logged in.
 
-The 'All Books' page would also have a search bar at the top, and return a list of books relating to the keyword the user enters. If they have yet to search for anything, all book in the database display. A user has the ability to click on the book to read more about it and add to their reading list found on 'My Profile'.
+The 'All Books' page would also have a search bar at the top, and return a list of books relating to the keyword the user enters. If they have yet to search for anything, all books in the database display. A user has the ability to click on the book to read more about it and add to their reading list found on 'My Profile'.
 
-The 'Add Book' page, only visible to logged in users, will facilitate the user adding their own book recommendation to the database. All fields are required to do this and they can edit or delete their recommendation at an time from the profile.
+The 'Add Book' page, only visible to logged in users, will facilitate the user adding their own book recommendation to the database. All fields are required to do this and they can edit or delete their recommendation at a time from the profile.
 
 The 'My Profile' is a page which is only visible to a logged in user. The user can find books in this area they have bookmarked. These will appear in a collapsible element. Books can be marked as read and removed from the list once read. The user can also manage their own book recommendations added to the website in the collapsible element beneath this, with edit and delete functions. 
 
@@ -124,7 +124,7 @@ The final menu item appears to those who have yet to login or signup as 'Login/S
 
 I wanted The Book Bunker's visual design to be light, clean and simple. This is important for a user who wants a simple website for getting the information they want quickly or they may exit and find another website. Loud colours and complicated layouts would be counteractive to this. I'm an advocated for rounded edges to all shapes on websites because I think it effortlessly gives a modern and sleek feel.
 
-This project has been imagined with a particular client in mind, who eventually might like to leverage this site as another way of growing their brand awareness. Therefore, my design reflects [their website](https://www.jason-butler.com) style and colour scheme, which is lilac, white, light grey and dark grey. PLEASE NOTE*: I designed, built and currently maintain this website and all company branding associated with it.*
+This project has been imagined with a particular website owner in mind, who eventually might like to leverage it as part of their brand. Therefore, my design reflects their main website style and colour scheme, which is lilac, white, light grey and dark grey.
 
 All these visual features and colours I experimented with and decided on in the creation of my wireframes in Figma [see wireframes](#wireframe-mockups).
 
@@ -156,13 +156,11 @@ The wireframes I made in the planning stage of my project creation can be viewed
 
 - [My Profile](static/images/README-images/profile-wireframe.png)
 
-- [Add Book](static/images/README-images/add-book-wireframe.png)
-
 - [Login](static/images/README-images/login-wireframe.png)
 
 - [Signup](static/images/README-images/signup-wireframe.png)
 
-I have not included wireframes for Edit Book or Edit User since they are replicas of Signup and Add Book pages respectively.
+I have not included wireframes for Edit Book or Edit User since they are replicas of the Add Book and Signup pages respectively.
 
 My entire Figma workspace for this project can be viewed [here](https://www.figma.com/file/WlJ4F22GdniPyiQmA1At1T/Milestone-3?node-id=0%3A1).
 
@@ -279,7 +277,7 @@ The website is fully responsive on all screen sizes, with all text sizes and blo
 
 ### Interactive Features
 
-This project uses JQuery to implement interactive features using Javascript. This includes:
+This project uses JQuery to create interactive features using Javascript. I would like to acknowledge that the Javascript very minimal in this project, however I did not want to add in features in the final stages just for the sake of doing so. Therefore, the interactive features that this project includes to enhance user experience are:
 
 - Materialize interactive features such as the collapsible elements on the profile page, tooltips, the mobile navbar, form select and floating action buttons.
 - The floating action button containing user settings on the profile page uses Javascript to hid and reveal the sub-settings on hover.
@@ -431,7 +429,7 @@ For more on cloning a repository from GitHub, visit [this link](https://docs.git
 
 ### Inspiration
 - This project was inspired by the financial education community on [Instagram](https://www.instagram.com) by observing the importance of personal finance book recommendations to its members.
-- Subsequently, this project's design was inspired by a family member's website [jason-butler.com](https://www.jasoon-butler.com/) with a view to the website becoming a platform to monetize in the future by them.
+- Subsequently, this project's design was inspired by a family member's website [jason-butler.com](https://www.jasoon-butler.com/) with a view to the website becoming a platform to monetize in the future by them. Please note: I designed, built and currently maintain this website and all company branding associated with it.
 
 ### Media
 - All background images were created for this project in Canva.
