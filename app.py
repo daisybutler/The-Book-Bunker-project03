@@ -48,18 +48,13 @@ def all_books():
 
 @app.route("/display-book/<book_id>")
 def display_book(book_id):
-    if session['user']:
+    bookmarked = False
+    if session and session['user']:
         existing_user = mongo.db.users.find_one(
             {"username": session['user']})
-        bookmarked = False
 
         if existing_user and book_id in existing_user["bookmarked"]:
             bookmarked = True
-
-# ---------------------------------------------------Problem
-    else:
-        bookmarked = False
-# ---------------------------------------------------Problem
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     selected_book = {"_id": book["_id"], "title": book["title"],
