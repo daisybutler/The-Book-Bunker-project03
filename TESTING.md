@@ -21,27 +21,35 @@
 ## Testing User Stories
 
 _1. As a new user, I want to quickly find a book related to a particular topic, for example, 'pensions'._
-A user can use the searchbar at the top of the Home page or the All Books page to find all results relating to a particular input. This can be a complete word or a slice of a word, for exmaple, 'pysch' would return results with the word 'Pyschology' in it. It is not case sensitive.
+
+A user can use the searchbar at the top of the Home page or the All Books page to find all results relating to a particular input. This can be a complete word or a slice of a word, for example, 'pysch' would return results with the word 'Pyschology' in it. It is not case sensitive.
 
 _2. As a new user, I want to read the description of a book to see if I am interested in buying it._
+
 A user can view more details about a book from the All Books page by clicking on it. This renders the book on its own page with a full description and links to buy the book or bookmark it within the site. Full book details are also available to the user if they have bookmarked it via their profile page by expanding the collapsible element.
 
 _3. As a new or existing user, I want to find a link to buy a book I have decided I want to read._
+
 A purple 'Buy Now' button is available on each book's individual display page. If the book has been saved by the user to their reading list on their profile, the 'Buy Now' button also appears in the collapsing body.
 
 _4. As a new user, I want to create an account containing a personal reading list I have created._
+
 Using the signup form, a user can create an account. On their profile page, they can add books to their reading list. This creates an easily accessible list of books with all their information and links in one place. Books can be removed from the list using the bookmark button to unbookmark them, located both in the reading list of their profile or on each book's individual display page.
 
 _5. As an existing user, I want add a book recommendation to the website and be able to edit or delete it later on._
+
 A logged in user can add a book to the website via the Add Book page. This book will then appear on the site for all users. A user can edit or delete any book they are responsible for adding to the site. 
 
 _6. As an existing user, I want to edit my user details, or delete my account altogether._
+
 A user can edit or delete their details from the website's database using the settings button on their profile page. The Edit User page always the user to ammend one or all values at a time and has the option to discard changes with the cancel button. The Delete User page ensures the user would definitely like to delete their profile.
 
 _7. As the owner of the website, I want to build up a mailing list of people with an interest in personal finance to market my resources, services and platforms to._
+
 A user is required to provide a valid email address when they signup. This allows the website owner to benefit from users using the website since they are email them about other resources or services they might be interested in. In terms of privacy, the website would have to provide the user with the option to unsubscribe from receiving emails and agree what marketing messages they are happy to receive. Howver, for this version of the website, this is not something I have implemented yet.
 
 _8. As the owner of the website, I want to have the option to monetize the site through affiliate links._
+
 The Buy Now button links, which are positioned on the Display Book and Profile pages, could easily be swapped out for affiliate links provided by a company who intends to pay the site owner a commission for every purchase convertion made through their site links.
 
 ## DevTools
@@ -243,7 +251,7 @@ Since no session would be found when a user is not logged in, the default displa
 
 ### Code Validation
 
-- This project used the W3C Markup Validation Service to validate HTML code. The only errors returned which needed attention were a few incorrect uses of anchor tags and duplicate IDs, which were missed because they were in a Jinja 'for' loop. Other errors raised were those thrown by the use of the Jinja templating language and the absence of a Doctype, since all pages are extended from base.html. These errors were not thrown when the code was validated via a URL, but I had to use the direct input option for a few pages, which did. Thus, these errors could be ignored. Only one validation screenshot has been attached for demonstration purposes, since there were too many to include every one.
+- This project used the W3C Markup Validation Service to validate HTML code. The only errors returned which needed attention were: a few incorrect uses of anchor tags; a few duplicate IDs, which were missed because they were not repeated in the HTML itself, but were when loaded in the browser through a Jinja 'for' loop. Other errors raised were those thrown by the use of the Jinja templating language and the absence of a Doctype, since all pages are extended from base.html. These errors were not thrown when the code was validated via a URL, but I had to use the direct input option for a few pages, which did. Thus, these errors could be ignored. Only one validation screenshot has been attached for demonstration purposes, since there were too many to include every one.
 
 <img width="1301" alt="home-validate" src="https://user-images.githubusercontent.com/68863341/111221319-3f815900-85d2-11eb-9b7e-d5fe7c8dd97c.png">
 
@@ -296,5 +304,5 @@ My mentor Seun Owonikoko was very helpful with her feedback and suggestions when
 ### User Review
 I asked several family members to use the website and provide any feedback they had. They made some of the following comments:
 - Labelling of buttons as to their functions was again a point raised. For example, the big yellow button with a + icon on the All Books page was a feature ignored by users becasue they did not know what it was for. I added a small 'Add Book' label above it to rectify this.
-- When creating an account on the Signup page, users did not understand why their username of 4 letters was throwing the error 'Please match the requested format'. Therefore, I added small clauses below both the username and password fields, asking users to use at least 6 characters of numbers and/or letters only. 
-
+- When creating an account on the Signup page, users did not understand why their username of 4 letters was throwing the error 'Please match the requested format'. Therefore, I added small clauses below both the username and password fields, asking users to use at least 6 characters of numbers and/or letters only.
+- When a user bookmakred a book, the flash message 'Bookmarked' provided a bit of confusion as to what the action had actually achieved for the user. Therefore, I extended the message to read 'Bookmarked! View on profile' so the user would then know to visit their profile to find the bookmarked book.
