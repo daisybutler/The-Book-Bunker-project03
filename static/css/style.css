@@ -5,6 +5,7 @@
 * Browsers: last 4 version
 */
 
+
 /* ---------------------------------------------------------------FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -18,42 +19,49 @@ body {
     min-height: 100vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     scroll-behavior: smooth;
-  }
+}
 
-  /* Facilitates sticky footer */
-  main {
+
+/* Facilitates sticky footer */
+
+main {
     -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
     background-image: url('/static/images/background-pattern1.png');
     background-position: center;
     background-repeat: repeat-y;
     background-size: cover;
     background-color: #fff;
-  }
+}
 
-  /* Styles flash messages */
-  #flash-message {
+
+/* Styles flash messages */
+
+#flash-message {
     background-color: #bb98eb80;
     margin-bottom: 0;
     margin-top: 10px;
-  }
+}
 
-  #flash-message h4 {
+#flash-message h4 {
     font-family: "Poppins";
     color: #fff;
     margin-bottom: 0;
     padding-bottom: 10px;
     padding-top: 10px;
-  }
+}
 
-  /* ----------------------------TEXT */
 
-  /* Page headings */
-  h2 {
+/* ----------------------------TEXT */
+
+
+/* Page headings */
+
+h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-align: center;
@@ -62,14 +70,19 @@ body {
     padding-top: 40px;
 }
 
+
 /* Paragraphs */
+
 p {
     font-family: "Lato", sans-serif;
 }
 
+
 /* ------------------------------------BUTTONS */
 
+
 /* Purple buttons */
+
 .btn-purple {
     background-color: #bb98eb;
     cursor: pointer;
@@ -83,7 +96,9 @@ p {
     background-color: #cdb3f1;
 }
 
+
 /* Yellow buttons */
+
 .btn-yellow {
     background-color: #ffdb9c;
 }
@@ -96,6 +111,7 @@ p {
     background-color: #fce6c0;
 }
 
+
 /* -----------------------------INSTANCES OF BOOK TITLES */
 
 .book-title {
@@ -105,11 +121,14 @@ p {
     text-align: center;
 }
 
+
 /* INSTANCES OF CATEGORIES */
+
 .category-display {
     color: #bb98eb;
     font-weight: 700;
 }
+
 
 /* -----------------------------CONTAINERS */
 
@@ -118,11 +137,13 @@ p {
     padding-bottom: 40px;
 }
 
+
 /* -----------------------------LOGO */
 
 .brand-logo img {
     padding-left: 10px;
 }
+
 
 /* -------------------------------------------------------------------------------NAVIGATION  */
 
@@ -135,6 +156,7 @@ nav li a {
     font-size: 20px;
 }
 
+
 /* --------------------------------------------------------------------------------HOMEPAGE  */
 
 #homepage-title h1 {
@@ -146,13 +168,17 @@ nav li a {
     padding-bottom: 20px;
 }
 
+
 /* 'Personal Finance' */
+
 #small-title {
     font-size: 40px;
     font-weight: 700;
 }
 
+
 /* 'Book Bunker' */
+
 #large-title {
     font-size: 70px;
     font-weight: 700;
@@ -161,6 +187,7 @@ nav li a {
 #homepage-content {
     min-height: 200px;
 }
+
 
 /* -----------------------------SEARCH BAR */
 
@@ -183,9 +210,12 @@ nav li a {
     font-family: "Lato", sans-serif;
 }
 
+
 /* -----------------------------CALL TO ACTIONS */
 
+
 /* Sign up */
+
 .sign-up-circle {
     width: 160px;
     height: 160px;
@@ -200,7 +230,9 @@ nav li a {
     padding-top: 45px;
 }
 
+
 /* Login */
+
 .login-circle {
     width: 100px;
     height: 100px;
@@ -213,12 +245,14 @@ nav li a {
     padding-top: 30px;
 }
 
+
 /* Top Picks section */
+
 #featured-section {
     margin-bottom: 50px;
     background-color: #cab3eb;
     -webkit-box-shadow: rgb(189, 189, 189) 2px 5px 5px;
-            box-shadow: rgb(189, 189, 189) 2px 5px 5px;
+    box-shadow: rgb(189, 189, 189) 2px 5px 5px;
     border: transparent;
     border-radius: 50px;
     margin-top: 40px;
@@ -242,9 +276,12 @@ nav li a {
     margin-top: 20px;
 }
 
+
 /* ------------------------------------------------------------------------ALL BOOKS */
 
+
 /* ----------------------------- BACK TO TOP BUTTON */
+
 
 /* Original code credit: https://codepen.io/deveb22/pen/QxPmGz */
 
@@ -265,7 +302,7 @@ nav li a {
     visibility: hidden;
     z-index: 1000;
     -webkit-box-shadow: #7e7e7e 1px 1px 3px 1px;
-            box-shadow: #7e7e7e 1px 1px 3px 1px;
+    box-shadow: #7e7e7e 1px 1px 3px 1px;
 }
 
 .fa-angle-up {
@@ -287,27 +324,33 @@ nav li a {
     visibility: visible;
 }
 
+
 /* Search results message to user */
+
 #search-results-message {
     text-align: center;
     font-size: 20px;
     padding-bottom: 20px;
 }
 
+
 /* Book image display */
+
 .book-image {
     max-width: 180px;
     max-height: 270px;
-} 
+}
+
 
 /* -----------------------------SEARCH BAR */
 
 .search-button {
     position: absolute;
     -webkit-transform: translate(-55px, 0px);
-        -ms-transform: translate(-55px, 0px);
-            transform: translate(-55px, 0px);
+    -ms-transform: translate(-55px, 0px);
+    transform: translate(-55px, 0px);
 }
+
 
 /* -----------------------------ADD BOOK BUTTON */
 
@@ -323,17 +366,21 @@ nav li a {
     border-radius: 50px;
 }
 
+
 /* Centers plus icon in green Add Book button */
+
 .add-book-button i {
     -webkit-transform: translate(0, 30px);
-        -ms-transform: translate(0, 30px);
-            transform: translate(0, 30px);
+    -ms-transform: translate(0, 30px);
+    transform: translate(0, 30px);
 }
 
 
 /* --------------------------BOOK CARDS */
 
+
 /* Ellipsis 'Read More' style card button. Margin-bottom for visibility */
+
 .expand-book-btn {
     background-color: #fff;
     margin-bottom: 30px;
@@ -347,51 +394,67 @@ nav li a {
     background-color: #fff;
 }
 
+
 /* Ellipsis icon */
+
 .expand-book-btn i {
     color: #bb98eb;
 }
 
+
 /* Card */
+
 .card {
     background-color: #cab3eb;
     padding-bottom: 20px;
     padding-top: 25px;
     -webkit-box-shadow: grey 2px 5px 5px;
-            box-shadow: grey 2px 5px 5px;
+    box-shadow: grey 2px 5px 5px;
 }
 
+
 /* Book titles */
+
 .book-title-all-books {
     color: #fff;
     font-size: 20px;
 }
 
+
 /* Book authors */
+
 .book-author-all-books {
     color: #fff;
 }
 
+
 /* Book categories */
+
 .book-category-all-books {
     color: #fff;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
+
 /* Centers the book images within card */
+
 .card-image {
     padding-left: 25%;
     padding-right: 25%;
 }
 
+
 /* 'Lifts' card image for the appearence of depth */
+
 .card-image img {
- -webkit-box-shadow: #282828 2px 2px 8px 1px;
-         box-shadow: #282828 2px 2px 8px 1px;
+    -webkit-box-shadow: #282828 2px 2px 8px 1px;
+    box-shadow: #282828 2px 2px 8px 1px;
 }
 
+
 /* Book author and year */
+
 .author-year {
     font-family: "Lato";
     color: #bb98eb;
@@ -401,7 +464,9 @@ nav li a {
     margin-bottom: 0;
 }
 
+
 /* Book categories */
+
 .category {
     font-family: "Poppins", sans-serif;
     color: #bb98eb;
@@ -410,14 +475,19 @@ nav li a {
     margin-top: 0;
 }
 
+
 /*-----------------------------------------------------------DISPLAY BOOK */
 
+
 /* Return button */
+
 #back-to-books-button {
     margin-top: 15px;
 }
 
+
 /* Buy now button */
+
 .buy-button {
     background-color: #bb98eb;
     font-family: 'Poppins', sans-serif;
@@ -428,20 +498,22 @@ nav li a {
     border-radius: 6px;
 }
 
+
 /* Book information */
+
 #book-container {
     margin-bottom: 100px;
     margin-top: 30px;
 }
 
 #description {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 #book-image {
     margin-top: 50px;
     -webkit-box-shadow: #282828 1px 1px 6px 2px;
-            box-shadow: #282828 1px 1px 6px 2px;
+    box-shadow: #282828 1px 1px 6px 2px;
     width: 300px;
     height: 450px;
 }
@@ -452,9 +524,12 @@ nav li a {
     font-size: 12px;
 }
 
+
 /*-------------------------------------------------------------MY PROFILE */
 
+
 /* Settings */
+
 #settings {
     position: relative;
     height: 120px;
@@ -467,17 +542,23 @@ nav li a {
     right: 24px;
 }
 
+
 /* Toggle user settings buttons */
+
 #user-settings {
-    border-radius: 30px ;
+    border-radius: 30px;
 }
 
+
 /* User-delete setting */
+
 #sub-setting2 {
     background-color: #e4775c;
 }
 
+
 /* 'MY READING LIST/MY RECOMMENDATIONS' */
+
 .collapsible {
     border-radius: 10px;
 }
@@ -497,7 +578,9 @@ nav li a {
     margin-bottom: 0;
 }
 
+
 /* User controls for add/edit/check/delete */
+
 .book-actions {
     margin-top: 15px;
 }
@@ -520,11 +603,13 @@ nav li a {
     border-radius: 50px;
 }
 
+
 /* Centers plus icon in green Find Books button */
+
 #create-reading-list-button i {
     -webkit-transform: translate(0, 20px);
-        -ms-transform: translate(0, 20px);
-            transform: translate(0, 20px);
+    -ms-transform: translate(0, 20px);
+    transform: translate(0, 20px);
 }
 
 #edit-button {
@@ -535,15 +620,19 @@ nav li a {
     margin-top: 5px;
 }
 
+
 /* Unbookmark button on profile page */
+
 #remove-button {
     margin-top: 5px;
 }
 
+
 /* Box shadow for book images in collapsible bodies */
+
 .book-image-profile-page {
     -webkit-box-shadow: #282828 1px 1px 6px 2px;
-            box-shadow: #282828 1px 1px 6px 2px;
+    box-shadow: #282828 1px 1px 6px 2px;
     width: 200px;
     height: 300px;
     margin-top: 50px;
@@ -554,6 +643,7 @@ nav li a {
     height: 300px;
 }
 
+
 /* -------------------------------------------------------------- SIGN UP */
 
 .login-signup-switch {
@@ -561,8 +651,9 @@ nav li a {
 }
 
 .login-signup-switch:hover {
-     background-color: #cdb3f1;
+    background-color: #cdb3f1;
 }
+
 
 /* ----------------------------------------------------------------LOGIN */
 
@@ -578,6 +669,7 @@ nav li a {
     margin-top: 2px;
     color: #bb98eb;
 }
+
 
 /* -----------------------------------------------------------------LOGOUT */
 
@@ -595,13 +687,14 @@ nav li a {
 #logout-page-confirm {
     background-color: #cab3eb;
     -webkit-box-shadow: rgb(189, 189, 189) 5px 5px 5px;
-            box-shadow: rgb(189, 189, 189) 5px 5px 5px;
+    box-shadow: rgb(189, 189, 189) 5px 5px 5px;
     padding-bottom: 40px;
 }
 
 #back-to-profile-button {
     padding-top: 60px;
 }
+
 
 /* ---------------------------------------------------------------- FOOTER */
 
@@ -617,7 +710,9 @@ nav li a {
     margin-bottom: 0;
 }
 
+
 /* Social icons */
+
 .footer-contents i {
     font-size: 30px;
 }
@@ -627,15 +722,18 @@ nav li a {
     height: 120px;
 }
 
+
 /* ------------------------------------------------------------- MEDIA QUERIES */
+
 
 /* Very small phones */
 
 @media only screen and (max-width: 360px) {
- #settings {
+    #settings {
         margin-top: 50px;
     }
 }
+
 
 /* Smaller phones */
 
@@ -666,6 +764,7 @@ nav li a {
     }
 }
 
+
 /* Larger phones */
 
 @media only screen and (max-width: 600px) {
@@ -673,7 +772,7 @@ nav li a {
         width: 200px;
         height: 300px;
     }
-     .brand-logo img {
+    .brand-logo img {
         width: 65px;
         height: 55px;
     }
@@ -681,6 +780,7 @@ nav li a {
         display: none;
     }
 }
+
 
 /* Tablets */
 
@@ -691,16 +791,18 @@ nav li a {
     }
 }
 
+
 /* Desktop devices */
 
 @media only screen and (min-width: 992px) {
-#added-by-display {
-    float: left;
+    #added-by-display {
+        float: left;
     }
     #book-info-display-page {
         text-align: left;
     }
 }
+
 
 /* Larger desktop devices */
 
@@ -718,13 +820,14 @@ nav li a {
     }
 }
 
+
 /* Very large desktop devices */
 
 @media only screen and (min-width: 1700px) {
     /* Space book images more suitably on very large screens */
     .book-image {
-    -webkit-transform: translate(20px, 0);
+        -webkit-transform: translate(20px, 0);
         -ms-transform: translate(20px, 0);
-            transform: translate(20px, 0);
+        transform: translate(20px, 0);
     }
 }
