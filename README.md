@@ -429,8 +429,8 @@ For more on cloning a repository from GitHub, visit [this link](https://docs.git
 ## Credits
 
 ### Inspiration
-- This project was inspired by the brand identity of [jason-butler.com](https://www.jasoon-butler.com/) for potential monetization in the future by Jason.
-- This project also received inspiration from the financial education community on [Instagram](https://www.instagram/com) by recognising the importance of personal finance book recommendations to its members.
+- This project was inspired by the financial education community on [Instagram](https://www.instagram.com) by observing the importance of personal finance book recommendations to its members.
+- Subsequently, this project's design was inspired by a family member's website [jason-butler.com](https://www.jasoon-butler.com/) with a view to the website becoming a platform to monetize in the future by them.
 
 ### Media
 - All background images were created for this project in Canva.
@@ -438,3 +438,4 @@ For more on cloning a repository from GitHub, visit [this link](https://docs.git
 ### Code
 - This project makes use of many Materialize features provided in its documentation and was modified for this website's specific requirements.
 - The #back-to-top button was modelled off of the code found at [here](https://codepen.io/deveb22/pen/QxPmGz).
+- My mentor Seun helped me find a solution to my Display Book page crashing for users who were not logged in (see #testing regarding display book for all users). She also helped me created a check to see if a user had bookmarked a book, and display as so on the book's own page. For this code, see app.py lines 51 - 57.
