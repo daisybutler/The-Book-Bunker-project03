@@ -385,14 +385,7 @@ def login():
     return render_template("login.html")
 
 
-# --------------------------------------------------------DISPLAY LOGOUT PAGE
-
-@app.route("/logout")
-def logout():
-    return render_template('logout.html')
-
-
-# --------------------------------------------------------LOGOUT CONFIRMATION
+# --------------------------------------------------------LOGOUT
 
 @app.route("/confirm_logout")
 def confirm_logout():
