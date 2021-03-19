@@ -148,7 +148,7 @@ Since no session would be found when a user is not logged in, the default displa
 
 <img width="1458" alt="bookmarked" src="https://user-images.githubusercontent.com/68863341/111532562-b139de00-875d-11eb-80e2-98db1f19a0f2.png">
 
--The action is confirmed by navigating to the profile page (see [Profile](#profile)) where the book now displays in one of the collapsibles in the 'My Reading List' section.
+- The action is confirmed by navigating to the profile page (see [Profile](#profile)) where the book now displays in one of the collapsibles in the 'My Reading List' section.
 
 <img width="1456" alt="bookmarked-confirm" src="https://user-images.githubusercontent.com/68863341/111532708-dfb7b900-875d-11eb-969a-0d03b75ea3d7.png">
 
@@ -288,5 +288,13 @@ The live deployment of this project displays correctly on all of the following d
 
 ### Mentor Review
 
+My mentor Seun Owonikoko was very helpful with her feedback and suggestions when it come to reviewing this project. She made the following suggestions:
+- Remove the Logout page and instead have the user logged out simply by clicking the Logout tab in the navbar. I agreed that the second page to confirm that a user wants to logout is not a permanent action, like deleting an account, so was an added step which was not really necessary.
+- Make Image URL and Purchase Link optional fileds to complete for a user who is adding a book to the site. If they choose to not specific these fields, placeholder values can be used instead for display purposes. I agreed that this makes the process of adding a book to the site a much quicker process for the user.
+- Several of my buttons needed further clarification for the user. For example, the flashing button on the login and signup pages were not immediately obvious to Seun what they were for. Therefore, I added simple labels, 'Login' and 'Signup' discreetly underneath them.
+
 ### User Review
+I asked several family members to use the website and provide any feedback they had. They made some of the following comments:
+- Labelling of buttons as to their functions was again a point raised. For example, the big yellow button with a + icon on the All Books page was a feature ignored by users becasue they did not know what it was for. I added a small 'Add Book' label above it to rectify this.
+- When creating an account on the Signup page, users did not understand why their username of 4 letters was throwing the error 'Please match the requested format'. Therefore, I added small clauses below both the username and password fields, asking users to use at least 6 characters of numbers and/or letters only. 
 
