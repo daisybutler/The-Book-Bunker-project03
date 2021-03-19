@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-
 <!--Back to top button -->
 <a id="back-to-top-button" class="d-none d-sm-block"><i class="fas fa-angle-up"></i></a>
-
 <!--Page heading-->
 <div>
     <h2>All Books</h2>
 </div>
-
 <!---Search bar-->
 <div class="row">
     <div class="col s12 m6 offset-m3" id="book-page-search-bar">
@@ -16,18 +13,15 @@
         <form class="search-bar" method="POST" action="{{ url_for('search_categories') }}">
             <div class="input-field">
                 <input class="search" name="search" type="text" placeholder="E.g. 'investing'" required>
-
                 <!---Search button-->
                 <button class="btn btn-purple search-button right" type="submit"><i class="fas fa-search"
-                        style="cursor: pointer;"></i></button>
+                    style="cursor: pointer;"></i></button>
             </div>
         </form>
-
         <!---Displays for what keyword results are displayed or advises the user that there are no results-->
         <div class="col s12">
             <p id="search-results-message">{{ user_message }}</p>
         </div>
-
         <!---If a search has been carried out, the Show All Books button appears which lets the user reset the page-->
         {% if all_books_button %}
         <div class="col s12 center">
@@ -35,63 +29,53 @@
         </div>
         {% endif %}
     </div>
-
     <!---Link to 'Add Book' page if a user is logged in-->
     <div id="add-book-button-all-books" class="col s12 m3 center">
         {% if session.user %}
         <p class="add-book-prompt">Add Book</p>
         <a class="btn-floating waves-effect waves-light tooltipped add-book-button btn-yellow" data-position="bottom"
             data-tooltip="Add a book recommendation" href="{{ url_for('add_book', back_btn='all-books') }}">
-            <i class="fas fa-plus"></i>
+        <i class="fas fa-plus"></i>
         </a>
-
         <!---Link to 'Login' page if no user is logged in. Session user must be in place for Add Book function to be enabled-->
         {% else %}
         <p class="add-book-prompt">Add Book</p>
         <a class="btn-floating waves-effect waves-light tooltipped add-book-button btn-yellow" data-position="bottom"
             data-tooltip="Please sign in to add a book recommendation" href="{{ url_for('login') }}">
-            <i class="fas fa-plus"></i>
+        <i class="fas fa-plus"></i>
         </a>
         {% endif %}
     </div>
 </div>
-
 <!---Loops over every book in db-->
 <div id="all-books-page-display" class="row">
     {% for book in all_books %}
     <div class="col s12 m6 l4 xl3 center">
-
         <!---Display cards-->
         <!--Help with display issues from https://stackoverflow.com/questions/38457266/materialize-alignment-issue-with-cards-->
         <div class="card large">
             <div class="card-image">
-
                 <!---Displays book on individual page when book image clicked-->
                 <a href="{{ url_for('display_book', book_id=book._id) }}">
-
                     <!---If an image_url is present for the book, display this image-->
                     {% if book.image_url %}
                     <img class="book-image center" src="{{ book.image_url }}" alt="{{ book.title }}">
-
                     <!---If no image_url is present for the book, display placeholder image-->
                     {% else %}
                     <img class="book-image center" src="./static/images/book-placeholder.png" style="box-shadow: none;"
                         alt="{{ book.title }}">
                     {% endif %}
                 </a>
-
                 <!---Displays book on individual page when ellipsis icon clicked-->
                 <a class="expand-book-btn btn-floating halfway-fab waves-effect waves-light"
                     href="{{ url_for('display_book', book_id=book._id) }}"><i class="fas fa-ellipsis-h"></i>
                 </a>
             </div>
-
             <!---Displays book on individual page when title clicked-->
             <h3>
                 <a class="book-title-all-books"
                     href="{{ url_for('display_book', book_id=book._id)}}">{{ book.title }}</a>
             </h3>
-
             <!---Basic book information-->
             <p class="book-author-all-books">{{ book.author }} - {{ book.year }}</p>
             <p class="book-category-all-books">{{ book.category }}</p>

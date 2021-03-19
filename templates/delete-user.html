@@ -1,24 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div id="delete-user-page" class="container">
-
     <!--Page heading-->
     <div>
         <h2>Delete Profile</h2>
     </div>
-
     <div class="row">
         <div class="row">
             <div class="col s12 m8 offset-m2 center">
-
                 <!---Display warning message-->
                 <p>Are you sure you want to delete your profile <em>{{ session["user"] }}</em> ?</p>
-
                 <!---Delete user button-->
                 <form method="POST" action="{{ url_for('confirm_delete_user') }}">
                     <button type="submit" class="waves-effect waves-light btn-large btn-yellow">Delete Profile</button>
-                
                     <!--Cancel button-->
                     <a class="btn-large btn-purple" href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
                 </form>

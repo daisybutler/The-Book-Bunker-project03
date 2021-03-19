@@ -1,22 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
 <!---Page heading-->
 <div id="add-book-page">
     <h2>Add Book</h2>
 </div>
-
 <!---Add book form-->
 <div class="row container">
     <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('add_book', back_btn=back_btn) }}">
         <div class="row">
-
             <!---Add title-->
             <div class="input-field col s12 m6">
                 <input id="title" name="title" type="text" class="validate" maxlength="33" required>
                 <label for="title">Title *</label>
             </div>
-
             <!---Add author-->
             <div class="input-field col s12 m6">
                 <input id="author" name="author" type="text" class="validate" maxlength="25" required>
@@ -24,7 +20,6 @@
             </div>
         </div>
         <div class="row">
-
             <!---Select category-->
             <div class="input-field col s12 m6">
                 <select id="category_name" name="category_name" required>
@@ -35,14 +30,12 @@
                 </select>
                 <label for="category_name">Category *</label>
             </div>
-
             <!---Select year between 1980 and 2021-->
             <div class="input-field col s12 m6">
                 <input id="year" name="year" type="number" min="1980" max="2021" class="validate" required>
                 <label for="year">Year *</label>
             </div>
         </div>
-
         <!---Input description-->
         <div class="row">
             <div class="input-field col s12">
@@ -51,7 +44,6 @@
                 <label for="description">Description *</label>
             </div>
         </div>
-
         <!---Provide image URL-->
         <div class="row">
             <div class="input-field col s12 m6">
@@ -60,7 +52,6 @@
                 <label for="image_url">Image URL</label>
                 <small>Please use an image with a 2:3 ratio</small>
             </div>
-
             <!---Provide Amazon purchase link-->
             <div class="input-field col s12 m6">
                 <input id="purchase_link" name="purchase_link" type="text" pattern="https://.*" placeholder="https://"
@@ -68,21 +59,17 @@
                 <label for="purchase_link">Purchase Link</label>
             </div>
         </div>
-
         <!---Submit button-->
         <div class="row">
             <div class="col s12 center">
                 <button type="submit" class="waves-effect waves-light btn-yellow btn-large">Add Book</button>
-
                 <!--If user access this page from their profile, the 'Cancel' button returns them there-->
                 {% if back_btn == "profile" %}
                 <a class="waves-effect waves-light btn-large btn-purple"
                     href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
-                
                 <!--If user access this page from the All Books page, the 'Cancel' button returns them there-->
                 {% elif back_btn == "all-books" %}
                 <a class="waves-effect waves-light btn-large btn-purple" href="{{ url_for('all_books') }}">Cancel</a>
-
                 <!--If user access this page from the Add Book tab directly, the 'Cancel' button returns them to homepage-->
                 {% else %}
                 <a class="waves-effect waves-light btn-large btn-purple" href="{{ url_for('home') }}">Cancel</a>

@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="row container">
     <div class="row">
-
         <!---Title-->
         <div class="col s12 m4 offset-m4">
             <h2>Sign Up</h2>
         </div>
-
         <!---Switch to login page-->
         <div class="col s12 m1 offset-m1 center">
             <a class="btn-floating btn-large pulse login-signup-switch tooltipped btn-purple" data-position="bottom"
@@ -16,12 +13,10 @@
             <p class="signup-login-hint">Login</p>
         </div>
     </div>
-
     <!---Signup form-->
     <div class="row">
         <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('signup') }}">
             <div class="row">
-
                 <!---Username-->
                 <div class="input-field col s12">
                     <input id="username" name="username" type="text" minlength="6" maxlength="15"
@@ -29,7 +24,6 @@
                     <label for="username">Username *</label>
                     <div><small> Please use a minimum of 6 numbers and/or letters</small></div>
                 </div>
-
                 <!---Password-->
                 <div class="input-field col s12">
                     <input id="password" name="password" type="password" minlength="6" maxlength="15"
@@ -38,7 +32,6 @@
                     <div><small> Please use a minimum of 6 numbers and/or letters</small></div>
                 </div>
             </div>
-
             <!---Email-->
             <div class="row">
                 <div class="input-field col s12">
@@ -46,7 +39,6 @@
                     <label for="email">Email *</label>
                 </div>
             </div>
-
             <!---Signup button-->
             <div class="row">
                 <div class="col s12 center">

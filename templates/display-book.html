@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-
 <!--Button to return to All Books page-->
 <div class="row">
     <div class="col s12">
         <a id="back-to-books-button" class="btn btn-purple" href="{{ url_for('all_books') }}">Back to All Books</a>
     </div>
 </div>
-
 <div class="container">
-
     <!---Checks the selected_book values which are most important have been retrieved from db-->
     {% if selected_book.title, selected_book.author, selected_book.description %}
     <div class="row">
@@ -20,55 +17,44 @@
     </div>
     <div id="book-container" class="row">
         <div id="book-info-display-page" class="col s12 l8 center">
-
             <!---Book category-->
             <p class="category-display">{{ selected_book.category }}</p>
-
             <!---Book description-->
             <p id="description">{{ selected_book.description }}</p>
-
             <!---Display username of user who added book-->
             <div class="row">
                 <div class="col s12 center">
                     <p id="added-by-display">Added by: {{ selected_book.added_by }}</p>
                 </div>
             </div>
-
             <!---Purchase link-->
             <div class="row">
                 <div class="col s12">
-
                     <!---Display Buy Now button if a purchase link has been provided-->
                     {% if selected_book.purchase_link %}
                     <a class="btn btn-purple" href="{{ selected_book.purchase_link }}" target="_blank">Buy Now</a>
-
                     <!---Disable Buy Now button if a purchase link has not been provided-->
                     {% else %}
                     <button class="btn btn-purple" disabled>Buy Now</button>
                     {% endif %}
-
                     <!--If session user is place, display bookmark option-->
                     {% if session['user'] %}
-                    
-                        <!---User has already bookmarked book, and may unbookmark it-->
-                        {% if bookmarked %}
-                        <a class="btn bookmark btn-purple"
-                            href="{{ url_for('unbookmark_bookpage', book_id=selected_book._id) }}">
-                            <i class="fas fa-bookmark"></i>
-                        </a>
-
-                        <!---User has not bookmarked book, and may bookmark it-->
-                        {% else %}
-                        <a class="btn bookmark btn-purple" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
-                            <i class="far fa-bookmark"></i>
-                        </a>
-                        {% endif %}
-                    
+                    <!---User has already bookmarked book, and may unbookmark it-->
+                    {% if bookmarked %}
+                    <a class="btn bookmark btn-purple"
+                        href="{{ url_for('unbookmark_bookpage', book_id=selected_book._id) }}">
+                    <i class="fas fa-bookmark"></i>
+                    </a>
+                    <!---User has not bookmarked book, and may bookmark it-->
+                    {% else %}
+                    <a class="btn bookmark btn-purple" href="{{ url_for('bookmark', book_id=selected_book._id) }}">
+                    <i class="far fa-bookmark"></i>
+                    </a>
+                    {% endif %}
                     {% else %}
                     <button class="btn bookmark btn-purple tooltipped" data-position="bottom" data-tooltip="New here?" disabled><i
-                            class="fas fa-bookmark"></i></button>
+                        class="fas fa-bookmark"></i></button>
                     {% endif %}
-
                     <!---If the book's "add_by" field is equal to session['user'], edit and delete options are available -->
                     {% if selected_book.added_by == session['user'] %}
                     <a id="edit-button" class="btn btn-yellow"
@@ -76,12 +62,11 @@
                     <a id="delete-button" class="btn btn-yellow"
                         href="{{ url_for('delete_book', book_id=selected_book._id) }}"
                         onclick="
-                                        return confirm('Are you sure you want to delete {{ selected_book.title }} from the site?');">Delete</a>
+                        return confirm('Are you sure you want to delete {{ selected_book.title }} from the site?');">Delete</a>
                     {% endif %}
                 </div>
             </div>
         </div>
-
         <!--Display book image if book_url, else display placeholder book-->
         <div id="book-image-section" class="col s12 center l4">
             {% if selected_book.image_url %}
@@ -92,7 +77,6 @@
             {% endif %}
         </div>
     </div>
-
     <!---If selected_book main values have not been retrieved then error message displays to user -->
     {% else %}
     <div class="row">

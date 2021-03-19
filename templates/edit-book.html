@@ -1,23 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-
 <!--Page heading-->
 <div id="edit-book-page">
     <h2>Edit Book</h2>
 </div>
-
 <!---Edit book form-->
 <div class="row container">
     <form class="col s10 offset-s1 m8 offset-m2" method="POST"
         action="{{ url_for('edit_book', book_id=book._id, back_btn=back_btn, _anchor='my-recommendations') }}">
         <div class="row">
-
             <!---Add title-->
             <div class="input-field col s12 m6">
                 <input id="title" name="title" type="text" class="validate" value="{{ book.title }}" maxlength="33" required>
                 <label for="title">Title *</label>
             </div>
-
             <!---Add author-->
             <div class="input-field col s12 m6">
                 <input id="author" name="author" type="text" class="validate" value="{{ book.author }}" maxlength="25" required>
@@ -25,7 +21,6 @@
             </div>
         </div>
         <div class="row">
-
             <!---Select category-->
             <div class="input-field col s12 m6">
                 <select id="category_name" name="category_name" required>
@@ -40,7 +35,6 @@
                 </select>
                 <label for="category_name">Category *</label>
             </div>
-
             <!---Select year between 1980 and 2021-->
             <div class="input-field col s12 m6">
                 <input id="year" name="year" type="number" min="1980" max="2021" class="validate"
@@ -48,17 +42,15 @@
                 <label for="year">Year *</label>
             </div>
         </div>
-
         <!---Input description-->
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="description" name="description" class="materialize-textarea" data-length="200" required>
-                        {{-book.description-}}
-                    </textarea>
+                {{-book.description-}}
+                </textarea>
                 <label for="description">Description *</label>
             </div>
         </div>
-
         <!---Provide image URL-->
         <div class="row">
             <div class="input-field col s12 m6">
@@ -67,7 +59,6 @@
                 <label for="image_url">Image URL</label>
                 <small>Please use an image with a 2:3 ratio</small>
             </div>
-
             <!---Provide Amazon purchase link-->
             <div class="input-field col s12 m6">
                 <input id="purchase_link" name="purchase_link" type="text" pattern="https://.*" placeholder="https://"
@@ -75,17 +66,14 @@
                 <label for="purchase_link">Purchase Link</label>
             </div>
         </div>
-
         <!---Submit button-->
         <div class="row">
             <div class="col s12 center">
                 <button type="submit" class="waves-effect waves-light btn-yellow btn-large">Edit Book</button>
-
                 <!---If the user has accessed the page from their profile, the cancel button will return them there-->
                 {% if back_btn == "profile" %}
                 <a class="waves-effect waves-light btn-large lighten-1 btn-purple"
                     href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>
-
                 <!---If the user has accessed the page from the book's display page, the cancel button will return them there-->
                 {% elif back_btn == "display_book" %}
                 <a class="waves-effect waves-light btn-large lighten-1 btn-purple"

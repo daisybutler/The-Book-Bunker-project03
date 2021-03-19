@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 <!--Page heading-->
 <div class="row container">
     <div class="row">
@@ -8,12 +7,10 @@
             <h2>Edit User Info</h2>
         </div>
     </div>
-
     <!--Form for editing user info-->
     <div class="row">
         <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('edit_user', user=user) }}">
             <div class="row">
-
                 <!--Username-->
                 <div class="input-field col s12">
                     <input value="{{ user.username }}" id="username" name="username" type="text" minlength="5"
@@ -21,7 +18,6 @@
                     <label for="username">Username</label>
                     <div><small> Please use a minimum of 6 numbers and/or letters</small></div>
                 </div>
-
                 <!--Password-->
                 <div class="input-field col s12">
                     <input id="password" name="password" type="password" minlength="6" maxlength="15"
@@ -31,7 +27,6 @@
                     <div><small>NOTE: If you do not wish to change your password, please re-enter your current one</small></div>
                 </div>
             </div>
-
             <!--Email-->
             <div class="row">
                 <div class="input-field col s12">
@@ -41,10 +36,8 @@
             </div>
             <div class="row">
                 <div class="col s12 center">
-
                     <!--Submit button-->
                     <button type="submit" class="waves-effect waves-light btn-large btn-yellow">Edit</button>
-
                     <!--Cancel button-->
                     <a class="waves-effect waves-light btn-large btn-purple"
                         href="{{ url_for('dashboard', username=session['user']) }}">Cancel</a>

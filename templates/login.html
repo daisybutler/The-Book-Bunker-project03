@@ -1,40 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div id="login-page" class="container">
-
     <!--Page heading-->
     <div class="row">
         <div class="col s12 m4 offset-m4">
             <h2>Login</h2>
         </div>
         <div class="col s12 m1 offset-m1 center">
-
             <!--Link to Signup page-->
             <a class="btn-floating btn-large pulse login-signup-switch tooltipped btn-purple" data-position="bottom"
                 data-tooltip="New here?" href="{{ url_for('signup') }}"><i class="fas fa-user-plus"></i></a>
             <p class="signup-login-hint">Signup</p>
         </div>
     </div>
-
     <!--Login form-->
     <div class="row">
         <form class="col s10 offset-s1 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="row">
-
                 <!--Username-->
                 <div class="input-field col s12">
                     <input id="username" name="username" type="text" class="validate" required>
                     <label for="username">Username</label>
                 </div>
-
                 <!--Password-->
                 <div class="input-field col s12">
                     <input id="password" name="password" type="password" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
-
             <!--Login button-->
             <div class="row">
                 <div class="col s12 center">
