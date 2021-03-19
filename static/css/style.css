@@ -86,6 +86,7 @@ p {
 .btn-purple {
     background-color: #bb98eb;
     cursor: pointer;
+    margin-left: 2px;
 }
 
 .btn-purple:hover {
@@ -101,6 +102,7 @@ p {
 
 .btn-yellow {
     background-color: #ffdb9c;
+    margin-right: 2px;
 }
 
 .btn-yellow:hover {
@@ -243,6 +245,7 @@ nav li a {
     -o-transition: .15s ease-out;
     transition: .15s ease-out;
     padding-top: 30px;
+    margin-right: 10px;
 }
 
 
