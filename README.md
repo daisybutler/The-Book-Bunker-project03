@@ -162,6 +162,7 @@ The wireframes I made in the planning stage of my project creation can be viewed
 
 - [Signup](static/images/README-images/signup-wireframe.png)
 
+I have not included wireframes for Edit Book or Edit User since they are replicas of Signup and Add Book pages respectively.
 
 My entire Figma workspace for this project can be viewed [here](https://www.figma.com/file/WlJ4F22GdniPyiQmA1At1T/Milestone-3?node-id=0%3A1).
 
