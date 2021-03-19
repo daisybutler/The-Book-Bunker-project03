@@ -52,8 +52,8 @@
                     </a>
                     {% endif %}
                     {% else %}
-                    <button class="btn bookmark btn-purple tooltipped" data-position="bottom" data-tooltip="New here?" disabled><i
-                        class="fas fa-bookmark"></i></button>
+                    <button class="btn bookmark btn-purple" disabled><i class="fas fa-bookmark"></i></button>
+                    <small>Login to bookmark</small>
                     {% endif %}
                     <!---If the book's "add_by" field is equal to session['user'], edit and delete options are available -->
                     {% if selected_book.added_by == session['user'] %}
