@@ -201,7 +201,7 @@ Individual book pages contain the title and author of the book in the heading of
 
 The Login page provides the user with two fields to fill out to log in to their account: username and password. There is a flashing button in the top right-hand corner which allows the user to switch to the signup page if they have not created an account yet.
 
-![Homepage](static/images/README-images/login.png)
+<img width="1046" alt="login" src="https://user-images.githubusercontent.com/68863341/111788539-1bff2c80-88b8-11eb-8cc3-c43a6a812b03.png">
 
 ### Signup
 
