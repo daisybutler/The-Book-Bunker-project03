@@ -203,7 +203,7 @@ def bookmark(book_id):
     mongo.db.users.update({"username": session['user']}, {
         "$push": {"bookmarked": book_id}})
 
-    flash("Bookmarked")
+    flash("Bookmarked! View on your profile")
 
     return redirect(url_for(
         "display_book", book_id=saved_book["_id"]))
