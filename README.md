@@ -2,7 +2,7 @@
 
 ![Live Demo Of Website](static/images/README-images/live-demo.png)
 
-The live website for this project can be viewed here: https://personal-finance-book-bunker.herokuapp.com/
+This website is no longer live.
 
 The Book Bunker is a one-stop directory for browsing personal finance books. Everyone can browse the books available on the website. However, only users with an account can create a "Reading List" of bookmarked books and add their own book recommendations for other users to see. This project is orientated around user input and offers several different 'Create', 'Read', 'Update' and 'Delete' functions.
 
